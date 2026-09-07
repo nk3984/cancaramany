@@ -1,0 +1,54 @@
+.can-caramany-map .mapboxgl-ctrl-attrib {
+  font-size: 9px;
+  line-height: 1.2;
+  background: rgba(250, 249, 246, 0.72) !important;
+  color: rgba(56, 61, 49, 0.65);
+}
+
+.can-caramany-map .mapboxgl-ctrl-attrib a {
+  color: rgba(56, 61, 49, 0.75);
+}
+
+.can-caramany-map .mapboxgl-ctrl-group {
+  border: 1px solid rgba(200, 186, 154, 0.55) !important;
+  box-shadow: none !important;
+  background: rgba(250, 249, 246, 0.94) !important;
+}
+
+.can-caramany-map .mapboxgl-ctrl-group button {
+  width: 34px;
+  height: 34px;
+}
+
+.can-caramany-map .mapboxgl-ctrl-group button + button {
+  border-top: 1px solid rgba(200, 186, 154, 0.45) !important;
+}
+
+.can-caramany-map .mapboxgl-ctrl-group button .mapboxgl-ctrl-icon {
+  filter: none;
+}
+
+.can-caramany-map .mapboxgl-canvas {
+  outline: none;
+}
+
+.can-caramany-map .mapboxgl-map {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.can-caramany-map .mapboxgl-canvas-container {
+  width: 100%;
+  height: 100%;
+}
+
+.can-caramany-map .mapboxgl-scroll-zoom-blocker,
+.can-caramany-map .mapboxgl-touch-pan-blocker {
+  font-family: inherit;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(32, 33, 31, 0.7);
+}
