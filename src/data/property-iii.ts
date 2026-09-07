@@ -71,7 +71,7 @@ export const propertyIIIContent = {
   land: {
     eyebrow: "Landscape",
     title: "Architecture as a continuation of the land.",
-    copy: "An elongated, irregular landholding with a north–south orientation and a gentle slope of approximately 7–11%. Existing dry-stone walls, holm oak cover, a dry torrent and buildings set in the flatter portion of the land create a living environment that feels grounded, private and distinctly Mallorcan.",
+    copy: "An elongated, irregular landholding with a north–south orientation and a gentle slope of approximately 7–11%. Existing dry-stone walls, holm oaks, almond and olive trees, a dry torrent and buildings set in the flatter portion of the land create a living environment that feels grounded, private and distinctly Mallorcan.",
   },
   cta: {
     eyebrow: "Private documentation",

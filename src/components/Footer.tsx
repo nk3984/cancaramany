@@ -21,6 +21,10 @@ export function Footer() {
             <p className="mt-3 max-w-sm text-sm leading-relaxed text-[var(--color-white)]/55">
               {siteConfig.descriptor}
             </p>
+            <p className="mt-4 max-w-sm text-sm leading-relaxed text-[var(--color-white)]/45">
+              The tortoise — a traditional Mallorcan symbol of fortune — is the
+              mark of Can Caramany.
+            </p>
           </div>
 
           <div className="grid gap-10 sm:grid-cols-2 lg:col-span-7 lg:grid-cols-2">

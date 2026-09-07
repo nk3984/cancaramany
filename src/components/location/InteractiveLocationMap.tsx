@@ -69,10 +69,16 @@ export default function InteractiveLocationMap() {
       const map = mapRef.current?.getMap();
       if (!map) return;
 
-      const coordinates = getCoordinatesForBounds(filteredPoints, true);
+      const pointsForBounds =
+        activeFilter === "all" ? getDefaultBoundsPoints() : filteredPoints;
+
+      const coordinates = getCoordinatesForBounds(pointsForBounds, true);
       fitMapToCoordinates(map, coordinates, {
         duration,
-        maxZoom: activeFilter === "airport" ? 9.8 : 11.2,
+        maxZoom:
+          activeFilter === "airport" || activeFilter === "everyday"
+            ? 9.6
+            : 11.4,
       });
     },
     [activeFilter, filteredPoints],
@@ -207,7 +213,7 @@ export default function InteractiveLocationMap() {
                 key={point.id}
                 longitude={point.longitude}
                 latitude={point.latitude}
-                anchor="bottom"
+                anchor="center"
               >
                 <DestinationMarker
                   point={point}

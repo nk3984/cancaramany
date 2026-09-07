@@ -20,7 +20,7 @@ export type LocationCategory =
   | "marina"
   | "golf"
   | "sport"
-  | "dining"
+  | "culture"
   | "airport";
 
 export type LocationPoint = {
@@ -34,7 +34,6 @@ export type LocationPoint = {
   driveTimeMinutes?: number;
   description: string;
   featured?: boolean;
-  externalMapUrl?: string;
 };
 
 export const locationCategories = [
@@ -44,7 +43,7 @@ export const locationCategories = [
   { id: "marina", label: "Marinas" },
   { id: "golf", label: "Golf" },
   { id: "sport", label: "Sport & Education" },
-  { id: "dining", label: "Dining" },
+  { id: "culture", label: "Culture" },
   { id: "airport", label: "Airport" },
 ] as const;
 
@@ -55,144 +54,155 @@ export type LocationListItem = {
   categoryLabel: string;
 };
 
+/**
+ * Pins are placed on land — beach, quay, clubhouse or town centre —
+ * never on a water centroid. East-coast coves face east, so longitude is
+ * biased slightly inland of the open water.
+ */
 export const locationPoints: LocationPoint[] = [
   {
     id: "manacor",
     name: "Manacor",
     category: "everyday",
     latitude: 39.5696,
-    longitude: 3.2095,
+    longitude: 3.2096,
     distanceKm: 8,
     distanceMiles: 5,
     description:
       "The commercial and cultural centre of eastern Mallorca, providing shopping, healthcare, restaurants, services and everyday infrastructure.",
     featured: true,
-    externalMapUrl:
-      "https://www.google.com/maps/search/?api=1&query=Manacor+Mallorca",
+  },
+  {
+    id: "hospital-manacor",
+    name: "Hospital de Manacor",
+    category: "everyday",
+    latitude: 39.57888,
+    longitude: 3.20711,
+    description:
+      "The regional hospital serving Manacor and the east of the island, a short drive from the estate.",
+  },
+  {
+    id: "palma",
+    name: "Palma",
+    category: "everyday",
+    latitude: 39.5694,
+    longitude: 2.6501,
+    description:
+      "Mallorca’s capital — historic centre, harbour, dining and cultural life — reached across the island in a little over an hour.",
+    featured: true,
   },
   {
     id: "rafa-nadal-academy",
     name: "Rafa Nadal Academy",
     category: "sport",
-    latitude: 39.5742,
-    longitude: 3.2148,
+    latitude: 39.5601,
+    longitude: 3.2133,
     description:
-      "A globally recognised tennis and sports destination in nearby Manacor, combining high-performance facilities, wellness and international education.",
+      "A globally recognised tennis and sports destination on the Cales de Mallorca road, just south of Manacor, combining high-performance facilities, wellness and international education.",
     featured: true,
-    externalMapUrl:
-      "https://www.google.com/maps/search/?api=1&query=Rafa+Nadal+Academy+Manacor",
   },
   {
     id: "porto-cristo",
     name: "Porto Cristo",
     category: "marina",
-    latitude: 39.5389,
-    longitude: 3.3334,
+    latitude: 39.5422,
+    longitude: 3.3332,
     description:
       "A Mediterranean harbour town offering beaches, restaurants, boating access and a lively local waterfront.",
     featured: true,
-    externalMapUrl:
-      "https://www.google.com/maps/search/?api=1&query=Porto+Cristo+Mallorca",
   },
   {
     id: "portocolom",
     name: "Portocolom",
     category: "marina",
-    latitude: 39.4256,
-    longitude: 3.2572,
+    latitude: 39.4185,
+    longitude: 3.256,
     description:
       "One of Mallorca’s most distinctive natural harbours, combining traditional maritime character with restaurants and Mediterranean boating.",
-    externalMapUrl:
-      "https://www.google.com/maps/search/?api=1&query=Portocolom+Mallorca",
-  },
-  {
-    id: "cala-mendia",
-    name: "Cala Mendia",
-    category: "coast",
-    latitude: 39.5331,
-    longitude: 3.3194,
-    description: "A sheltered sandy cove on Mallorca’s eastern coastline.",
-    featured: true,
-    externalMapUrl:
-      "https://www.google.com/maps/search/?api=1&query=Cala+Mendia+Mallorca",
-  },
-  {
-    id: "cala-anguila",
-    name: "Cala Anguila",
-    category: "coast",
-    latitude: 39.5234,
-    longitude: 3.3261,
-    description:
-      "A compact Mediterranean cove known for clear water and a relaxed coastal setting.",
-    externalMapUrl:
-      "https://www.google.com/maps/search/?api=1&query=Cala+Anguila+Mallorca",
-  },
-  {
-    id: "cala-romantica",
-    name: "Cala Romàntica",
-    category: "coast",
-    latitude: 39.5082,
-    longitude: 3.3145,
-    description:
-      "A broad sandy cove surrounded by Mallorca’s eastern coastal landscape.",
-    externalMapUrl:
-      "https://www.google.com/maps/search/?api=1&query=Cala+Romantica+Mallorca",
-  },
-  {
-    id: "cala-varques",
-    name: "Cala Varques",
-    category: "coast",
-    latitude: 39.5324,
-    longitude: 3.3731,
-    description:
-      "One of the east coast’s more natural and secluded Mediterranean coves.",
-    featured: true,
-    externalMapUrl:
-      "https://www.google.com/maps/search/?api=1&query=Cala+Varques+Mallorca",
-  },
-  {
-    id: "vall-dor-golf",
-    name: "Vall d'Or Golf",
-    category: "golf",
-    latitude: 39.3774,
-    longitude: 3.2453,
-    description:
-      "An established 18-hole golf course overlooking Mallorca’s southeastern countryside and Mediterranean coast.",
-    featured: true,
-    externalMapUrl:
-      "https://www.google.com/maps/search/?api=1&query=Vall+d%27Or+Golf+Mallorca",
-  },
-  {
-    id: "pula-golf",
-    name: "Pula Golf",
-    category: "golf",
-    latitude: 39.6382,
-    longitude: 3.3764,
-    description:
-      "A respected golf destination near Son Servera and Mallorca’s northeast coastline.",
-    externalMapUrl:
-      "https://www.google.com/maps/search/?api=1&query=Pula+Golf+Mallorca",
-  },
-  {
-    id: "son-servera-golf",
-    name: "Golf Son Servera",
-    category: "golf",
-    latitude: 39.6221,
-    longitude: 3.3612,
-    description: "A long-established coastal golf club in Mallorca’s northeast.",
-    externalMapUrl:
-      "https://www.google.com/maps/search/?api=1&query=Son+Servera+Golf+Mallorca",
   },
   {
     id: "marina-cala-dor",
     name: "Marina Cala d'Or",
     category: "marina",
-    latitude: 39.3752,
-    longitude: 3.2341,
+    latitude: 39.3689,
+    longitude: 3.2268,
     description:
-      "A full-service Mediterranean leisure marina surrounded by restaurants and coastal amenities.",
-    externalMapUrl:
-      "https://www.google.com/maps/search/?api=1&query=Marina+Cala+d%27Or+Mallorca",
+      "A full-service Mediterranean leisure marina in Cala Llonga, surrounded by restaurants and coastal amenities.",
+  },
+  {
+    id: "cala-mendia",
+    name: "Cala Mendia",
+    category: "coast",
+    latitude: 39.5206,
+    longitude: 3.3124,
+    description: "A sheltered sandy cove on Mallorca’s eastern coastline, just south of Porto Cristo.",
+    featured: true,
+  },
+  {
+    id: "cala-anguila",
+    name: "Cala Anguila",
+    category: "coast",
+    latitude: 39.5221,
+    longitude: 3.3135,
+    description:
+      "A compact Mediterranean cove known for clear water and a relaxed coastal setting, beside Cala Mendia.",
+  },
+  {
+    id: "cala-romantica",
+    name: "Cala Romàntica",
+    category: "coast",
+    latitude: 39.5175,
+    longitude: 3.3078,
+    description:
+      "A broad sandy cove — s’Estany d’en Mas — framed by the east-coast landscape south of Cala Anguila.",
+  },
+  {
+    id: "cala-varques",
+    name: "Cala Varques",
+    category: "coast",
+    latitude: 39.4998,
+    longitude: 3.2947,
+    description:
+      "One of the east coast’s more natural and secluded Mediterranean coves, reached through pine woodland south of Porto Cristo.",
+    featured: true,
+  },
+  {
+    id: "coves-del-drach",
+    name: "Coves del Drach",
+    category: "culture",
+    latitude: 39.5362,
+    longitude: 3.3303,
+    description:
+      "Mallorca’s most celebrated cave system, just inland of Porto Cristo, with an underground lake and concert chamber.",
+    featured: true,
+  },
+  {
+    id: "vall-dor-golf",
+    name: "Vall d'Or Golf",
+    category: "golf",
+    latitude: 39.431635,
+    longitude: 3.217025,
+    description:
+      "An established 18-hole golf course at S’Horta, between Portocolom and Cala d’Or, overlooking Mallorca’s southeastern countryside.",
+    featured: true,
+  },
+  {
+    id: "pula-golf",
+    name: "Pula Golf",
+    category: "golf",
+    latitude: 39.647064,
+    longitude: 3.378639,
+    description:
+      "A respected golf destination on the Son Servera–Capdepera road, inland of Mallorca’s northeast coastline.",
+  },
+  {
+    id: "son-servera-golf",
+    name: "Golf Son Servera",
+    category: "golf",
+    latitude: 39.6405,
+    longitude: 3.4035,
+    description:
+      "A long-established coastal golf club in Costa dels Pins, in Mallorca’s northeast.",
   },
   {
     id: "palma-airport",
@@ -205,26 +215,25 @@ export const locationPoints: LocationPoint[] = [
     description:
       "Mallorca’s international gateway, offering extensive connectivity to major European cities and onward international travel.",
     featured: true,
-    externalMapUrl:
-      "https://www.google.com/maps/search/?api=1&query=Palma+de+Mallorca+Airport",
   },
 ];
 
+/** Initial map frame: east Mallorca around the estate — not the whole island. */
 export const defaultMapFeaturedIds = [
   "manacor",
   "rafa-nadal-academy",
   "porto-cristo",
+  "coves-del-drach",
   "cala-mendia",
   "cala-varques",
-  "palma-airport",
 ] as const;
 
 export const featuredLocationList: LocationListItem[] = [
   { pointId: "manacor", categoryLabel: "Everyday" },
   { pointId: "rafa-nadal-academy", categoryLabel: "Sport & Education" },
   { pointId: "porto-cristo", categoryLabel: "Coast & Marina" },
+  { pointId: "coves-del-drach", categoryLabel: "Culture" },
   { pointId: "cala-varques", categoryLabel: "Nature" },
-  { pointId: "vall-dor-golf", categoryLabel: "Golf" },
   { pointId: "palma-airport", categoryLabel: "International Access" },
 ];
 
@@ -233,7 +242,7 @@ export const locationEditorials = [
     id: "coast",
     title: "The Coast",
     headline: "The Mediterranean, within easy reach.",
-    copy: "From sheltered sandy coves to traditional working harbours, Mallorca’s east coast offers a diverse Mediterranean landscape within convenient reach of Can Caramany.",
+    copy: "From sheltered sandy coves — Cala Mendia, Cala Anguila, Cala Romàntica and Cala Varques — to the working harbours of Porto Cristo and Portocolom, Mallorca’s east coast sits within convenient reach of Can Caramany. The Coves del Drach lie just inland of Porto Cristo.",
   },
   {
     id: "sport",
@@ -245,7 +254,7 @@ export const locationEditorials = [
     id: "golf",
     title: "Golf",
     headline: "Golf across Mallorca’s east.",
-    copy: "Several established golf courses — including Vall d’Or, Pula and Son Servera — are accessible from the estate.",
+    copy: "Several established golf courses — including Vall d’Or at S’Horta, Pula and Son Servera — are accessible from the estate.",
   },
   {
     id: "access",
@@ -277,7 +286,7 @@ export function getCategoryLabel(category: LocationCategory): string {
     marina: "Marina",
     golf: "Golf",
     sport: "Sport & Education",
-    dining: "Dining",
+    culture: "Culture",
     airport: "Airport",
   };
   return labels[category];

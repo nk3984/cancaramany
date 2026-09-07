@@ -11,13 +11,59 @@ type EnquiryFormProps = {
 
 export function EnquiryForm({ onSuccess, compact }: EnquiryFormProps) {
   const [submitted, setSubmitted] = useState(false);
+  const [pending, setPending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setSubmitted(true);
-    window.setTimeout(() => {
-      onSuccess?.();
-    }, 1200);
+    setError(null);
+    setPending(true);
+
+    const form = event.currentTarget;
+    const data = new FormData(form);
+
+    const payload = {
+      firstName: String(data.get("firstName") ?? ""),
+      lastName: String(data.get("lastName") ?? ""),
+      email: String(data.get("email") ?? ""),
+      phone: String(data.get("phone") ?? ""),
+      company: String(data.get("company") ?? ""),
+      country: String(data.get("country") ?? ""),
+      interest: String(data.get("interest") ?? ""),
+      message: String(data.get("message") ?? ""),
+      consent: data.get("consent") === "on",
+    };
+
+    try {
+      const response = await fetch("/api/enquiry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      const result = (await response.json().catch(() => ({}))) as {
+        error?: string;
+      };
+
+      if (!response.ok) {
+        setError(
+          result.error ||
+            `Could not send enquiry. Please email ${siteConfig.company.email} directly.`,
+        );
+        setPending(false);
+        return;
+      }
+
+      setSubmitted(true);
+      window.setTimeout(() => {
+        onSuccess?.();
+      }, 1200);
+    } catch {
+      setError(
+        `Could not send enquiry. Please email ${siteConfig.company.email} directly.`,
+      );
+      setPending(false);
+    }
   }
 
   if (submitted) {
@@ -113,11 +159,18 @@ export function EnquiryForm({ onSuccess, compact }: EnquiryFormProps) {
         </span>
       </label>
 
+      {error ? (
+        <p className="text-sm leading-relaxed text-[var(--color-terracotta)]" role="alert">
+          {error}
+        </p>
+      ) : null}
+
       <button
         type="submit"
-        className="w-full bg-[var(--color-charcoal)] px-6 py-4 text-[11px] uppercase tracking-[0.22em] text-[var(--color-white)] transition-colors hover:bg-[var(--color-deep-olive)]"
+        disabled={pending}
+        className="w-full bg-[var(--color-charcoal)] px-6 py-4 text-[11px] uppercase tracking-[0.22em] text-[var(--color-white)] transition-colors hover:bg-[var(--color-deep-olive)] disabled:cursor-not-allowed disabled:opacity-60"
       >
-        Submit Enquiry
+        {pending ? "Sending…" : "Submit Enquiry"}
       </button>
     </form>
   );

@@ -110,6 +110,7 @@ export const contentFacts = {
     features: [
       "Existing dry-stone walls",
       "Holm oak / oak cover",
+      "Almond and olive trees",
       "Dry torrent / seasonal watercourse",
       "Existing buildings in the flatter portion of the land",
     ],

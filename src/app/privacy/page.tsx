@@ -109,8 +109,8 @@ export default function PrivacyPage() {
           <strong className="font-medium text-[var(--color-charcoal)]">
             Enquiry delivery:
           </strong>{" "}
-          to be confirmed (e.g. Resend or Formspree) before go-live and named
-          here once selected
+          Resend (transactional email delivery of contact and data-room
+          enquiries to {company.email})
         </li>
       </ul>
 
