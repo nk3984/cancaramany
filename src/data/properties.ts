@@ -15,6 +15,7 @@ export interface Property {
   acres: number;
   areaDisplay: string;
   headline: string;
+  projectLine: string;
   descriptors: string[];
   overview: string;
   landscape: string;
@@ -24,7 +25,7 @@ export interface Property {
   href: string;
   imageLabel: string;
   imageAlt: string;
-  imagePath: string;
+  imagePath: string | null;
   isHistoricFinca?: boolean;
   specialLabel?: string;
   areaNote?: string;
@@ -53,24 +54,26 @@ export const properties: Property[] = [
     squareMetres: p.I.squareMetres,
     acres: p.I.acres,
     areaDisplay: "50,033 m² · 12.36 acres",
-    headline: "Open land. Long views. Complete privacy.",
+    headline: "Open land. Long views. A house already conceived.",
+    projectLine:
+      "Formerly permitted villa with pool and garage, set in more than five hectares of private countryside.",
     descriptors: [
-      "Open countryside",
-      "Expansive private setting",
-      "Mature Mediterranean landscape",
-      "Historic architectural project and former planning approval",
+      "50,033 m² of open countryside",
+      "Complete privacy and long views",
+      "Villa, pool and garage in the original project",
+      "Formerly granted building permit",
     ],
     overview:
-      "Property I forms a substantial private landholding within Can Caramany, characterised by open countryside, mature Mediterranean vegetation and a strong sense of separation from the wider landscape.",
+      "Property I is the most open of the four landholdings — a generous private landscape of dry-stone walls, Mediterranean planting and uninterrupted sky. A complete residential project was prepared for this land: a villa with pool and garage, once permitted, later deferred with the rest of the estate. What remains is scale, silence, and a documented architectural starting point.",
     landscape:
       "Gently rolling terrain, dry-stone walls and agricultural openness shape a landscape of light, silence and spatial generosity.",
     architecture: arch.architectureIIiIv,
     infrastructure: `Property I is connected through the estate’s established access network. ${infra.electricity} ${infra.water}`,
     cta: "Explore Property I",
     href: "/properties/property-i",
-    imageLabel: "IMAGE REQUIRED — PROPERTY I LANDSCAPE",
+    imageLabel: "Photography to follow",
     imageAlt: "Open countryside landscape of Property I at Can Caramany, Mallorca",
-    imagePath: "/images/can-caramany/property-01/property-01-landscape.jpg",
+    imagePath: null,
     areaNote: "Area figures provisional pending current Registro / Catastro confirmation.",
   },
   {
@@ -81,15 +84,17 @@ export const properties: Property[] = [
     squareMetres: p.II.squareMetres,
     acres: p.II.acres,
     areaDisplay: "57,092 m² · 14.11 acres",
-    headline: "A generous setting within the heart of the estate.",
+    headline: "At the centre of the estate, among the oaks.",
+    projectLine:
+      "Formerly permitted family house, with living rooms opening to terrace and pool.",
     descriptors: [
       "57,092 m² · 14.11 acres",
-      "Substantial landholding",
-      "Mature vegetation",
-      "Historic architectural project and former planning approval",
+      "Heart of the estate",
+      "Mature holm oaks and internal paths",
+      "Formerly granted building permit",
     ],
     overview:
-      "Property II combines substantial scale with a central position within Can Caramany. Mature vegetation, open land and established estate access create a setting defined by quiet, space and long-term ownership potential.",
+      "Property II sits in the quiet centre of Can Caramany, among mature holm oaks and the estate’s own paths. A substantial family house was designed here — living rooms, terrace and pool turned toward the land. The building permit was granted, then not renewed after the project was postponed. The land, the trees and the original drawings remain.",
     landscape:
       "Mature holm oaks, agricultural openness and internal estate routes contribute to a setting defined by silence, light and spatial generosity.",
     architecture: arch.architectureIIiIv,
@@ -109,22 +114,24 @@ export const properties: Property[] = [
     squareMetres: p.III.squareMetres,
     acres: p.III.acres,
     areaDisplay: "64,455 m² · 15.93 acres",
-    headline: "Where Can Caramany’s history becomes tangible.",
+    headline: "The historic heart of Can Caramany.",
+    projectLine:
+      "The original Mallorcan finca, with a considered proposal for rehabilitation, annexes, terrace and pool.",
     descriptors: [
       "Historic Mallorcan finca",
       "64,455 m² · 15.93 acres",
-      "Historic rehabilitation study",
-      "Heart of Can Caramany",
+      "Original stone, timber and tiled roofs",
+      "Former rehabilitation proposal",
     ],
     overview:
-      "At the heart of Property III stands the historic Mallorcan finca — one of the defining elements of Can Caramany. Its stone walls, timber structures and agricultural architecture connect the estate to its past and provide a tangible starting point for a future architectural concept, always subject to current planning and technical review.",
+      "Property III is the soul of the estate: the historic Mallorcan finca, weathered and authentic, set in more than fifteen acres of oaks, almonds and dry-stone walls. A comprehensive rehabilitation was drawn for the house — a country residence of real presence, with annexes, terrace and pool. The project was later deferred. The finca stands. The drawings remain a starting point, not a current building right.",
     landscape:
       "An elongated, irregular landholding with a north–south orientation and a gentle slope of approximately 7–11%. Dry-stone walls, holm oaks, a dry torrent and buildings set in the flatter portion of the land shape a distinctly Mallorcan setting.",
     architecture: arch.architectureIii,
     infrastructure: `As the historic heart of the estate, Property III is connected by established internal access. ${infra.water} ${infra.electricity} ${infra.wastewaterHistoric}`,
     cta: "Discover the Historic Finca",
     href: "/properties/property-iii",
-    imageLabel: "IMAGE REQUIRED — PROPERTY III FINCA HERO",
+    imageLabel: "Historic finca",
     imageAlt: "Historic Mallorcan finca exterior at Property III, Can Caramany",
     imagePath:
       "/images/can-caramany/property-03/property-03-historic-finca-exterior.jpg",
@@ -140,24 +147,26 @@ export const properties: Property[] = [
     squareMetres: p.IV.squareMetres,
     acres: p.IV.acres,
     areaDisplay: "61,834 m² · 15.28 acres",
-    headline: "Quiet scale at the edge of the estate.",
+    headline: "Quiet scale at the eastern edge.",
+    projectLine:
+      "Formerly permitted villa with lower-ground rooms, pool and a four-car garage.",
     descriptors: [
       "61,834 m² · 15.28 acres",
-      "Rolling countryside",
-      "Private setting",
-      "Historic architectural project and former planning approval",
+      "Independence at the edge of the estate",
+      "Villa, pool and four-car garage in the original project",
+      "Formerly granted building permit",
     ],
     overview:
-      "Property IV offers a generous private landholding framed by open terrain, mature trees and the agricultural character of Can Caramany. Its position within the estate creates a strong sense of independence and privacy.",
+      "Property IV is the quieter eastern landholding — generous, private, and slightly apart. A complete villa was designed for this ground, with living floors, lower-ground rooms, pool and a four-car garage. As with Properties I and II, a building permit was granted and later not renewed when the estate project was postponed. The opportunity is the land, and a serious architectural beginning.",
     landscape:
       "Open fields, mature trees and the broader agricultural character of Can Caramany define a setting of privacy and Mediterranean authenticity.",
     architecture: arch.architectureIIiIv,
     infrastructure: `Property IV is linked through the estate’s established access routes. ${infra.electricity} ${infra.water}`,
     cta: "Explore Property IV",
     href: "/properties/property-iv",
-    imageLabel: "IMAGE REQUIRED — PROPERTY IV LANDSCAPE",
+    imageLabel: "Photography to follow",
     imageAlt: "Rolling countryside of Property IV at Can Caramany, Mallorca",
-    imagePath: "/images/can-caramany/property-04/property-04-landscape.jpg",
+    imagePath: null,
     areaNote: "Area figures provisional pending current Registro / Catastro confirmation.",
   },
 ];

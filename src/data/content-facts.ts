@@ -37,25 +37,25 @@ export const contentFacts = {
       code: "GK1",
       parcels: "Pol. 3, Parcela 282 (formerly part of Parcela 82)",
       status:
-        "Historic architectural project with a former building permit that expired on 18 July 2009.",
+        "Residential architectural project with a former building permit. The permit was not renewed after prolonged postponement of the estate and expired on 18 July 2009.",
     },
     II: {
       code: "GK2",
       parcels: "Pol. 3, Parcelas 105 + 392",
       status:
-        "Historic architectural project with a former building permit that expired on 18 July 2009.",
+        "Residential architectural project with a former building permit. The permit was not renewed after prolonged postponement of the estate and expired on 18 July 2009.",
     },
     III: {
       code: "GK3",
       parcels: "Pol. 3, Parcelas 391 + 393",
       status:
-        "Historic rehabilitation study for the traditional Mallorcan finca. Consell de Mallorca assent dated 6 April 2009 was referenced; corresponding Ayuntamiento permission was not documented.",
+        "Rehabilitation proposal for the traditional Mallorcan finca. Consell de Mallorca assent dated 6 April 2009 was referenced; corresponding Ayuntamiento permission was not documented. The project was later deferred for a prolonged period.",
     },
     IV: {
       code: "GK4",
       parcels: "Pol. 3, Parcela 390 (formerly part of Parcela 82)",
       status:
-        "Historic architectural project with a former building permit that expired on 18 July 2009.",
+        "Residential architectural project with a former building permit. The permit was not renewed after prolonged postponement of the estate and expired on 18 July 2009.",
     },
   },
   properties: {
@@ -86,7 +86,7 @@ export const contentFacts = {
     projectTitle:
       "Rehabilitación y ampliación de casa payesa y anexos. Construcción de piscina.",
     summaryEn:
-      "Historic architectural proposal for the rehabilitation and extension of the existing traditional Mallorcan finca, including annexes and a pool.",
+      "A considered architectural proposal for the rehabilitation and extension of the existing traditional Mallorcan finca, including annexes and a pool.",
     programme: [
       "Single-family residence",
       "Conceived for eight persons",
@@ -101,7 +101,7 @@ export const contentFacts = {
       outdoorTerraceM2: 296.55,
       poolM2: 63.75,
     },
-    figuresLabel: "Historic architectural study — approximate figures",
+    figuresLabel: "Original architectural proposal — approximate figures",
   },
   landscapePropertyIII: {
     form: "Elongated, irregular landholding",
@@ -119,13 +119,19 @@ export const contentFacts = {
     historicFincaOn: "Property III" as const,
     historicStudiesExist: true,
     historicApprovalsNote:
-      "Historic approvals and planning documentation do not constitute current building rights.",
+      "Previous permits were not renewed and do not constitute current building rights.",
   },
   copy: {
+    architectureEyebrowIIiIv: "Architecture / Former Permit",
+    architectureHeadlineIIiIv: "Once granted. Later deferred.",
     architectureIIiIv:
-      "The property was historically subject to an architectural residential project and a building permit that has since expired. Any future development is subject to current planning regulations and renewed governmental approval.",
+      "A complete residential project was prepared for this land, and a building permit was granted. The Can Caramany project was later postponed for a prolonged period, and the permit was not renewed. It expired on 18 July 2009. What remains is the original architectural work — a previously approved concept that gives a future owner a clear, documented starting point. It is not a current building right. Any development today is subject to current planning regulations and renewed governmental approval.",
     architectureIii:
-      "Historic architectural proposal for the rehabilitation and extension of the existing traditional Mallorcan finca. Any future rehabilitation, extension or change of use is subject to current planning regulations and all required approvals.",
+      "A comprehensive rehabilitation proposal was prepared for the historic finca. The documentation references a Consell de Mallorca assent of 6 April 2009; corresponding Ayuntamiento permission was not documented in the files available. As with the wider estate, the project was later deferred for a prolonged period. These drawings remain a considered architectural starting point. They do not constitute current building rights. Any rehabilitation, extension or change of use is subject to current planning regulations and all required approvals.",
+    galleryFormerPermit:
+      "Floor plans, elevations and sections from the formerly permitted residential project. They record a concept that was once approved — not a building right that can be exercised today.",
+    galleryRehabilitation:
+      "Floor plans, elevations and sections from the original rehabilitation proposal. They remain a serious architectural starting point — not a current building right.",
   },
   infrastructure: {
     water:
@@ -148,7 +154,7 @@ export const contentFacts = {
 /** Full site disclaimer — for counsel final approval before public go-live. */
 export const siteDisclaimerParagraphs = [
   "The architectural drawings, plans, renderings, studies and other development concepts presented on this website include historical and conceptual material and are provided for illustrative and informational purposes only.",
-  "Certain properties within the Can Caramany estate were historically subject to architectural projects and/or planning procedures. Any previous permits or approvals may have expired, may no longer be valid or may require modification under current planning, environmental and building regulations.",
+  "Certain properties within the Can Caramany estate were historically subject to architectural projects and planning procedures, including building permits that were later not renewed after the project was deferred for a prolonged period. Any previous permits or approvals have expired, may no longer be valid, or may require modification under current planning, environmental and building regulations.",
   "No representation or warranty is made that the concepts shown can be implemented in their current form. Any future construction, rehabilitation, extension, change of use or other development is subject to independent technical and legal review and to all approvals required by the competent authorities.",
   "All areas, dimensions, plans, distances, infrastructure information and other property data are approximate unless expressly confirmed by current official documentation and should be independently verified by a prospective purchaser.",
   "Renderings and visualisations are artistic representations and do not constitute a contractual specification or commitment.",

@@ -37,7 +37,11 @@ function PropertyContent({ property }: { property: Property }) {
         </span>
       ) : null}
 
-      <p className="mt-6 text-base leading-[1.8] text-[var(--color-deep-olive)]">
+      <p className="mt-6 text-[13px] leading-relaxed tracking-wide text-[var(--color-terracotta)]">
+        {property.projectLine}
+      </p>
+
+      <p className="mt-5 text-base leading-[1.8] text-[var(--color-deep-olive)]">
         {property.overview}
       </p>
 

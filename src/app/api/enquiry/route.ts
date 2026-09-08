@@ -131,8 +131,21 @@ export async function POST(request: Request) {
 
     if (error) {
       console.error("Resend error:", error);
+      const detail =
+        typeof error === "object" && error && "message" in error
+          ? String((error as { message?: string }).message)
+          : "";
+      const testingOnly =
+        /only send testing emails to your own email/i.test(detail) ||
+        /verify a domain/i.test(detail);
+
       return NextResponse.json(
-        { error: "Could not send enquiry. Please try again or email us directly." },
+        {
+          error: testingOnly
+            ? "Resend is still in test mode: it can only deliver to the email address of your Resend account until cancaramany.com is verified. Verify the domain in Resend, or temporarily set ENQUIRY_TO_EMAIL to your Resend login email."
+            : detail ||
+              "Could not send enquiry. Please try again or email us directly.",
+        },
         { status: 502 },
       );
     }

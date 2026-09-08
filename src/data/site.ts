@@ -1,9 +1,11 @@
+import { contentFacts } from "@/data/content-facts";
+
 export const siteConfig = {
   name: "Can Caramany",
   descriptor: "Private Estate · Mallorca",
-  title: "Can Caramany | Private Estate in Mallorca",
+  title: "Can Caramany | A Private Estate in Mallorca",
   description:
-    "Discover Can Caramany, a rare private estate in eastern Mallorca comprising four exceptional properties, more than 58 acres of land, historic architecture and significant private scale.",
+    "Can Caramany is a rare private estate in eastern Mallorca: four independent landholdings, more than 58 acres, a historic Mallorcan finca, and original architectural projects once prepared for each plot.",
   proposition: "Space. Privacy. Heritage. Mallorca.",
   location: {
     region: "Eastern Mallorca",
@@ -67,9 +69,8 @@ export const siteConfig = {
   ] as const,
   conceptualDisclaimer:
     "Conceptual visualization. Subject to planning, technical review and applicable approvals.",
-  historicLabel: "Historic Architectural Studies",
-  historicApprovalsNote:
-    "Historic approvals and planning documentation do not constitute current building rights.",
+  historicLabel: "Original Architectural Drawings",
+  historicApprovalsNote: contentFacts.heritage.historicApprovalsNote,
   privacyConsent:
     "I have read the Privacy Policy and consent to the processing of my personal data for the purpose of handling my enquiry.",
 } as const;

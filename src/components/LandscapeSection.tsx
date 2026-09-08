@@ -9,18 +9,18 @@ const fragments = ["Stone", "Land", "Light", "Space", "Silence"];
 
 const images = [
   {
-    label: "IMAGE REQUIRED — OPEN FIELDS",
+    label: "Photography to follow",
     alt: "Open agricultural fields within Can Caramany",
-    src: "/images/can-caramany/landscape/landscape-open-fields.jpg",
+    src: null,
     caption: "Open land",
     className: "lg:col-span-12",
     aspect: "aspect-[16/10] lg:aspect-[21/9]",
     objectPosition: "center 78%",
   },
   {
-    label: "IMAGE REQUIRED — OLIVE GROVE",
+    label: "Photography to follow",
     alt: "Mature trees and dry-stone walls on the Can Caramany landholding",
-    src: "/images/can-caramany/landscape/landscape-olive-grove.jpg",
+    src: null,
     caption: "Mediterranean planting",
     className: "lg:col-span-7",
     aspect: "aspect-[5/4]",
@@ -81,14 +81,14 @@ export function LandscapeSection() {
           </FadeIn>
           <FadeIn delay={0.1} className="lg:col-span-5">
             <p className="max-w-md text-base leading-[1.8] text-[var(--color-deep-olive)]">
-              Ancient holm oaks, almond and olive trees, traditional dry-stone
-              walls and open agricultural land define Can Caramany. The
-              landholding opens to the southwest — morning light and evening
-              light across the same terrain.
+              This is what luxury looks like here: ancient holm oaks, almond and
+              olive trees, dry-stone walls that have held the land for
+              generations, and light that moves across the same ground from
+              morning until evening.
             </p>
             <p className="mt-4 max-w-md text-base leading-[1.8] text-[var(--color-deep-olive)]">
-              The estate does not attempt to recreate Mallorca’s rural character.
-              It is part of it.
+              The estate does not imitate rural Mallorca. It is rural Mallorca
+              — private, unhurried, and unusually intact.
             </p>
           </FadeIn>
         </div>

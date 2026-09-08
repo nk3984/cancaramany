@@ -35,7 +35,7 @@ export function InfrastructureSection() {
             Infrastructure
           </p>
           <h2 className="font-[family-name:var(--font-serif)] text-[clamp(2rem,4.5vw,3.25rem)] leading-[1.15] text-[var(--color-charcoal)]">
-            Established Foundations.
+            The estate is already served.
           </h2>
         </FadeIn>
 

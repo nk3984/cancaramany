@@ -26,6 +26,10 @@
 
 # local photo inbox (processed assets live under public/images)
 /incoming-photos/
+.tmp-planpaket/
+.tmp-brochure/
+.tmp-pdf-preview/
+.tmp-copy-plans.py
 
 # debug
 npm-debug.log*

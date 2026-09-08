@@ -4,10 +4,10 @@ const areas = contentFacts.propertyIIIStudy.approxAreas;
 
 export const propertyIIIContent = {
   eyebrow: "Property III — The Historic Estate",
-  headline: "Where Can Caramany’s history becomes tangible.",
-  lead: "At the centre of Can Caramany stands the historic finca — a rare architectural anchor with tangible Mallorcan character.",
+  headline: "The historic heart of Can Caramany.",
+  lead: "Original stone, tiled roofs and a landscape that has grown around the house for generations — the finca that gives the estate its name.",
   overview:
-    "This is the heart of the estate: original stone, agricultural architecture and a landscape that has grown around it. A historic architectural proposal explored the rehabilitation and extension of the existing traditional Mallorcan finca — always subject to current planning, technical review and all required approvals.",
+    "This is the soul of Can Caramany: a genuine Mallorcan finca, weathered and irreplaceable, set in more than fifteen acres of oaks, almonds and dry-stone walls. A comprehensive rehabilitation was drawn for the house — country living of real presence, with annexes, terrace and pool. The documentation references a Consell de Mallorca assent of 6 April 2009; corresponding Ayuntamiento permission was not documented, and the project was later deferred. The drawings remain a starting point, not a current building right.",
   facts: [
     { label: "Land", value: "64,455 m²" },
     { label: "Scale", value: "15.93 acres" },
@@ -21,9 +21,9 @@ export const propertyIIIContent = {
     copy: "At the heart of Property III stands an original Mallorcan finca — weathered, authentic and deeply rooted in its landscape. Stone walls, timber structures and traditional roof tiles give the house a character that cannot be manufactured. What stands here is not a finished residence, but a rare starting point: historic substance with genuine architectural presence.",
   },
   vision: {
-    eyebrow: "Historic rehabilitation study",
+    eyebrow: "Former rehabilitation proposal",
     title: "A quiet continuation of Mallorcan living.",
-    copy: `${contentFacts.propertyIIIStudy.summaryEn} Historic studies imagined a composed Casa Payesa with annexes, terrace, pergola and pool — contemporary in comfort, unmistakably Mallorcan in character. This material is historical and conceptual only.`,
+    copy: `${contentFacts.propertyIIIStudy.summaryEn} The original proposal imagined a composed Casa Payesa with annexes, terrace, pergola and pool — contemporary in comfort, unmistakably Mallorcan in character. The project was later deferred; these drawings are a starting point, not a current building right.`,
     points: [
       "Rehabilitation and extension of the existing Casa Payesa and annexes",
       "Pool and pergola contemplated in the historic proposal",
@@ -31,31 +31,31 @@ export const propertyIIIContent = {
     ],
   },
   living: {
-    eyebrow: "Historic architectural study",
+    eyebrow: "Original architectural drawings",
     title: "Conceived for gathering, retreat and outdoor living.",
     intro:
-      "Figures below are approximate values from the historic architectural study and are provided for information only. Detailed plans remain available on qualified request.",
+      "Figures below are approximate values from the original rehabilitation proposal and are provided for information only. The drawings that follow record that concept — they are not a current building right.",
     levels: [
       {
         label: "Ground floor",
         title: "Arrival and gathering",
-        copy: `Approx. ${areas.groundFloorM2.toFixed(2)} m² in the historic study — entrance, salon and living spaces opening toward the land.`,
+        copy: `Approx. ${areas.groundFloorM2.toFixed(2)} m² in the original proposal — entrance, salon and living spaces opening toward the land.`,
       },
       {
         label: "Upper floor",
         title: "Private retreat",
-        copy: `Approx. ${areas.upperFloorM2.toFixed(2)} m² in the historic study — private rooms within the contemplated upper-floor extension.`,
+        copy: `Approx. ${areas.upperFloorM2.toFixed(2)} m² in the original proposal — private rooms within the contemplated upper-floor extension.`,
       },
       {
         label: "Outdoors",
         title: "Living in the landscape",
-        copy: `Approx. ${areas.outdoorTerraceM2.toFixed(2)} m² outdoor / terrace areas and an approx. ${areas.poolM2.toFixed(2)} m² pool in the historic proposal.`,
+        copy: `Approx. ${areas.outdoorTerraceM2.toFixed(2)} m² outdoor / terrace areas and an approx. ${areas.poolM2.toFixed(2)} m² pool in the original proposal.`,
       },
     ],
     figures: [
       {
         value: `approx. ${Math.round(areas.mainHouseM2)} m²`,
-        label: "Main house (historic study)",
+        label: "Main house (original proposal)",
       },
       {
         value: `approx. ${Math.round(areas.outdoorTerraceM2)} m²`,
@@ -76,7 +76,7 @@ export const propertyIIIContent = {
   cta: {
     eyebrow: "Private documentation",
     title: "Request the documentation for Property III.",
-    copy: "Floor plans, historic studies and further material are available upon qualified request.",
+    copy: "Floor plans, elevations, sections and further material from the original proposal are shown on this page. Additional documentation remains available upon qualified request.",
     button: "Enquire about Property III",
   },
 } as const;
@@ -93,9 +93,9 @@ export const propertyIIIImages = {
     label: "IMAGE REQUIRED — FINCA EXISTING",
   },
   annex: {
-    src: "/images/can-caramany/historic-finca/finca-annex-barn.jpg",
+    src: null,
     alt: "Historic annex and agricultural buildings of the Mallorcan finca",
-    label: "IMAGE REQUIRED — FINCA ANNEX",
+    label: "Photography to follow",
   },
   details: [
     {
@@ -165,10 +165,6 @@ export const propertyIIIImages = {
       alt: "Historic finca exterior at Property III",
     },
     {
-      src: "/images/can-caramany/historic-finca/finca-annex-barn.jpg",
-      alt: "Annex and barn of the historic Mallorcan finca",
-    },
-    {
       src: "/images/can-caramany/historic-finca/finca-detail-stone.jpg",
       alt: "Stone masonry detail of the historic finca",
     },
@@ -177,12 +173,8 @@ export const propertyIIIImages = {
       alt: "Door detail of the historic Mallorcan finca",
     },
     {
-      src: "/images/can-caramany/landscape/landscape-olive-grove.jpg",
-      alt: "Mediterranean landscape surrounding Property III",
-    },
-    {
-      src: "/images/can-caramany/landscape/landscape-holm-oaks.jpg",
-      alt: "Holm oaks within the Property III landholding",
+      src: "/images/can-caramany/landscape/landscape-estate-path.jpg",
+      alt: "Estate path among holm oaks at Can Caramany",
     },
   ],
 } as const;

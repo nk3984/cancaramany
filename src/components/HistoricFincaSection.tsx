@@ -17,11 +17,11 @@ const stages = [
   },
   {
     id: "study",
-    label: "Historic Study",
+    label: "Original Proposal",
     imageLabel: "IMAGE REQUIRED — HISTORIC STUDY 01",
-    alt: "Historic architectural study of the Can Caramany finca, north façade",
+    alt: "Original architectural proposal for the Can Caramany finca, north façade",
     src: "/images/can-caramany/architecture/architecture-vision-north-facade.jpg",
-    note: "Historic rehabilitation study",
+    note: "Former rehabilitation proposal. Not a current building right.",
   },
   {
     id: "vision",
@@ -29,7 +29,7 @@ const stages = [
     imageLabel: "IMAGE REQUIRED — CONCEPTUAL VISION",
     alt: "Conceptual visualization of the historic finca set into the Mallorcan landscape",
     src: "/images/can-caramany/architecture/architecture-vision-elevated.jpg",
-    note: "Conceptual visualization. Subject to planning, technical review and applicable approvals. Historic approvals do not constitute current building rights.",
+    note: "Conceptual visualization. Subject to planning, technical review and applicable approvals. Previous permits were not renewed and do not constitute current building rights.",
   },
 ] as const;
 
@@ -67,17 +67,20 @@ export function HistoricFincaSection() {
               Historic Finca
             </p>
             <h2 className="font-[family-name:var(--font-serif)] text-[clamp(2.25rem,4.5vw,3.5rem)] leading-[1.12] text-[var(--color-charcoal)]">
-              A house that was here before us.
+              The house that gives the estate its name.
             </h2>
             <p className="mt-8 max-w-md text-base leading-[1.85] text-[var(--color-deep-olive)]">
-              At the heart of Property III stands the historic Mallorcan finca —
-              one of the defining elements of Can Caramany.
+              At the heart of Property III stands the historic Mallorcan finca
+              — stone, timber and tiled roofs that have belonged to this land
+              for generations. It is rare, authentic, and impossible to
+              reproduce.
             </p>
             <p className="mt-4 max-w-md text-base leading-[1.85] text-[var(--color-deep-olive)]">
-              A historic architectural proposal explored the rehabilitation and
-              extension of the existing traditional Mallorcan finca. This
-              material is historical and conceptual only — it does not constitute
-              current building rights.
+              A full rehabilitation was drawn for the house: a country
+              residence of real presence, with annexes, terrace and pool. The
+              project was later set aside. The finca remains the architectural
+              soul of Can Caramany — and a starting point, not a finished
+              permit.
             </p>
 
             <div className="mt-12 flex flex-wrap gap-2">
@@ -147,7 +150,7 @@ export function HistoricFincaSection() {
                 </span>
                 <span className="h-px w-8 bg-[var(--color-warm-stone)]" />
                 <span className={stage === 1 ? "text-[var(--color-charcoal)]" : ""}>
-                  Historic Study
+                  Original Proposal
                 </span>
                 <span className="h-px w-8 bg-[var(--color-warm-stone)]" />
                 <span className={stage === 2 ? "text-[var(--color-charcoal)]" : ""}>

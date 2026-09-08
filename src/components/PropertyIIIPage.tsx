@@ -4,12 +4,14 @@ import Link from "next/link";
 import { useState } from "react";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
+import { HistoricStudyGallery } from "@/components/HistoricStudyGallery";
 import { EnquiryForm } from "@/components/EnquiryForm";
 import { Modal } from "@/components/ui/Modal";
 import { Button } from "@/components/ui/Button";
 import { siteConfig } from "@/data/site";
 import { properties } from "@/data/properties";
 import { propertyIIIContent, propertyIIIImages } from "@/data/property-iii";
+import { historicPlansByProperty } from "@/data/historic-plans";
 
 export function PropertyIIIPage() {
   const [open, setOpen] = useState(false);
@@ -249,6 +251,16 @@ export function PropertyIIIPage() {
           <p className="mt-8 max-w-xl text-sm leading-relaxed text-[var(--color-deep-olive)]/75">
             {content.living.figuresNote}
           </p>
+        </div>
+      </section>
+
+      <section className="bg-[var(--color-white)] px-5 py-20 sm:px-8 sm:py-28 lg:px-12">
+        <div className="mx-auto max-w-[1440px]">
+          <HistoricStudyGallery
+            drawings={historicPlansByProperty["property-iii"]}
+            roman="III"
+            variant="rehabilitation"
+          />
         </div>
       </section>
 

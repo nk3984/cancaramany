@@ -13,11 +13,11 @@ export function ClosingSection() {
     <section className="relative overflow-hidden bg-[var(--color-charcoal)]">
       <div className="absolute inset-0">
         <ImagePlaceholder
-          label="IMAGE REQUIRED — ESTATE AFTERNOON"
+          label="Photography to follow"
           alt="Late afternoon light across the Can Caramany estate"
           aspect="h-full min-h-[80vh] w-full"
           className="h-full min-h-[80vh] w-full"
-          src="/images/can-caramany/investment/closing-estate-afternoon.jpg"
+          src={null}
           sizes="100vw"
           objectPosition="center 40%"
         />
@@ -30,7 +30,7 @@ export function ClosingSection() {
             CAN CARAMANY
           </p>
           <p className="mt-8 max-w-xl font-[family-name:var(--font-serif)] text-[clamp(1.35rem,3vw,2rem)] leading-snug text-[var(--color-white)]/90">
-            Space to create something enduring.
+            Four private worlds. One extraordinary piece of Mallorca.
           </p>
           <button
             type="button"

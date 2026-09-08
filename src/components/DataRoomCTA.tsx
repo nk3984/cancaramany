@@ -7,8 +7,8 @@ import { Modal } from "@/components/ui/Modal";
 
 const documents = [
   "Cadastral information",
-  "Historic planning documentation",
-  "Architectural studies",
+  "Former planning documentation",
+  "Original architectural drawings",
   "Infrastructure information",
   "Technical documents",
   "Property documentation",
@@ -33,8 +33,9 @@ export function DataRoomCTA() {
               For those who want to go deeper.
             </h2>
             <p className="mt-8 max-w-md text-base leading-[1.85] text-[var(--color-deep-olive)]">
-              Qualified buyers, advisers and investment partners may request
-              access to detailed documentation relating to Can Caramany.
+              Plans, titles, infrastructure notes and the original architectural
+              drawings are available to qualified buyers and their advisers —
+              privately, and in full.
             </p>
             <button
               type="button"

@@ -6,9 +6,12 @@ import { FadeIn } from "@/components/ui/FadeIn";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
 import { EnquiryForm } from "@/components/EnquiryForm";
 import { Modal } from "@/components/ui/Modal";
+import { HistoricStudyGallery } from "@/components/HistoricStudyGallery";
 import { siteConfig } from "@/data/site";
+import { contentFacts } from "@/data/content-facts";
 import type { Property } from "@/data/properties";
 import { properties } from "@/data/properties";
+import { historicPlansByProperty } from "@/data/historic-plans";
 
 export function PropertyPage({ property }: { property: Property }) {
   const [open, setOpen] = useState(false);
@@ -48,7 +51,10 @@ export function PropertyPage({ property }: { property: Property }) {
             <h2 className="mt-5 font-[family-name:var(--font-serif)] text-[clamp(1.75rem,3.5vw,2.75rem)] leading-[1.2] text-[var(--color-charcoal)]">
               {property.headline}
             </h2>
-            <p className="mt-8 max-w-2xl text-base leading-[1.85] text-[var(--color-deep-olive)]">
+            <p className="mt-5 max-w-2xl text-[15px] leading-relaxed text-[var(--color-terracotta)]">
+              {property.projectLine}
+            </p>
+            <p className="mt-6 max-w-2xl text-base leading-[1.85] text-[var(--color-deep-olive)]">
               {property.overview}
             </p>
           </FadeIn>
@@ -79,7 +85,7 @@ export function PropertyPage({ property }: { property: Property }) {
           </FadeIn>
           <FadeIn delay={0.08} className="lg:col-span-7">
             <ImagePlaceholder
-              label={`IMAGE REQUIRED — PROPERTY ${property.roman} LANDSCAPE`}
+              label={property.imageLabel}
               alt={`Landscape of Property ${property.roman} at Can Caramany`}
               aspect="aspect-[16/11]"
               src={property.imagePath}
@@ -122,27 +128,29 @@ export function PropertyPage({ property }: { property: Property }) {
         </div>
       </section>
 
-      <section className="bg-[var(--color-charcoal)] px-5 py-20 text-[var(--color-white)] sm:px-8 lg:px-12">
-        <div className="mx-auto grid max-w-[1440px] gap-12 lg:grid-cols-12">
-          <FadeIn className="lg:col-span-6">
-            <p className="text-[11px] uppercase tracking-[0.24em] text-[var(--color-warm-stone)]">
-              Architecture / Historic Documentation
+      <section className="bg-[var(--color-background)] px-5 py-20 sm:px-8 lg:px-12">
+        <div className="mx-auto max-w-[1440px]">
+          <FadeIn className="max-w-3xl">
+            <p className="text-[11px] uppercase tracking-[0.24em] text-[var(--color-deep-olive)]">
+              {contentFacts.copy.architectureEyebrowIIiIv}
             </p>
-            <p className="mt-6 text-base leading-[1.85] text-[var(--color-white)]/70">
+            <h2 className="mt-5 font-[family-name:var(--font-serif)] text-[clamp(1.85rem,3.5vw,2.75rem)] leading-[1.15] text-[var(--color-charcoal)]">
+              {contentFacts.copy.architectureHeadlineIIiIv}
+            </h2>
+            <p className="mt-6 text-base leading-[1.85] text-[var(--color-deep-olive)]">
               {property.architecture}
             </p>
-            <p className="mt-6 text-sm text-[var(--color-warm-stone)]/80">
+            <p className="mt-6 text-sm text-[var(--color-deep-olive)]/75">
               {siteConfig.historicApprovalsNote}
             </p>
           </FadeIn>
-          <FadeIn delay={0.08} className="lg:col-span-6">
-            <ImagePlaceholder
-              label="IMAGE REQUIRED — HISTORIC STUDY 01"
-              alt="Historic architectural study related to Can Caramany"
-              aspect="aspect-[4/3]"
-              className="bg-[var(--color-deep-olive)]/40"
+          <div className="mt-14">
+            <HistoricStudyGallery
+              drawings={historicPlansByProperty[property.id]}
+              roman={property.roman}
+              variant="former-permit"
             />
-          </FadeIn>
+          </div>
         </div>
       </section>
 
@@ -173,7 +181,7 @@ export function PropertyPage({ property }: { property: Property }) {
                 {
                   label: "IMAGE REQUIRED — HISTORIC STUDY 01",
                   alt: "Historic architectural study of the finca",
-                  caption: "Historic Study",
+                  caption: "Original Proposal",
                   src: null as string | null,
                 },
                 {
@@ -241,20 +249,23 @@ export function PropertyPage({ property }: { property: Property }) {
                   {
                     src: property.imagePath,
                     alt: property.imageAlt,
+                    label: property.imageLabel,
                   },
                   {
-                    src: "/images/can-caramany/landscape/landscape-holm-oaks.jpg",
-                    alt: "Mature holm oaks within Can Caramany",
+                    src: "/images/can-caramany/landscape/landscape-estate-path.jpg",
+                    alt: "Shaded estate path within Can Caramany",
+                    label: "Estate path",
                   },
                   {
                     src: "/images/can-caramany/landscape/landscape-stone-wall.jpg",
                     alt: "Dry-stone wall across the Can Caramany countryside",
+                    label: "Dry-stone walls",
                   },
                 ]
             ).map((item, index) => (
               <ImagePlaceholder
                 key={`${property.id}-gallery-${index}`}
-                label={`IMAGE REQUIRED — PROPERTY ${property.roman} GALLERY 0${index + 1}`}
+                label={"label" in item ? item.label : "Photography to follow"}
                 alt={item.alt}
                 src={item.src}
                 aspect="aspect-[4/3]"

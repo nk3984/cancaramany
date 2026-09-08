@@ -10,14 +10,14 @@ export function HeroSection() {
     <section className="relative flex min-h-[100svh] items-end overflow-hidden bg-[var(--color-charcoal)]">
       <div className="absolute inset-0">
         <ImagePlaceholder
-          label="IMAGE REQUIRED — ESTATE AERIAL"
-          alt="Open countryside across the Can Caramany private estate in eastern Mallorca"
+          label="Can Caramany private estate"
+          alt="Shaded estate path between dry-stone walls and holm oaks at Can Caramany"
           aspect="h-full w-full"
           className="h-full min-h-[100svh] w-full"
-          src="/images/can-caramany/hero/hero-estate-aerial.jpg"
+          src="/images/can-caramany/landscape/landscape-estate-path.jpg"
           priority
           sizes="100vw"
-          objectPosition="center 45%"
+          objectPosition="center 42%"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-charcoal)]/75 via-[var(--color-charcoal)]/25 to-[var(--color-charcoal)]/15" />
       </div>
@@ -39,7 +39,7 @@ export function HeroSection() {
             Space. Privacy. Heritage. Mallorca.
           </p>
           <p className="mt-6 max-w-lg text-sm leading-relaxed text-[var(--color-white)]/70 sm:text-[15px]">
-            Four private properties · {ESTATE_TOTAL.display} · Historic finca
+            Four private landholdings · {ESTATE_TOTAL.display} · Historic finca
           </p>
           <div className="mt-10">
             <Button href="#estate" variant="light">

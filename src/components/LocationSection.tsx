@@ -33,15 +33,15 @@ export function LocationSection() {
             Secluded. Not Isolated.
           </h2>
           <p className="mt-8 text-base leading-[1.8] text-[var(--color-deep-olive)]">
-            Can Caramany sits in the municipality of Manacor, Mallorca — in the
-            eastern hinterland, among farms, vineyards and open countryside,
-            eight kilometres from town and within easy reach of the
-            Mediterranean harbours of Porto Cristo and Portocolom.
+            Can Caramany sits in the municipality of Manacor, in Mallorca’s
+            eastern hinterland — among farms, vineyards and open countryside,
+            eight kilometres from town and within easy reach of Porto Cristo
+            and Portocolom.
           </p>
           <p className="mt-4 text-base leading-[1.8] text-[var(--color-deep-olive)]">
-            The setting offers a rare combination: the privacy and scale of a
-            rural estate without sacrificing access to the places that make
-            Mallorca exceptionally easy to live in.
+            It is the rare combination buyers look for and so seldom find:
+            the privacy and scale of a true country estate, without giving up
+            the island’s harbours, restaurants and everyday ease.
           </p>
         </FadeIn>
 

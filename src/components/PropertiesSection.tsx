@@ -14,12 +14,13 @@ export function PropertiesSection() {
             Properties
           </p>
           <h2 className="font-[family-name:var(--font-serif)] text-[clamp(2rem,4.5vw,3.25rem)] leading-[1.15] text-[var(--color-charcoal)]">
-            Four Properties. Four Distinct Settings.
+            Four landholdings. Four architectural beginnings.
           </h2>
           <p className="mt-6 text-base leading-[1.8] text-[var(--color-deep-olive)] sm:text-lg">
-            Each property occupies its own position within the wider estate,
-            offering a different combination of landscape, privacy, scale and
-            historic context.
+            Each property is offered in its own right — a substantial piece of
+            Mallorcan countryside, and the original project once drawn for it.
+            Together they form Can Caramany. Separately, each is a complete
+            private world.
           </p>
         </FadeIn>
 

@@ -68,16 +68,19 @@ export function EstateMasterplan() {
             Estate Overview
           </p>
           <h2 className="font-[family-name:var(--font-serif)] text-[clamp(2rem,4.5vw,3.5rem)] leading-[1.15] text-[var(--color-charcoal)]">
-            One Estate. Four Private Properties.
+            One estate. Four independent properties.
           </h2>
           <p className="mt-6 text-base leading-relaxed text-[var(--color-deep-olive)]">
-            Four individual properties form the current Can Caramany estate, each
-            with its own scale, landscape character and position within the
-            wider setting.
+            The land was divided so that each holding could stand alone — its
+            own privacy, its own house, its own relationship to the landscape.
+            Properties I, II and IV received building permits for complete
+            villas. Property III holds the historic finca and a rehabilitation
+            proposal. Those permits were not renewed after the project was
+            postponed. Select a plot to explore it.
           </p>
-          <p className="mt-4 text-base leading-relaxed text-[var(--color-deep-olive)]">
-            Select a property to explore its individual characteristics and
-            available documentation.
+          <p className="mt-4 text-sm leading-relaxed text-[var(--color-deep-olive)]/75">
+            Property V appears on the plan for geographic context only and is
+            not offered.
           </p>
         </FadeIn>
 
@@ -214,6 +217,9 @@ export function EstateMasterplan() {
 
                 <p className="mt-6 font-[family-name:var(--font-serif)] text-xl leading-snug text-[var(--color-charcoal)]">
                   {activeProperty.headline}
+                </p>
+                <p className="mt-4 text-sm leading-relaxed text-[var(--color-terracotta)]">
+                  {activeProperty.projectLine}
                 </p>
 
                 <ul className="mt-6 space-y-2.5 border-t border-[var(--color-warm-stone)]/60 pt-6">
