@@ -58,6 +58,7 @@ export function LocationSection() {
                 alt={block.imageAlt}
                 src={block.image}
                 aspect="aspect-[4/5]"
+                objectPosition={block.objectPosition}
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
               />
               <p className="mt-5 text-[10px] uppercase tracking-[0.2em] text-[var(--color-terracotta)]">

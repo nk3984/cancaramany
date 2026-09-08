@@ -244,7 +244,8 @@ export const locationEditorials = [
     headline: "The Mediterranean, within easy reach.",
     copy: "From sheltered sandy coves — Cala Mendia, Cala Anguila, Cala Romàntica and Cala Varques — to the working harbours of Porto Cristo and Portocolom, Mallorca’s east coast sits within convenient reach of Can Caramany. The Coves del Drach lie just inland of Porto Cristo.",
     image: "/images/can-caramany/location/coast.jpg",
-    imageAlt: "Sheltered Mediterranean cove on Mallorca’s east coast",
+    imageAlt: "Sheltered rocky cove and turquoise water on Mallorca’s east coast near Porto Cristo",
+    objectPosition: "center 45%",
   },
   {
     id: "sport",
@@ -252,7 +253,8 @@ export const locationEditorials = [
     headline: "World-class sport close to home.",
     copy: "Nearby Manacor is home to the Rafa Nadal Academy, bringing internationally recognised tennis, training, wellness and education facilities to Mallorca’s east.",
     image: "/images/can-caramany/location/sport.jpg",
-    imageAlt: "Tennis courts at a Mediterranean sports academy in eastern Mallorca",
+    imageAlt: "Championship tennis courts in warm evening light",
+    objectPosition: "center",
   },
   {
     id: "golf",
@@ -260,7 +262,8 @@ export const locationEditorials = [
     headline: "Golf across Mallorca’s east.",
     copy: "Several established golf courses — including Vall d’Or at S’Horta, Pula and Son Servera — are accessible from the estate.",
     image: "/images/can-caramany/location/golf.jpg",
-    imageAlt: "Mediterranean golf fairway in eastern Mallorca",
+    imageAlt: "Golf on a Mallorca course, with bunker, fairway and open sky",
+    objectPosition: "center 40%",
   },
   {
     id: "access",
@@ -268,7 +271,8 @@ export const locationEditorials = [
     headline: "Mallorca, connected to Europe.",
     copy: "Palma de Mallorca Airport provides extensive connectivity to major European hubs, making international ownership and regular travel unusually straightforward for an island estate.",
     image: "/images/can-caramany/location/access.jpg",
-    imageAlt: "Mediterranean gateway for international travel to Mallorca",
+    imageAlt: "Palma de Mallorca Airport beside the coast, marina and sea",
+    objectPosition: "center 35%",
   },
 ] as const;
 
