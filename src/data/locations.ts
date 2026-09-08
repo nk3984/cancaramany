@@ -243,24 +243,32 @@ export const locationEditorials = [
     title: "The Coast",
     headline: "The Mediterranean, within easy reach.",
     copy: "From sheltered sandy coves — Cala Mendia, Cala Anguila, Cala Romàntica and Cala Varques — to the working harbours of Porto Cristo and Portocolom, Mallorca’s east coast sits within convenient reach of Can Caramany. The Coves del Drach lie just inland of Porto Cristo.",
+    image: "/images/can-caramany/location/coast.jpg",
+    imageAlt: "Sheltered Mediterranean cove on Mallorca’s east coast",
   },
   {
     id: "sport",
     title: "Sport & Education",
     headline: "World-class sport close to home.",
     copy: "Nearby Manacor is home to the Rafa Nadal Academy, bringing internationally recognised tennis, training, wellness and education facilities to Mallorca’s east.",
+    image: "/images/can-caramany/location/sport.jpg",
+    imageAlt: "Tennis courts at a Mediterranean sports academy in eastern Mallorca",
   },
   {
     id: "golf",
     title: "Golf",
     headline: "Golf across Mallorca’s east.",
     copy: "Several established golf courses — including Vall d’Or at S’Horta, Pula and Son Servera — are accessible from the estate.",
+    image: "/images/can-caramany/location/golf.jpg",
+    imageAlt: "Mediterranean golf fairway in eastern Mallorca",
   },
   {
     id: "access",
     title: "International Access",
     headline: "Mallorca, connected to Europe.",
     copy: "Palma de Mallorca Airport provides extensive connectivity to major European hubs, making international ownership and regular travel unusually straightforward for an island estate.",
+    image: "/images/can-caramany/location/access.jpg",
+    imageAlt: "Mediterranean gateway for international travel to Mallorca",
   },
 ] as const;
 

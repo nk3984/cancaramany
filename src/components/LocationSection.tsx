@@ -2,6 +2,7 @@
 
 import dynamic from "next/dynamic";
 import { FadeIn } from "@/components/ui/FadeIn";
+import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
 import { locationEditorials } from "@/data/locations";
 
 const InteractiveLocationMap = dynamic(
@@ -52,7 +53,14 @@ export function LocationSection() {
         <div className="mt-24 grid gap-10 sm:grid-cols-2 lg:mt-32 lg:grid-cols-4 lg:gap-8">
           {locationEditorials.map((block, index) => (
             <FadeIn key={block.id} delay={index * 0.08}>
-              <p className="text-[10px] uppercase tracking-[0.2em] text-[var(--color-terracotta)]">
+              <ImagePlaceholder
+                label={block.title}
+                alt={block.imageAlt}
+                src={block.image}
+                aspect="aspect-[4/5]"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+              />
+              <p className="mt-5 text-[10px] uppercase tracking-[0.2em] text-[var(--color-terracotta)]">
                 {block.title}
               </p>
               <h3 className="mt-4 font-[family-name:var(--font-serif)] text-xl leading-snug text-[var(--color-charcoal)]">

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
+import { siteConfig } from "@/data/site";
 import type { Property } from "@/data/properties";
 
 type PropertyFeatureProps = {
@@ -83,6 +84,9 @@ export function PropertyFeature({ property, reverse }: PropertyFeatureProps) {
               src={property.imagePath}
               sizes="(max-width: 1024px) 100vw, 58vw"
             />
+            <p className="mt-3 text-[10px] uppercase tracking-[0.16em] text-[var(--color-deep-olive)]/70">
+              {siteConfig.visualizationCaption}
+            </p>
           </FadeIn>
           <FadeIn delay={0.1} className="lg:col-span-5">
             <PropertyContent property={property} />
@@ -102,6 +106,9 @@ export function PropertyFeature({ property, reverse }: PropertyFeatureProps) {
           src={property.imagePath}
           sizes="(max-width: 1024px) 100vw, 58vw"
         />
+        <p className="mt-3 text-[10px] uppercase tracking-[0.16em] text-[var(--color-deep-olive)]/70">
+          {siteConfig.visualizationCaption}
+        </p>
       </FadeIn>
       <FadeIn
         delay={0.1}

@@ -5,7 +5,7 @@
 export const ESTATE_VIEWBOX = { width: 1878, height: 1662 } as const;
 
 export const ESTATE_PLAN_IMAGE =
-  "/images/can-caramany/estate/can-caramany-plan-clean.png?v=2";
+  "/images/can-caramany/estate/can-caramany-plan-clean.png";
 
 export type EstateParcelId =
   | "property-1"

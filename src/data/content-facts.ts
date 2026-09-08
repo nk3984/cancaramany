@@ -129,9 +129,9 @@ export const contentFacts = {
     architectureIii:
       "A comprehensive rehabilitation proposal was prepared for the historic finca. The documentation references a Consell de Mallorca assent of 6 April 2009; corresponding Ayuntamiento permission was not documented in the files available. As with the wider estate, the project was later deferred for a prolonged period. These drawings remain a considered architectural starting point. They do not constitute current building rights. Any rehabilitation, extension or change of use is subject to current planning regulations and all required approvals.",
     galleryFormerPermit:
-      "Floor plans, elevations and sections from the formerly permitted residential project. They record a concept that was once approved — not a building right that can be exercised today.",
+      "Elevations, sections and related drawings from the formerly permitted residential project. They record a concept that was once approved — not a building right that can be exercised today.",
     galleryRehabilitation:
-      "Floor plans, elevations and sections from the original rehabilitation proposal. They remain a serious architectural starting point — not a current building right.",
+      "Elevations, sections and related drawings from the original rehabilitation proposal. They remain a serious architectural starting point — not a current building right.",
   },
   infrastructure: {
     water:

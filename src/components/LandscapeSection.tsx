@@ -9,18 +9,18 @@ const fragments = ["Stone", "Land", "Light", "Space", "Silence"];
 
 const images = [
   {
-    label: "Photography to follow",
+    label: "Open land",
     alt: "Open agricultural fields within Can Caramany",
-    src: null,
+    src: "/images/can-caramany/landscape/landscape-open-fields.jpg",
     caption: "Open land",
     className: "lg:col-span-12",
     aspect: "aspect-[16/10] lg:aspect-[21/9]",
     objectPosition: "center 78%",
   },
   {
-    label: "Photography to follow",
+    label: "Mediterranean planting",
     alt: "Mature trees and dry-stone walls on the Can Caramany landholding",
-    src: null,
+    src: "/images/can-caramany/landscape/landscape-olive-grove.jpg",
     caption: "Mediterranean planting",
     className: "lg:col-span-7",
     aspect: "aspect-[5/4]",

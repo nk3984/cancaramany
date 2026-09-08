@@ -42,6 +42,9 @@ export function PropertyIIIPage() {
           <p className="mt-5 font-[family-name:var(--font-serif)] text-xl text-[var(--color-white)]/80 sm:text-2xl">
             64,455 m² · 15.93 acres
           </p>
+          <p className="mt-4 max-w-xl text-[10px] uppercase tracking-[0.16em] text-[var(--color-white)]/55">
+            {siteConfig.visualizationCaption}
+          </p>
         </div>
       </section>
 
@@ -181,25 +184,6 @@ export function PropertyIIIPage() {
                       </p>
                     </div>
                   ))}
-                <div className="grid gap-4 sm:grid-cols-2">
-                  {images.vision
-                    .filter((item) => item.layout === "half")
-                    .map((item) => (
-                      <div key={item.label}>
-                        <ImagePlaceholder
-                          label={item.label}
-                          alt={item.alt}
-                          src={item.src}
-                          aspect="aspect-[4/3]"
-                          className="bg-[var(--color-deep-olive)]/40"
-                          sizes="(max-width: 640px) 100vw, 28vw"
-                        />
-                        <p className="mt-3 text-[11px] uppercase tracking-[0.16em] text-[var(--color-warm-stone)]">
-                          {item.caption}
-                        </p>
-                      </div>
-                    ))}
-                </div>
               </div>
             </FadeIn>
           </div>

@@ -76,16 +76,16 @@ export const propertyIIIContent = {
   cta: {
     eyebrow: "Private documentation",
     title: "Request the documentation for Property III.",
-    copy: "Floor plans, elevations, sections and further material from the original proposal are shown on this page. Additional documentation remains available upon qualified request.",
+    copy: "Elevations, sections and further material from the original proposal are shown on this page. Additional documentation remains available upon qualified request.",
     button: "Enquire about Property III",
   },
 } as const;
 
 export const propertyIIIImages = {
   hero: {
-    src: "/images/can-caramany/property-03/property-03-historic-finca-exterior.jpg",
-    alt: "Historic Mallorcan finca exterior at Property III, Can Caramany",
-    label: "IMAGE REQUIRED — PROPERTY III FINCA HERO",
+    src: "/images/can-caramany/visualizations/property-iii.jpg",
+    alt: "Architectural visualization of the original rehabilitation proposal for the historic finca at Property III",
+    label: "Architectural visualization",
   },
   existing: {
     src: "/images/can-caramany/historic-finca/finca-existing-exterior.jpg",
@@ -93,9 +93,9 @@ export const propertyIIIImages = {
     label: "IMAGE REQUIRED — FINCA EXISTING",
   },
   annex: {
-    src: null,
+    src: "/images/can-caramany/historic-finca/finca-annex-barn.jpg",
     alt: "Historic annex and agricultural buildings of the Mallorcan finca",
-    label: "Photography to follow",
+    label: "Historic annex",
   },
   details: [
     {
@@ -132,20 +132,6 @@ export const propertyIIIImages = {
       caption: "Terrace, pergola and pool",
       layout: "wide",
     },
-    {
-      src: "/images/can-caramany/architecture/architecture-vision-elevated.jpg",
-      alt: "Elevated visualisation of Property III set into the Mallorcan landscape",
-      label: "IMAGE REQUIRED — ELEVATED VISION",
-      caption: "Set into the slope",
-      layout: "half",
-    },
-    {
-      src: "/images/can-caramany/architecture/architecture-vision-topography.jpg",
-      alt: "Side visualisation showing the topography of Property III",
-      label: "IMAGE REQUIRED — TOPOGRAPHY VISION",
-      caption: "Topography",
-      layout: "half",
-    },
   ],
   land: [
     {
@@ -175,6 +161,10 @@ export const propertyIIIImages = {
     {
       src: "/images/can-caramany/landscape/landscape-estate-path.jpg",
       alt: "Estate path among holm oaks at Can Caramany",
+    },
+    {
+      src: "/images/can-caramany/historic-finca/finca-annex-barn.jpg",
+      alt: "Historic annex and agricultural buildings of the Mallorcan finca",
     },
   ],
 } as const;

@@ -69,6 +69,8 @@ export const siteConfig = {
   ] as const,
   conceptualDisclaimer:
     "Conceptual visualization. Subject to planning, technical review and applicable approvals.",
+  visualizationCaption:
+    "Architectural visualization of the original project. Subject to planning, technical review and all required approvals.",
   historicLabel: "Original Architectural Drawings",
   historicApprovalsNote: contentFacts.heritage.historicApprovalsNote,
   privacyConsent:

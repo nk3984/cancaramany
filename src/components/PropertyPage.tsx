@@ -13,7 +13,29 @@ import type { Property } from "@/data/properties";
 import { properties } from "@/data/properties";
 import { historicPlansByProperty } from "@/data/historic-plans";
 
+const propertyLandPhotos = {
+  "property-i": {
+    src: "/images/can-caramany/property-01/property-01-landscape.jpg",
+    alt: "Open countryside of Property I at Can Caramany",
+    label: "The land today",
+  },
+  "property-ii": {
+    src: "/images/can-caramany/property-02/property-02-landscape.jpg",
+    alt: "Countryside and trees on Property II at Can Caramany",
+    label: "The land today",
+  },
+  "property-iv": {
+    src: "/images/can-caramany/property-04/property-04-landscape.jpg",
+    alt: "Open land of Property IV at Can Caramany",
+    label: "The land today",
+  },
+} as const;
+
 export function PropertyPage({ property }: { property: Property }) {
+  const landPhoto =
+    property.id in propertyLandPhotos
+      ? propertyLandPhotos[property.id as keyof typeof propertyLandPhotos]
+      : null;
   const [open, setOpen] = useState(false);
   const others = properties.filter((item) => item.id !== property.id);
 
@@ -39,6 +61,9 @@ export function PropertyPage({ property }: { property: Property }) {
           <h1 className="mt-4 font-[family-name:var(--font-serif)] text-[clamp(2.5rem,6vw,4.5rem)] leading-none text-[var(--color-white)]">
             {property.areaDisplay}
           </h1>
+          <p className="mt-4 max-w-xl text-[10px] uppercase tracking-[0.16em] text-[var(--color-white)]/55">
+            {siteConfig.visualizationCaption}
+          </p>
         </div>
       </section>
 
@@ -91,6 +116,17 @@ export function PropertyPage({ property }: { property: Property }) {
               src={property.imagePath}
               sizes="(max-width: 1024px) 100vw, 58vw"
             />
+            {landPhoto ? (
+              <div className="mt-5">
+                <ImagePlaceholder
+                  label={landPhoto.label}
+                  alt={landPhoto.alt}
+                  aspect="aspect-[16/11]"
+                  src={landPhoto.src}
+                  sizes="(max-width: 1024px) 100vw, 58vw"
+                />
+              </div>
+            ) : null}
           </FadeIn>
         </div>
       </section>
@@ -261,6 +297,15 @@ export function PropertyPage({ property }: { property: Property }) {
                     alt: "Dry-stone wall across the Can Caramany countryside",
                     label: "Dry-stone walls",
                   },
+                  ...(landPhoto
+                    ? [
+                        {
+                          src: landPhoto.src,
+                          alt: landPhoto.alt,
+                          label: landPhoto.label,
+                        },
+                      ]
+                    : []),
                 ]
             ).map((item, index) => (
               <ImagePlaceholder

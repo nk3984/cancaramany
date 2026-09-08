@@ -13,11 +13,11 @@ export function ClosingSection() {
     <section className="relative overflow-hidden bg-[var(--color-charcoal)]">
       <div className="absolute inset-0">
         <ImagePlaceholder
-          label="Photography to follow"
+          label="Late afternoon on the estate"
           alt="Late afternoon light across the Can Caramany estate"
           aspect="h-full min-h-[80vh] w-full"
           className="h-full min-h-[80vh] w-full"
-          src={null}
+          src="/images/can-caramany/investment/closing-estate-afternoon.jpg"
           sizes="100vw"
           objectPosition="center 40%"
         />

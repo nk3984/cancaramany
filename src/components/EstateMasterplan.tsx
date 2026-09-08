@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { FadeIn } from "@/components/ui/FadeIn";
+import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
 import {
   DEFAULT_ESTATE_PROPERTY_INDEX,
   ESTATE_PLAN_IMAGE,
@@ -208,6 +209,21 @@ export function EstateMasterplan() {
                 <p className="mt-5 font-[family-name:var(--font-serif)] text-3xl text-[var(--color-charcoal)]">
                   {activeProperty.areaDisplay}
                 </p>
+
+                {activeProperty.imagePath ? (
+                  <div className="mt-5">
+                    <ImagePlaceholder
+                      label={activeProperty.imageLabel}
+                      alt={activeProperty.imageAlt}
+                      src={activeProperty.imagePath}
+                      aspect="aspect-[16/10]"
+                      sizes="(max-width: 1024px) 100vw, 28vw"
+                    />
+                    <p className="mt-2 text-[10px] uppercase tracking-[0.14em] text-[var(--color-deep-olive)]/65">
+                      Architectural visualization
+                    </p>
+                  </div>
+                ) : null}
 
                 {activeProperty.isHistoricFinca ? (
                   <span className="mt-4 inline-flex border border-[var(--color-terracotta)]/40 px-3 py-1.5 text-[10px] uppercase tracking-[0.18em] text-[var(--color-terracotta)]">
