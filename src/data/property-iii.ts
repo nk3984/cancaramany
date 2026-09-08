@@ -119,17 +119,24 @@ export const propertyIIIImages = {
   ],
   vision: [
     {
-      src: "/images/can-caramany/architecture/architecture-vision-north-facade.jpg",
-      alt: "Visualised north façade of the historic finca at Property III",
-      label: "IMAGE REQUIRED — NORTH FACADE VISION",
-      caption: "North façade",
+      src: "/images/can-caramany/property-03/vision/facade.png",
+      alt: "Visualised façade of the historic finca at Property III",
+      label: "IMAGE REQUIRED — FINCA FACADE VISION",
+      caption: "Façade",
       layout: "wide",
     },
     {
-      src: "/images/can-caramany/architecture/architecture-vision-south-terrace-pool.jpg",
+      src: "/images/can-caramany/property-03/vision/pool.png",
       alt: "Visualised terrace, pergola and pool for Property III",
       label: "IMAGE REQUIRED — TERRACE POOL VISION",
       caption: "Terrace, pergola and pool",
+      layout: "wide",
+    },
+    {
+      src: "/images/can-caramany/property-03/vision/evening.png",
+      alt: "Evening terrace vision for Property III",
+      label: "IMAGE REQUIRED — EVENING TERRACE VISION",
+      caption: "Evening",
       layout: "wide",
     },
   ],
@@ -151,16 +158,20 @@ export const propertyIIIImages = {
       alt: "Historic finca exterior at Property III",
     },
     {
+      src: "/images/can-caramany/property-03/vision/pool.png",
+      alt: "Architectural vision — terrace and pool for Property III",
+    },
+    {
+      src: "/images/can-caramany/property-03/vision/facade.png",
+      alt: "Architectural vision — façade for Property III",
+    },
+    {
+      src: "/images/can-caramany/property-03/vision/evening.png",
+      alt: "Architectural vision — evening terrace for Property III",
+    },
+    {
       src: "/images/can-caramany/historic-finca/finca-detail-stone.jpg",
       alt: "Stone masonry detail of the historic finca",
-    },
-    {
-      src: "/images/can-caramany/historic-finca/finca-detail-door.jpg",
-      alt: "Door detail of the historic Mallorcan finca",
-    },
-    {
-      src: "/images/can-caramany/landscape/landscape-estate-path.jpg",
-      alt: "Estate path among holm oaks at Can Caramany",
     },
     {
       src: "/images/can-caramany/historic-finca/finca-annex-barn.jpg",

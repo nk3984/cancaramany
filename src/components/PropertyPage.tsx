@@ -12,6 +12,7 @@ import { contentFacts } from "@/data/content-facts";
 import type { Property } from "@/data/properties";
 import { properties } from "@/data/properties";
 import { historicPlansByProperty } from "@/data/historic-plans";
+import { getResidenceVisionsById } from "@/data/residence-visions";
 
 const propertyLandPhotos = {
   "property-i": {
@@ -38,6 +39,13 @@ export function PropertyPage({ property }: { property: Property }) {
       : null;
   const [open, setOpen] = useState(false);
   const others = properties.filter((item) => item.id !== property.id);
+  const residence = getResidenceVisionsById(property.id);
+  const visionGallery =
+    residence?.visions.map((vision) => ({
+      src: vision.src,
+      alt: vision.alt,
+      label: vision.caption,
+    })) ?? [];
 
   return (
     <main>
@@ -271,32 +279,11 @@ export function PropertyPage({ property }: { property: Property }) {
                   {
                     src: "/images/can-caramany/historic-finca/finca-existing-exterior.jpg",
                     alt: "Historic finca exterior at Property III",
+                    label: "Existing",
                   },
-                  {
-                    src: "/images/can-caramany/historic-finca/finca-detail-stone.jpg",
-                    alt: "Stone masonry detail of the historic finca",
-                  },
-                  {
-                    src: "/images/can-caramany/historic-finca/finca-detail-door.jpg",
-                    alt: "Door detail of the historic Mallorcan finca",
-                  },
+                  ...visionGallery,
                 ]
               : [
-                  {
-                    src: property.imagePath,
-                    alt: property.imageAlt,
-                    label: property.imageLabel,
-                  },
-                  {
-                    src: "/images/can-caramany/landscape/landscape-estate-path.jpg",
-                    alt: "Shaded estate path within Can Caramany",
-                    label: "Estate path",
-                  },
-                  {
-                    src: "/images/can-caramany/landscape/landscape-stone-wall.jpg",
-                    alt: "Dry-stone wall across the Can Caramany countryside",
-                    label: "Dry-stone walls",
-                  },
                   ...(landPhoto
                     ? [
                         {
@@ -306,6 +293,7 @@ export function PropertyPage({ property }: { property: Property }) {
                         },
                       ]
                     : []),
+                  ...visionGallery,
                 ]
             ).map((item, index) => (
               <ImagePlaceholder

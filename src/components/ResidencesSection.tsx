@@ -1,49 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
-
-const blocks = [
-  {
-    copy: "The architectural vision for Can Caramany draws inspiration from Mallorca’s great country houses: natural stone façades, warm timber, shaded terraces, protected courtyards and simple, timeless proportions.",
-    image: {
-      label: "IMAGE REQUIRED — RESIDENCE STONE FACADE",
-      alt: "Conceptual Can Caramany residence with natural stone façade and timber accents",
-      aspect: "aspect-[4/5]",
-    },
-    reverse: false,
-  },
-  {
-    copy: "The emphasis is not on excess, but on proportion, materiality and a strong connection to the surrounding landscape.",
-    image: {
-      label: "IMAGE REQUIRED — RESIDENCE COURTYARD",
-      alt: "Conceptual shaded courtyard with natural stone and warm timber at Can Caramany",
-      aspect: "aspect-[5/4]",
-    },
-    reverse: true,
-  },
-  {
-    copy: "Interior spaces are conceived around natural light, long views and an effortless relationship between inside and outside.",
-    image: {
-      label: "IMAGE REQUIRED — RESIDENCE INDOOR OUTDOOR",
-      alt: "Conceptual indoor-outdoor living space opening to the Can Caramany landscape",
-      aspect: "aspect-[16/11]",
-    },
-    reverse: false,
-  },
-  {
-    copy: "Expansive terraces, private pools and landscaped grounds form a natural extension of the residences and allow each home to sit quietly within its surroundings.",
-    image: {
-      label: "IMAGE REQUIRED — RESIDENCE TERRACE POOL",
-      alt: "Conceptual understated terrace and private pool set within the Can Caramany landscape",
-      aspect: "aspect-[5/4]",
-    },
-    reverse: true,
-  },
-];
+import { residenceVisions } from "@/data/residence-visions";
 
 export function ResidencesSection() {
   return (
@@ -62,11 +22,70 @@ export function ResidencesSection() {
           <p className="mt-6 font-[family-name:var(--font-serif)] text-[clamp(1.25rem,2.5vw,1.75rem)] leading-snug text-[var(--color-charcoal)]">
             Traditional Character. Modern Refinement.
           </p>
+          <p className="mt-6 max-w-2xl text-base leading-[1.8] text-[var(--color-deep-olive)]">
+            Four private architectural visions for Properties I–IV — each with
+            three curated views. Conceptual material only; not current building
+            rights.
+          </p>
         </FadeIn>
 
-        <div className="mt-20 space-y-24 lg:mt-28 lg:space-y-36">
-          {blocks.map((block, index) => (
-            <ResidenceBlock key={block.image.label} block={block} index={index} />
+        <div className="mt-20 space-y-28 lg:mt-28 lg:space-y-36">
+          {residenceVisions.map((property, index) => (
+            <article key={property.id}>
+              <div
+                className={`grid items-end gap-8 lg:grid-cols-12 lg:gap-14 ${
+                  index % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""
+                }`}
+              >
+                <FadeIn className="lg:col-span-7">
+                  <ImagePlaceholder
+                    label={`Property ${property.roman} vision`}
+                    alt={property.visions[0].alt}
+                    src={property.visions[0].src}
+                    aspect="aspect-[16/10]"
+                    sizes="(max-width: 1024px) 100vw, 58vw"
+                    priority={index === 0}
+                  />
+                  <p className="mt-3 text-[11px] uppercase tracking-[0.18em] text-[var(--color-deep-olive)]/70">
+                    {property.visions[0].caption}
+                  </p>
+                </FadeIn>
+                <FadeIn delay={0.08} className="lg:col-span-5 lg:pb-4">
+                  <p className="text-[11px] uppercase tracking-[0.24em] text-[var(--color-terracotta)]">
+                    Property {property.roman}
+                  </p>
+                  <h3 className="mt-4 font-[family-name:var(--font-serif)] text-[clamp(1.75rem,3vw,2.5rem)] leading-[1.15] text-[var(--color-charcoal)]">
+                    {property.title}
+                  </h3>
+                  <p className="mt-6 max-w-md text-base leading-[1.85] text-[var(--color-deep-olive)]">
+                    {property.copy}
+                  </p>
+                  <Link
+                    href={property.href}
+                    className="mt-8 inline-flex text-[11px] uppercase tracking-[0.22em] text-[var(--color-charcoal)] underline-offset-4 hover:underline"
+                  >
+                    Explore Property {property.roman}
+                  </Link>
+                </FadeIn>
+              </div>
+
+              <div className="mt-5 grid gap-4 sm:grid-cols-2">
+                {property.visions.slice(1).map((vision, visionIndex) => (
+                  <FadeIn key={vision.src} delay={0.06 + visionIndex * 0.05}>
+                    <ImagePlaceholder
+                      label={vision.caption}
+                      alt={vision.alt}
+                      src={vision.src}
+                      aspect="aspect-[4/3]"
+                      sizes="(max-width: 640px) 100vw, 45vw"
+                    />
+                    <p className="mt-3 text-[11px] uppercase tracking-[0.18em] text-[var(--color-deep-olive)]/70">
+                      {vision.caption}
+                    </p>
+                  </FadeIn>
+                ))}
+              </div>
+            </article>
           ))}
         </div>
 
@@ -76,7 +95,7 @@ export function ResidencesSection() {
             Mallorcan.
           </p>
           <p className="mt-10 max-w-xl text-[11px] leading-relaxed tracking-[0.04em] text-[var(--color-deep-olive)]/75">
-            Architectural vision and formerly permitted villa projects. Building
+            Architectural visions and formerly permitted villa projects. Building
             permits for Properties I, II and IV were granted, then not renewed
             after the estate was deferred for a prolonged period. They do not
             constitute current building rights. Final design and any development
@@ -90,50 +109,5 @@ export function ResidencesSection() {
         </FadeIn>
       </div>
     </section>
-  );
-}
-
-function ResidenceBlock({
-  block,
-  index,
-}: {
-  block: (typeof blocks)[number];
-  index: number;
-}) {
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"],
-  });
-  const y = useTransform(scrollYProgress, [0, 1], [28, -28]);
-
-  return (
-    <div
-      ref={ref}
-      className="grid items-center gap-10 lg:grid-cols-12 lg:gap-16"
-    >
-      <FadeIn
-        delay={0.05}
-        className={`lg:col-span-7 ${block.reverse ? "lg:order-2" : ""}`}
-      >
-        <motion.div style={{ y }}>
-          <ImagePlaceholder
-            label={block.image.label}
-            alt={block.image.alt}
-            aspect={block.image.aspect}
-          />
-        </motion.div>
-      </FadeIn>
-      <FadeIn
-        delay={0.12}
-        className={`lg:col-span-5 ${block.reverse ? "lg:order-1" : ""} ${
-          index % 2 === 0 ? "lg:pt-8" : "lg:pb-8"
-        }`}
-      >
-        <p className="max-w-md text-base leading-[1.9] text-[var(--color-deep-olive)] sm:text-lg">
-          {block.copy}
-        </p>
-      </FadeIn>
-    </div>
   );
 }
