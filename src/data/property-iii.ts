@@ -83,8 +83,8 @@ export const propertyIIIContent = {
 
 export const propertyIIIImages = {
   hero: {
-    src: "/images/can-caramany/visualizations/property-iii.jpg",
-    alt: "Architectural visualization of the original rehabilitation proposal for the historic finca at Property III",
+    src: "/images/can-caramany/property-03/vision/pool.png",
+    alt: "Architectural visualization of the Property III finca terrace and pool",
     label: "Architectural visualization",
   },
   existing: {
@@ -120,22 +120,22 @@ export const propertyIIIImages = {
   vision: [
     {
       src: "/images/can-caramany/property-03/vision/facade.png",
-      alt: "Visualised façade of the historic finca at Property III",
-      label: "IMAGE REQUIRED — FINCA FACADE VISION",
+      alt: "Property III architectural vision — façade",
+      label: "Façade vision",
       caption: "Façade",
       layout: "wide",
     },
     {
       src: "/images/can-caramany/property-03/vision/pool.png",
-      alt: "Visualised terrace, pergola and pool for Property III",
-      label: "IMAGE REQUIRED — TERRACE POOL VISION",
-      caption: "Terrace, pergola and pool",
+      alt: "Property III architectural vision — terrace and pool",
+      label: "Pool vision",
+      caption: "Terrace & pool",
       layout: "wide",
     },
     {
       src: "/images/can-caramany/property-03/vision/evening.png",
-      alt: "Evening terrace vision for Property III",
-      label: "IMAGE REQUIRED — EVENING TERRACE VISION",
+      alt: "Property III architectural vision — evening terrace",
+      label: "Evening vision",
       caption: "Evening",
       layout: "wide",
     },
@@ -154,10 +154,6 @@ export const propertyIIIImages = {
   ],
   gallery: [
     {
-      src: "/images/can-caramany/property-03/property-03-historic-finca-exterior.jpg",
-      alt: "Historic finca exterior at Property III",
-    },
-    {
       src: "/images/can-caramany/property-03/vision/pool.png",
       alt: "Architectural vision — terrace and pool for Property III",
     },
@@ -170,12 +166,16 @@ export const propertyIIIImages = {
       alt: "Architectural vision — evening terrace for Property III",
     },
     {
+      src: "/images/can-caramany/historic-finca/finca-existing-exterior.jpg",
+      alt: "Existing historic finca exterior at Property III",
+    },
+    {
       src: "/images/can-caramany/historic-finca/finca-detail-stone.jpg",
       alt: "Stone masonry detail of the historic finca",
     },
     {
-      src: "/images/can-caramany/historic-finca/finca-annex-barn.jpg",
-      alt: "Historic annex and agricultural buildings of the Mallorcan finca",
+      src: "/images/can-caramany/landscape/landscape-holm-oaks.jpg",
+      alt: "Holm oaks within the Property III landholding",
     },
   ],
 } as const;

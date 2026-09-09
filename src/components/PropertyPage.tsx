@@ -226,13 +226,13 @@ export function PropertyPage({ property }: { property: Property }) {
                   label: "IMAGE REQUIRED — HISTORIC STUDY 01",
                   alt: "Historic architectural study of the finca",
                   caption: "Original Proposal",
-                  src: null as string | null,
+                  src: "/images/can-caramany/property-03/vision/facade.png",
                 },
                 {
                   label: "IMAGE REQUIRED — CONCEPTUAL VISION",
                   alt: "Conceptual visualization of the historic finca",
                   caption: siteConfig.conceptualDisclaimer,
-                  src: null as string | null,
+                  src: "/images/can-caramany/property-03/vision/pool.png",
                 },
               ].map((item) => (
                 <FadeIn key={item.label}>
