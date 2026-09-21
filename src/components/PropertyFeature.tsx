@@ -1,15 +1,33 @@
+"use client";
+
 import Link from "next/link";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
-import { siteConfig } from "@/data/site";
 import type { Property } from "@/data/properties";
+import { useLocale } from "@/i18n/LocaleProvider";
+import { localePath } from "@/i18n/paths";
 
 type PropertyFeatureProps = {
   property: Property;
   reverse?: boolean;
+  onEnquire?: () => void;
+  enquireLabel?: string;
+  availableLabel?: string;
 };
 
-function PropertyContent({ property }: { property: Property }) {
+function PropertyContent({
+  property,
+  onEnquire,
+  enquireLabel,
+  availableLabel,
+}: {
+  property: Property;
+  onEnquire?: () => void;
+  enquireLabel?: string;
+  availableLabel?: string;
+}) {
+  const { locale, dict } = useLocale();
+
   return (
     <>
       <p
@@ -19,10 +37,16 @@ function PropertyContent({ property }: { property: Property }) {
             : "text-[var(--color-deep-olive)]"
         }`}
       >
-        {property.isHistoricFinca
+        {property.isHistoricFinca && property.specialLabel
           ? property.specialLabel
-          : `Property ${property.roman}`}
+          : property.label}
       </p>
+
+      {availableLabel ? (
+        <p className="mt-3 text-[10px] uppercase tracking-[0.2em] text-[var(--color-terracotta)]/90">
+          {availableLabel}
+        </p>
+      ) : null}
 
       <h3 className="mt-5 font-[family-name:var(--font-serif)] text-[clamp(1.75rem,3.5vw,2.75rem)] leading-[1.15] text-[var(--color-charcoal)]">
         {property.headline}
@@ -34,7 +58,7 @@ function PropertyContent({ property }: { property: Property }) {
 
       {property.isHistoricFinca ? (
         <span className="mt-4 inline-flex border border-[var(--color-terracotta)]/40 px-3 py-1.5 text-[10px] uppercase tracking-[0.18em] text-[var(--color-terracotta)]">
-          Historic Finca
+          {dict.propertyPage.fincaEyebrow}
         </span>
       ) : null}
 
@@ -50,55 +74,51 @@ function PropertyContent({ property }: { property: Property }) {
         {property.descriptors.map((item) => (
           <li
             key={item}
-            className="text-sm tracking-wide text-[var(--color-deep-olive)]"
+            className="flex gap-3 text-sm tracking-wide text-[var(--color-deep-olive)]"
           >
+            <span className="mt-2 h-px w-4 shrink-0 bg-[var(--color-warm-stone)]" />
             {item}
           </li>
         ))}
       </ul>
 
-      <Link
-        href={property.href}
-        className={`mt-10 inline-flex text-[11px] uppercase tracking-[0.22em] text-[var(--color-charcoal)] ${
-          property.isHistoricFinca
-            ? "border border-[var(--color-charcoal)] px-7 py-3.5 transition-colors hover:bg-[var(--color-charcoal)] hover:text-[var(--color-white)]"
-            : "underline-offset-4 hover:underline"
-        }`}
-      >
-        {property.cta}
-      </Link>
+      <div className="mt-10 flex flex-wrap items-center gap-4">
+        <Link
+          href={localePath(locale, property.href)}
+          className="inline-flex border border-[var(--color-charcoal)] px-7 py-3.5 text-[11px] uppercase tracking-[0.22em] text-[var(--color-charcoal)] transition-colors hover:bg-[var(--color-charcoal)] hover:text-[var(--color-white)]"
+        >
+          {property.cta}
+        </Link>
+        {onEnquire && enquireLabel ? (
+          <button
+            type="button"
+            onClick={onEnquire}
+            className="text-[11px] uppercase tracking-[0.22em] text-[var(--color-deep-olive)] underline-offset-4 hover:underline"
+          >
+            {enquireLabel}
+          </button>
+        ) : null}
+      </div>
     </>
   );
 }
 
-export function PropertyFeature({ property, reverse }: PropertyFeatureProps) {
-  if (property.isHistoricFinca) {
-    return (
-      <article className="border-t border-[var(--color-warm-stone)]/70 pt-16 lg:pt-20">
-        <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-14">
-          <FadeIn className="lg:col-span-7">
-            <ImagePlaceholder
-              label={property.imageLabel}
-              alt={property.imageAlt}
-              aspect="aspect-[16/11]"
-              src={property.imagePath}
-              sizes="(max-width: 1024px) 100vw, 58vw"
-            />
-            <p className="mt-3 text-[10px] uppercase tracking-[0.16em] text-[var(--color-deep-olive)]/70">
-              {siteConfig.visualizationCaption}
-            </p>
-          </FadeIn>
-          <FadeIn delay={0.1} className="lg:col-span-5">
-            <PropertyContent property={property} />
-          </FadeIn>
-        </div>
-      </article>
-    );
-  }
+export function PropertyFeature({
+  property,
+  reverse,
+  onEnquire,
+  enquireLabel,
+  availableLabel,
+}: PropertyFeatureProps) {
+  const { dict } = useLocale();
 
   return (
     <article className="grid items-center gap-10 border-t border-[var(--color-warm-stone)]/70 pt-16 lg:grid-cols-12 lg:gap-14 lg:pt-20">
-      <FadeIn className={`lg:col-span-7 ${reverse ? "lg:order-2" : ""}`}>
+      <FadeIn
+        className={`lg:col-span-7 ${reverse ? "lg:order-2" : ""} ${
+          property.isHistoricFinca ? "" : ""
+        }`}
+      >
         <ImagePlaceholder
           label={property.imageLabel}
           alt={property.imageAlt}
@@ -107,14 +127,19 @@ export function PropertyFeature({ property, reverse }: PropertyFeatureProps) {
           sizes="(max-width: 1024px) 100vw, 58vw"
         />
         <p className="mt-3 text-[10px] uppercase tracking-[0.16em] text-[var(--color-deep-olive)]/70">
-          {siteConfig.visualizationCaption}
+          {dict.common.visualizationCaption}
         </p>
       </FadeIn>
       <FadeIn
         delay={0.1}
         className={`lg:col-span-5 ${reverse ? "lg:order-1" : ""}`}
       >
-        <PropertyContent property={property} />
+        <PropertyContent
+          property={property}
+          onEnquire={onEnquire}
+          enquireLabel={enquireLabel}
+          availableLabel={availableLabel}
+        />
       </FadeIn>
     </article>
   );

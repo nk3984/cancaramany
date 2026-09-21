@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
 import { locationEditorials } from "@/data/locations";
+import { useLocale } from "@/i18n/LocaleProvider";
 
 const InteractiveLocationMap = dynamic(
   () => import("@/components/location/InteractiveLocationMap"),
@@ -12,7 +13,7 @@ const InteractiveLocationMap = dynamic(
     loading: () => (
       <div className="mt-8 flex h-[520px] items-center justify-center border border-[var(--color-warm-stone)]/70 bg-[var(--color-background)] sm:h-[560px] lg:h-[700px]">
         <p className="text-[11px] uppercase tracking-[0.2em] text-[var(--color-deep-olive)]/70">
-          Loading map…
+          …
         </p>
       </div>
     ),
@@ -20,6 +21,8 @@ const InteractiveLocationMap = dynamic(
 );
 
 export function LocationSection() {
+  const { dict } = useLocale();
+
   return (
     <section
       id="location"
@@ -28,21 +31,16 @@ export function LocationSection() {
       <div className="mx-auto max-w-[1440px]">
         <FadeIn className="max-w-3xl">
           <p className="mb-6 text-[11px] uppercase tracking-[0.28em] text-[var(--color-terracotta)]">
-            Location
+            {dict.location.eyebrow}
           </p>
           <h2 className="font-[family-name:var(--font-serif)] text-[clamp(2.25rem,4.5vw,3.5rem)] leading-[1.12] text-[var(--color-charcoal)]">
-            Secluded. Not Isolated.
+            {dict.location.headline}
           </h2>
           <p className="mt-8 text-base leading-[1.8] text-[var(--color-deep-olive)]">
-            Can Caramany sits in the municipality of Manacor, in Mallorca’s
-            eastern hinterland — among farms, vineyards and open countryside,
-            eight kilometres from town and within easy reach of Porto Cristo
-            and Portocolom.
+            {dict.location.p1}
           </p>
           <p className="mt-4 text-base leading-[1.8] text-[var(--color-deep-olive)]">
-            It is the rare combination buyers look for and so seldom find:
-            the privacy and scale of a true country estate, without giving up
-            the island’s harbours, restaurants and everyday ease.
+            {dict.location.p2}
           </p>
         </FadeIn>
 

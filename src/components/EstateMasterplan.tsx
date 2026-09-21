@@ -12,7 +12,9 @@ import {
   estateParcels,
   type EstateParcel,
 } from "@/data/estate-plan";
-import { properties } from "@/data/properties";
+import { localizeProperties } from "@/data/properties";
+import { useLocale } from "@/i18n/LocaleProvider";
+import { localePath } from "@/i18n/paths";
 
 function parcelFill(
   parcel: EstateParcel,
@@ -52,6 +54,8 @@ function parcelStrokeWidth(selected: boolean, hovered: boolean): number {
 }
 
 export function EstateMasterplan() {
+  const { locale, dict } = useLocale();
+  const properties = localizeProperties(dict);
   const [active, setActive] = useState<number>(DEFAULT_ESTATE_PROPERTY_INDEX);
   const [hoveredId, setHoveredId] = useState<string | null>(null);
 
@@ -66,22 +70,13 @@ export function EstateMasterplan() {
       <div className="mx-auto max-w-[1440px]">
         <FadeIn className="mx-auto max-w-3xl text-center">
           <p className="mb-6 text-[11px] uppercase tracking-[0.28em] text-[var(--color-terracotta)]">
-            Estate Overview
+            {dict.masterplan.eyebrow}
           </p>
           <h2 className="font-[family-name:var(--font-serif)] text-[clamp(2rem,4.5vw,3.5rem)] leading-[1.15] text-[var(--color-charcoal)]">
-            One estate. Four independent properties.
+            {dict.masterplan.headline}
           </h2>
           <p className="mt-6 text-base leading-relaxed text-[var(--color-deep-olive)]">
-            The land was divided so that each holding could stand alone — its
-            own privacy, its own house, its own relationship to the landscape.
-            Properties I, II and IV received building permits for complete
-            villas. Property III holds the historic finca and a rehabilitation
-            proposal. Those permits were not renewed after the project was
-            postponed. Select a plot to explore it.
-          </p>
-          <p className="mt-4 text-sm leading-relaxed text-[var(--color-deep-olive)]/75">
-            Property V appears on the plan for geographic context only and is
-            not offered.
+            {dict.masterplan.support}
           </p>
         </FadeIn>
 
@@ -181,10 +176,7 @@ export function EstateMasterplan() {
 
               <div className="flex flex-col gap-2 border-t border-[var(--color-warm-stone)]/50 px-5 py-3 sm:flex-row sm:items-center sm:justify-between">
                 <p className="text-[10px] uppercase tracking-[0.18em] text-[var(--color-deep-olive)]/70">
-                  Historic estate plan · Select a property to explore
-                </p>
-                <p className="text-[10px] uppercase tracking-[0.14em] text-[var(--color-deep-olive)]/55">
-                  Property V shown for context · not part of the current offering
+                  {dict.masterplan.selectHint}
                 </p>
               </div>
             </div>
@@ -220,14 +212,14 @@ export function EstateMasterplan() {
                       sizes="(max-width: 1024px) 100vw, 28vw"
                     />
                     <p className="mt-2 text-[10px] uppercase tracking-[0.14em] text-[var(--color-deep-olive)]/65">
-                      Architectural visualization
+                      {dict.common.visualizationCaption}
                     </p>
                   </div>
                 ) : null}
 
                 {activeProperty.isHistoricFinca ? (
                   <span className="mt-4 inline-flex border border-[var(--color-terracotta)]/40 px-3 py-1.5 text-[10px] uppercase tracking-[0.18em] text-[var(--color-terracotta)]">
-                    Historic Finca
+                    {dict.propertyPage.fincaEyebrow}
                   </span>
                 ) : null}
 
@@ -250,10 +242,10 @@ export function EstateMasterplan() {
                 </ul>
 
                 <Link
-                  href={activeProperty.href}
+                  href={localePath(locale, activeProperty.href)}
                   className="mt-8 inline-flex border border-[var(--color-charcoal)] px-6 py-3 text-[11px] uppercase tracking-[0.22em] text-[var(--color-charcoal)] transition-colors hover:bg-[var(--color-charcoal)] hover:text-[var(--color-white)]"
                 >
-                  {activeProperty.cta}
+                  {dict.masterplan.explore}
                 </Link>
               </motion.div>
             </AnimatePresence>
@@ -271,7 +263,7 @@ export function EstateMasterplan() {
                     }`}
                   >
                     <span className="tracking-[0.08em]">
-                      Property {property.roman}
+                      {property.label}
                     </span>
                     <span className="text-xs opacity-80">
                       {property.acres.toFixed(2)} acres

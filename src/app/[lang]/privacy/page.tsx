@@ -1,18 +1,31 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import { LegalPageShell } from "@/components/LegalPageShell";
 import { formatCompanyAddress, siteConfig } from "@/data/site";
+import { isLocale } from "@/i18n/config";
+import { getDictionary } from "@/i18n/dictionaries";
 
-export const metadata: Metadata = {
-  title: `Privacy | ${siteConfig.name}`,
-  description: `Privacy information for the ${siteConfig.name} website operated by ${siteConfig.company.legalName}.`,
-};
+type Props = { params: Promise<{ lang: string }> };
 
-export default function PrivacyPage() {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { lang } = await params;
+  if (!isLocale(lang)) return {};
+  const dict = getDictionary(lang);
+  return {
+    title: `${dict.privacy.title} | ${siteConfig.name}`,
+    description: `Privacy information for the ${siteConfig.name} website operated by ${siteConfig.company.legalName}.`,
+  };
+}
+
+export default async function PrivacyPage({ params }: Props) {
+  const { lang } = await params;
+  if (!isLocale(lang)) notFound();
+  const dict = getDictionary(lang);
   const { company } = siteConfig;
 
   return (
-    <LegalPageShell title="Privacy" updated="September 2026">
+    <LegalPageShell title={dict.privacy.title} updated={dict.privacy.updated}>
       <p className="rounded-none border border-[var(--color-warm-stone)] bg-[var(--color-white)] px-5 py-4 text-sm">
         Draft aligned to the current website concept. Final wording should be
         reviewed by counsel before public go-live. The enquiry delivery provider
@@ -139,12 +152,12 @@ export default function PrivacyPage() {
       <h2>9. Related information</h2>
       <p>
         See also the{" "}
-        <Link href="/legal" className="underline underline-offset-4">
-          Legal Disclaimer
+        <Link href={`/${lang}/legal`} className="underline underline-offset-4">
+          {dict.legal.title}
         </Link>{" "}
         and{" "}
-        <Link href="/imprint" className="underline underline-offset-4">
-          Imprint
+        <Link href={`/${lang}/imprint`} className="underline underline-offset-4">
+          {dict.imprint.title}
         </Link>
         .
       </p>

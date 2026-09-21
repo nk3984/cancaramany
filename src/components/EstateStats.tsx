@@ -3,27 +3,10 @@
 import { motion, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { ESTATE_TOTAL } from "@/data/properties";
-
-const stats = [
-  {
-    value: `${ESTATE_TOTAL.squareMetresLabel} m²`,
-    label: "Estate",
-  },
-  {
-    value: `${ESTATE_TOTAL.acresLabel} acres`,
-    label: "Land",
-  },
-  {
-    value: "4",
-    label: "Private properties",
-  },
-  {
-    value: "1",
-    label: "Historic finca",
-  },
-];
+import { useLocale } from "@/i18n/LocaleProvider";
 
 export function EstateStats() {
+  const { dict } = useLocale();
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-10% 0px" });
   const [show, setShow] = useState(false);
@@ -31,6 +14,25 @@ export function EstateStats() {
   useEffect(() => {
     if (inView) setShow(true);
   }, [inView]);
+
+  const stats = [
+    {
+      value: `${ESTATE_TOTAL.squareMetresLabel} m²`,
+      label: dict.offer.stats.estate,
+    },
+    {
+      value: `${ESTATE_TOTAL.acresLabel} acres`,
+      label: dict.offer.stats.land,
+    },
+    {
+      value: "4",
+      label: dict.offer.stats.properties,
+    },
+    {
+      value: "1",
+      label: dict.offer.stats.finca,
+    },
+  ];
 
   return (
     <div

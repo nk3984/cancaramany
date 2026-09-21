@@ -1,11 +1,10 @@
 import { HeroSection } from "@/components/HeroSection";
-import { StatementSection } from "@/components/StatementSection";
+import { OfferSection } from "@/components/OfferSection";
 import { EstateMasterplan } from "@/components/EstateMasterplan";
 import { PropertiesSection } from "@/components/PropertiesSection";
-import { HistoricFincaSection } from "@/components/HistoricFincaSection";
-import { LandscapeSection } from "@/components/LandscapeSection";
-import { ResidencesSection } from "@/components/ResidencesSection";
+import { PlanningSection } from "@/components/PlanningSection";
 import { InfrastructureSection } from "@/components/InfrastructureSection";
+import { LimitedOpportunitySection } from "@/components/LimitedOpportunitySection";
 import { LocationSection } from "@/components/LocationSection";
 import { DataRoomCTA } from "@/components/DataRoomCTA";
 import { ClosingSection } from "@/components/ClosingSection";
@@ -14,13 +13,12 @@ export default function HomePage() {
   return (
     <main>
       <HeroSection />
-      <StatementSection />
+      <OfferSection />
       <EstateMasterplan />
       <PropertiesSection />
-      <HistoricFincaSection />
-      <LandscapeSection />
-      <ResidencesSection />
+      <PlanningSection />
       <InfrastructureSection />
+      <LimitedOpportunitySection />
       <LocationSection />
       <DataRoomCTA />
       <ClosingSection />

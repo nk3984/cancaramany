@@ -2,13 +2,18 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
-import { siteConfig } from "@/data/site";
 import { BrandLogo } from "@/components/BrandLogo";
 import { EnquiryForm } from "@/components/EnquiryForm";
 import { Modal } from "@/components/ui/Modal";
+import { locales, type Locale } from "@/i18n/config";
+import { useLocale } from "@/i18n/LocaleProvider";
+import { localePath, switchLocalePath } from "@/i18n/paths";
 
 export function Navigation() {
+  const { locale, dict } = useLocale();
+  const pathname = usePathname();
   const [mounted, setMounted] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -43,9 +48,9 @@ export function Navigation() {
       >
         <div className="mx-auto flex h-[4.75rem] max-w-[1440px] items-center justify-between px-5 sm:px-8 lg:h-[5.25rem] lg:px-12">
           <Link
-            href="/"
+            href={localePath(locale)}
             className="relative z-50 flex h-11 shrink-0 items-center sm:h-12 lg:h-[3.35rem]"
-            aria-label="Can Caramany home"
+            aria-label={dict.brand.homeAria}
           >
             <BrandLogo
               variant={logoOnLight ? "dark" : "light"}
@@ -54,11 +59,11 @@ export function Navigation() {
             />
           </Link>
 
-          <nav className="hidden items-center gap-8 xl:flex">
-            {siteConfig.navigation.map((item) => (
+          <nav className="hidden items-center gap-7 xl:flex">
+            {dict.nav.items.map((item) => (
               <Link
                 key={item.href}
-                href={item.href}
+                href={localePath(locale, item.href)}
                 className="text-[11px] uppercase tracking-[0.2em] opacity-85 transition-opacity hover:opacity-100"
               >
                 {item.label}
@@ -66,7 +71,21 @@ export function Navigation() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3 sm:gap-4">
+            <div
+              className="hidden items-center gap-1 text-[10px] uppercase tracking-[0.18em] sm:flex"
+              aria-label={dict.nav.language}
+            >
+              {locales.map((code) => (
+                <LangLink
+                  key={code}
+                  code={code}
+                  active={locale === code}
+                  pathname={pathname}
+                  solidHeader={solidHeader}
+                />
+              ))}
+            </div>
             <button
               type="button"
               onClick={() => setEnquireOpen(true)}
@@ -76,11 +95,11 @@ export function Navigation() {
                   : "border border-[var(--color-white)]/35 px-5 py-2.5 opacity-90"
               }`}
             >
-              Enquire
+              {dict.nav.enquire}
             </button>
             <button
               type="button"
-              aria-label={open ? "Close menu" : "Open menu"}
+              aria-label={open ? dict.nav.menuClose : dict.nav.menuOpen}
               aria-expanded={open}
               className="relative z-50 flex h-10 w-10 items-center justify-center xl:hidden"
               onClick={() => setOpen((value) => !value)}
@@ -124,7 +143,7 @@ export function Navigation() {
           >
             <div className="flex h-full flex-col justify-between px-6 pb-10 pt-28">
               <nav className="flex flex-col gap-6">
-                {siteConfig.navigation.map((item, index) => (
+                {dict.nav.items.map((item, index) => (
                   <motion.div
                     key={item.href}
                     initial={{ opacity: 0, y: 12 }}
@@ -132,7 +151,7 @@ export function Navigation() {
                     transition={{ delay: 0.05 * index, duration: 0.4 }}
                   >
                     <Link
-                      href={item.href}
+                      href={localePath(locale, item.href)}
                       onClick={() => setOpen(false)}
                       className="font-[family-name:var(--font-serif)] text-3xl text-[var(--color-charcoal)]"
                     >
@@ -141,16 +160,29 @@ export function Navigation() {
                   </motion.div>
                 ))}
               </nav>
-              <button
-                type="button"
-                onClick={() => {
-                  setOpen(false);
-                  setEnquireOpen(true);
-                }}
-                className="w-full border border-[var(--color-charcoal)] px-6 py-4 text-[11px] uppercase tracking-[0.22em] text-[var(--color-charcoal)]"
-              >
-                Enquire
-              </button>
+              <div className="space-y-4">
+                <div className="flex gap-3">
+                  {locales.map((code) => (
+                    <LangLink
+                      key={code}
+                      code={code}
+                      active={locale === code}
+                      pathname={pathname}
+                      solidHeader
+                    />
+                  ))}
+                </div>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setOpen(false);
+                    setEnquireOpen(true);
+                  }}
+                  className="w-full border border-[var(--color-charcoal)] px-6 py-4 text-[11px] uppercase tracking-[0.22em] text-[var(--color-charcoal)]"
+                >
+                  {dict.nav.enquire}
+                </button>
+              </div>
             </div>
           </motion.div>
         ) : null}
@@ -159,10 +191,34 @@ export function Navigation() {
       <Modal
         open={enquireOpen}
         onClose={() => setEnquireOpen(false)}
-        title="Enquire Privately"
+        title={dict.nav.enquireTitle}
       >
         <EnquiryForm onSuccess={() => setEnquireOpen(false)} />
       </Modal>
     </>
+  );
+}
+
+function LangLink({
+  code,
+  active,
+  pathname,
+  solidHeader,
+}: {
+  code: Locale;
+  active: boolean;
+  pathname: string;
+  solidHeader: boolean;
+}) {
+  return (
+    <Link
+      href={switchLocalePath(pathname, code)}
+      hrefLang={code}
+      className={`px-1.5 py-1 transition-opacity ${
+        active ? "opacity-100" : "opacity-45 hover:opacity-80"
+      } ${solidHeader ? "text-[var(--color-charcoal)]" : ""}`}
+    >
+      {code.toUpperCase()}
+    </Link>
   );
 }

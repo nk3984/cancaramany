@@ -5,8 +5,10 @@ import { FadeIn } from "@/components/ui/FadeIn";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
 import { EnquiryForm } from "@/components/EnquiryForm";
 import { Modal } from "@/components/ui/Modal";
+import { useLocale } from "@/i18n/LocaleProvider";
 
 export function ClosingSection() {
+  const { dict } = useLocale();
   const [open, setOpen] = useState(false);
 
   return (
@@ -30,14 +32,14 @@ export function ClosingSection() {
             CAN CARAMANY
           </p>
           <p className="mt-8 max-w-xl font-[family-name:var(--font-serif)] text-[clamp(1.35rem,3vw,2rem)] leading-snug text-[var(--color-white)]/90">
-            Four private worlds. One extraordinary piece of Mallorca.
+            {dict.closing.line}
           </p>
           <button
             type="button"
             onClick={() => setOpen(true)}
             className="mt-12 inline-flex border border-[var(--color-white)]/40 px-7 py-3.5 text-[11px] uppercase tracking-[0.22em] text-[var(--color-white)] transition-colors hover:bg-[var(--color-white)] hover:text-[var(--color-charcoal)]"
           >
-            Arrange a Private Conversation
+            {dict.closing.cta}
           </button>
         </FadeIn>
       </div>
@@ -45,7 +47,7 @@ export function ClosingSection() {
       <Modal
         open={open}
         onClose={() => setOpen(false)}
-        title="Arrange a Private Conversation"
+        title={dict.closing.modalTitle}
       >
         <EnquiryForm onSuccess={() => setOpen(false)} />
       </Modal>

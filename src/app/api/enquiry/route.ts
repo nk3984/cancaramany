@@ -4,7 +4,7 @@ import { siteConfig } from "@/data/site";
 
 export const runtime = "nodejs";
 
-const INTEREST_OPTIONS = new Set<string>(siteConfig.interestOptions);
+const INTEREST_OPTIONS = new Set<string>(siteConfig.interestValues);
 
 type EnquiryBody = {
   firstName?: string;
