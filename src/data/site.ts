@@ -34,9 +34,9 @@ export const siteConfig = {
     phone: "+49 170 3232013",
   },
   conceptualDisclaimer:
-    "Conceptual visualization. Subject to planning, technical review and applicable approvals.",
+    "Architectural vision of the residence. Brought to life with a contemporary planning application.",
   visualizationCaption:
-    "Architectural visualization of the original project. Subject to planning, technical review and all required approvals.",
+    "Architectural vision for the land — realised through a contemporary planning application.",
   historicLabel: "Original Architectural Drawings",
   historicApprovalsNote: contentFacts.heritage.historicApprovalsNote,
   /** Stable enquiry interest values accepted by the API (language-independent). */

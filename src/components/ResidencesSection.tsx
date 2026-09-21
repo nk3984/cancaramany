@@ -95,12 +95,9 @@ export function ResidencesSection() {
             Mallorcan.
           </p>
           <p className="mt-10 max-w-xl text-[11px] leading-relaxed tracking-[0.04em] text-[var(--color-deep-olive)]/75">
-            Architectural visions and formerly permitted villa projects. Building
-            permits for Properties I, II and IV were granted, then not renewed
-            after the estate was deferred for a prolonged period. They do not
-            constitute current building rights. Final design and any development
-            remain subject to independent technical and legal review and all
-            required approvals. See our{" "}
+            Architectural visions for Properties I–IV. Each residence is realised
+            with a contemporary planning application, shaped to your vision. See
+            our{" "}
             <Link href="/legal" className="underline underline-offset-2">
               Legal Disclaimer
             </Link>

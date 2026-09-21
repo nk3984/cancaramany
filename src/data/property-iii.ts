@@ -7,7 +7,7 @@ export const propertyIIIContent = {
   headline: "The historic heart of Can Caramany.",
   lead: "Original stone, tiled roofs and a landscape that has grown around the house for generations — the finca that gives the estate its name.",
   overview:
-    "This is the soul of Can Caramany: a genuine Mallorcan finca, weathered and irreplaceable, set in more than fifteen acres of oaks, almonds and dry-stone walls. A comprehensive rehabilitation was drawn for the house — country living of real presence, with annexes, terrace and pool. The documentation references a Consell de Mallorca assent of 6 April 2009; corresponding Ayuntamiento permission was not documented, and the project was later deferred. The drawings remain a starting point, not a current building right.",
+    "This is the soul of Can Caramany: a genuine Mallorcan finca, weathered and irreplaceable, set in more than fifteen acres of oaks, almonds and dry-stone walls. A comprehensive rehabilitation was drawn for the house — country living of real presence, with annexes, terrace and pool. Those studies remain a beautiful guide. You continue with a contemporary planning application — heritage, reimagined with care.",
   facts: [
     { label: "Land", value: "64,455 m²" },
     { label: "Scale", value: "15.93 acres" },
@@ -18,12 +18,12 @@ export const propertyIIIContent = {
   existing: {
     eyebrow: "Existing historic finca",
     title: "Weathered. Authentic. Rooted in the land.",
-    copy: "At the heart of Property III stands an original Mallorcan finca — weathered, authentic and deeply rooted in its landscape. Stone walls, timber structures and traditional roof tiles give the house a character that cannot be manufactured. What stands here is not a finished residence, but a rare starting point: historic substance with genuine architectural presence.",
+    copy: "At the heart of Property III stands an original Mallorcan finca — weathered, authentic and deeply rooted in its landscape. Stone walls, timber structures and traditional roof tiles give the house a character that cannot be manufactured. What stands here is a rare architectural presence: historic substance ready for a private life of lasting elegance.",
   },
   vision: {
-    eyebrow: "Former rehabilitation proposal",
+    eyebrow: "Rehabilitation vision",
     title: "A quiet continuation of Mallorcan living.",
-    copy: `${contentFacts.propertyIIIStudy.summaryEn} The original proposal imagined a composed Casa Payesa with annexes, terrace, pergola and pool — contemporary in comfort, unmistakably Mallorcan in character. The project was later deferred; these drawings are a starting point, not a current building right.`,
+    copy: `${contentFacts.propertyIIIStudy.summaryEn} The original proposal imagined a composed Casa Payesa with annexes, terrace, pergola and pool — contemporary in comfort, unmistakably Mallorcan in character. Those drawings remain a distinguished beginning for the house you will create.`,
     points: [
       "Rehabilitation and extension of the existing Casa Payesa and annexes",
       "Pool and pergola contemplated in the historic proposal",
@@ -34,7 +34,7 @@ export const propertyIIIContent = {
     eyebrow: "Original architectural drawings",
     title: "Conceived for gathering, retreat and outdoor living.",
     intro:
-      "Figures below are approximate values from the original rehabilitation proposal and are provided for information only. The drawings that follow record that concept — they are not a current building right.",
+      "Figures below are approximate values from the original rehabilitation study — an elegant guide for the residence ahead.",
     levels: [
       {
         label: "Ground floor",

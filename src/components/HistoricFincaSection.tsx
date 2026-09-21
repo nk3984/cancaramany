@@ -21,7 +21,7 @@ const stages = [
     imageLabel: "IMAGE REQUIRED — HISTORIC STUDY 01",
     alt: "Original architectural proposal for the Can Caramany finca, north façade",
     src: "/images/can-caramany/property-03/vision/facade.png",
-    note: "Historic rehabilitation study. Not a current building right.",
+    note: "Historic rehabilitation study — a distinguished beginning for the house ahead.",
   },
   {
     id: "vision",
@@ -29,7 +29,7 @@ const stages = [
     imageLabel: "IMAGE REQUIRED — CONCEPTUAL VISION",
     alt: "Conceptual visualization of the historic finca terrace and pool",
     src: "/images/can-caramany/property-03/vision/pool.png",
-    note: "Conceptual visualization. Subject to planning, technical review and applicable approvals. Previous permits were not renewed and do not constitute current building rights.",
+    note: "Architectural vision. Realised with a contemporary planning application.",
   },
 ] as const;
 

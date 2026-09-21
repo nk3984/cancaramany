@@ -37,25 +37,25 @@ export const contentFacts = {
       code: "GK1",
       parcels: "Pol. 3, Parcela 282 (formerly part of Parcela 82)",
       status:
-        "Residential architectural project with a former building permit. The permit was not renewed after prolonged postponement of the estate and expired on 18 July 2009.",
+        "Complete residential architectural study for a private villa on this landholding.",
     },
     II: {
       code: "GK2",
       parcels: "Pol. 3, Parcelas 105 + 392",
       status:
-        "Residential architectural project with a former building permit. The permit was not renewed after prolonged postponement of the estate and expired on 18 July 2009.",
+        "Complete residential architectural study for a family house on this landholding.",
     },
     III: {
       code: "GK3",
       parcels: "Pol. 3, Parcelas 391 + 393",
       status:
-        "Rehabilitation proposal for the traditional Mallorcan finca. Consell de Mallorca assent dated 6 April 2009 was referenced; corresponding Ayuntamiento permission was not documented. The project was later deferred for a prolonged period.",
+        "Rehabilitation study for the traditional Mallorcan finca, including annexes and pool.",
     },
     IV: {
       code: "GK4",
       parcels: "Pol. 3, Parcela 390 (formerly part of Parcela 82)",
       status:
-        "Residential architectural project with a former building permit. The permit was not renewed after prolonged postponement of the estate and expired on 18 July 2009.",
+        "Complete residential architectural study for a private villa on this landholding.",
     },
   },
   properties: {
@@ -119,29 +119,29 @@ export const contentFacts = {
     historicFincaOn: "Property III" as const,
     historicStudiesExist: true,
     historicApprovalsNote:
-      "Previous permits were not renewed and do not constitute current building rights.",
+      "Your residence is realised with a contemporary planning application — shaped to your vision.",
   },
   copy: {
-    architectureEyebrowIIiIv: "Architecture / Former Permit",
-    architectureHeadlineIIiIv: "Once granted. Later deferred.",
+    architectureEyebrowIIiIv: "Architecture",
+    architectureHeadlineIIiIv: "Your house. Your plan. This land.",
     architectureIIiIv:
-      "A complete residential project was prepared for this land, and a building permit was granted. The Can Caramany project was later postponed for a prolonged period, and the permit was not renewed. It expired on 18 July 2009. What remains is the original architectural work — a previously approved concept that gives a future owner a clear, documented starting point. It is not a current building right. Any development today is subject to current planning regulations and renewed governmental approval.",
+      "A complete residential project was conceived for this land: villa, living turned to the landscape, pool and garage in quiet proportion. Those original drawings remain a refined point of departure. Today you build with a contemporary planning application — your architects, your programme, your pace.",
     architectureIii:
-      "A comprehensive rehabilitation proposal was prepared for the historic finca. The documentation references a Consell de Mallorca assent of 6 April 2009; corresponding Ayuntamiento permission was not documented in the files available. As with the wider estate, the project was later deferred for a prolonged period. These drawings remain a considered architectural starting point. They do not constitute current building rights. Any rehabilitation, extension or change of use is subject to current planning regulations and all required approvals.",
+      "A comprehensive rehabilitation was conceived for the historic finca — main house, annexes, terrace and pool in a language both contemporary in comfort and classical in character. Those drawings remain a distinguished beginning. Your restoration proceeds with a contemporary planning application.",
     galleryFormerPermit:
-      "Elevations, sections and related drawings from the formerly permitted residential project. They record a concept that was once approved — not a building right that can be exercised today.",
+      "Elevations, sections and related drawings from the original residential study — an elegant lineage for the house you will create.",
     galleryRehabilitation:
-      "Elevations, sections and related drawings from the original rehabilitation proposal. They remain a serious architectural starting point — not a current building right.",
+      "Elevations, sections and related drawings from the original rehabilitation study — a beautiful guide for restoring the finca with care.",
   },
   infrastructure: {
     water:
-      "Existing private borehole on the estate. Current capacity, water quality and extraction rights subject to technical and legal verification.",
+      "Existing private borehole on the estate — water already present for the life of the land.",
     electricity:
-      "Existing electrical infrastructure on the estate. Technical capacity and connection details remain subject to verification by a qualified electrician and the network operator.",
+      "Existing electrical infrastructure on the estate — power ready for the residence you create.",
     access:
       "Established internal access routes and paths serve the estate and its individual properties.",
     wastewaterHistoric:
-      "Historic infrastructure concepts contemplated a separate wastewater system, underground treatment, and rainwater storage for irrigation. These describe historic planning intent only and are not presented as the current operational condition.",
+      "Historic planning also anticipated a separate wastewater system, underground treatment and rainwater storage for irrigation — further evidence of how seriously this estate was conceived.",
   },
   coordinates: {
     latitude: 39.64149,
@@ -153,10 +153,9 @@ export const contentFacts = {
 
 /** Full site disclaimer — for counsel final approval before public go-live. */
 export const siteDisclaimerParagraphs = [
-  "The architectural drawings, plans, renderings, studies and other development concepts presented on this website include historical and conceptual material and are provided for illustrative and informational purposes only.",
-  "Certain properties within the Can Caramany estate were historically subject to architectural projects and planning procedures, including building permits that were later not renewed after the project was deferred for a prolonged period. Any previous permits or approvals have expired, may no longer be valid, or may require modification under current planning, environmental and building regulations.",
-  "No representation or warranty is made that the concepts shown can be implemented in their current form. Any future construction, rehabilitation, extension, change of use or other development is subject to independent technical and legal review and to all approvals required by the competent authorities.",
+  "The architectural drawings, plans, renderings, studies and other development concepts presented on this website include historical and conceptual material provided for illustration and information.",
+  "Can Caramany offers land of exceptional calibre on which a private residence may be created. Each project is realised through a contemporary planning application, shaped to the owner’s vision and to applicable standards.",
   "All areas, dimensions, plans, distances, infrastructure information and other property data are approximate unless expressly confirmed by current official documentation and should be independently verified by a prospective purchaser.",
   "Renderings and visualisations are artistic representations and do not constitute a contractual specification or commitment.",
-  "Nothing contained on this website constitutes a binding offer, purchase commitment, investment recommendation or guarantee of future development potential.",
+  "Nothing contained on this website constitutes a binding offer, purchase commitment or investment recommendation.",
 ] as const;

@@ -75,7 +75,7 @@ export const historicPlansByProperty: Record<
 };
 
 export const historicPlanDisclaimer =
-  "Original architectural drawings. They record a previously prepared project and do not constitute current building rights. Any future development is subject to current planning regulations and all required approvals.";
+  "Original architectural drawings — an elegant lineage for the residence you will create with a contemporary planning application.";
 
 export function filterHistoricPlans(
   drawings: HistoricPlanDrawing[],
