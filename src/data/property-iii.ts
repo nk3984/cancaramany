@@ -120,21 +120,21 @@ export const propertyIIIImages = {
   vision: [
     {
       src: "/images/can-caramany/property-03/vision/facade.png",
-      alt: "Property III architectural vision — façade",
+      alt: "Property III vision — symmetrical finca façade with arched door and oculus",
       label: "Façade vision",
       caption: "Façade",
       layout: "wide",
     },
     {
       src: "/images/can-caramany/property-03/vision/pool.png",
-      alt: "Property III architectural vision — terrace and pool",
+      alt: "Property III vision — finca terrace and pool at golden hour",
       label: "Pool vision",
       caption: "Terrace & pool",
       layout: "wide",
     },
     {
       src: "/images/can-caramany/property-03/vision/evening.png",
-      alt: "Property III architectural vision — evening terrace",
+      alt: "Property III vision — evening light on the symmetrical finca entrance",
       label: "Evening vision",
       caption: "Evening",
       layout: "wide",
