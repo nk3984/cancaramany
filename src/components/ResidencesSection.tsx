@@ -23,9 +23,10 @@ export function ResidencesSection() {
             Traditional Character. Modern Refinement.
           </p>
           <p className="mt-6 max-w-2xl text-base leading-[1.8] text-[var(--color-deep-olive)]">
-            Four private architectural visions for Properties I–IV — each with
-            three curated views. Conceptual material only; not current building
-            rights.
+            Four plots. Four distinct architectural ideas — L-plan, stone and
+            light, historic finca, modern rustic. Each with three curated views
+            of how a residence could live here. Your architect, your theme, your
+            house. Conceptual material only; not current building rights.
           </p>
         </FadeIn>
 
@@ -91,8 +92,8 @@ export function ResidencesSection() {
 
         <FadeIn className="mt-24 max-w-2xl lg:mt-32">
           <p className="font-[family-name:var(--font-serif)] text-2xl leading-snug text-[var(--color-charcoal)] sm:text-3xl">
-            Every element should feel considered, enduring and unmistakably
-            Mallorcan.
+            Each plot is a gem in its own right — to discover, to shape, and to
+            make unmistakably yours.
           </p>
           <p className="mt-10 max-w-xl text-[11px] leading-relaxed tracking-[0.04em] text-[var(--color-deep-olive)]/75">
             Architectural visions and formerly permitted villa projects. Building
