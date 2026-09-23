@@ -1,8 +1,14 @@
+"use client";
+
 import { FadeIn } from "@/components/ui/FadeIn";
 import { PropertyFeature } from "@/components/PropertyFeature";
 import { properties } from "@/data/properties";
+import { useDictionary } from "@/i18n/locale-context";
 
 export function PropertiesSection() {
+  const dictionary = useDictionary();
+  const copy = dictionary.propertiesSection;
+
   return (
     <section
       id="properties"
@@ -11,16 +17,13 @@ export function PropertiesSection() {
       <div className="mx-auto max-w-[1440px]">
         <FadeIn className="mb-16 max-w-2xl sm:mb-24">
           <p className="mb-6 text-[11px] uppercase tracking-[0.28em] text-[var(--color-terracotta)]">
-            Properties
+            {copy.eyebrow}
           </p>
           <h2 className="font-[family-name:var(--font-serif)] text-[clamp(2rem,4.5vw,3.25rem)] leading-[1.15] text-[var(--color-charcoal)]">
-            Four landholdings. Four architectural beginnings.
+            {copy.headline}
           </h2>
           <p className="mt-6 text-base leading-[1.8] text-[var(--color-deep-olive)] sm:text-lg">
-            Each property is offered in its own right — a substantial piece of
-            Mallorcan countryside, and the original project once drawn for it.
-            Together they form Can Caramany. Separately, each is a complete
-            private world.
+            {copy.lead}
           </p>
         </FadeIn>
 

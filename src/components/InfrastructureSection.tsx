@@ -4,44 +4,34 @@ import { useState } from "react";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { EnquiryForm } from "@/components/EnquiryForm";
 import { Modal } from "@/components/ui/Modal";
-import { contentFacts } from "@/data/content-facts";
-
-const pillars = [
-  {
-    title: "Water",
-    headline: "Existing private borehole",
-    copy: contentFacts.infrastructure.water,
-  },
-  {
-    title: "Power",
-    headline: "Existing electrical infrastructure",
-    copy: contentFacts.infrastructure.electricity,
-  },
-  {
-    title: "Access",
-    headline: "Established internal access",
-    copy: contentFacts.infrastructure.access,
-  },
-] as const;
+import { useDictionary } from "@/i18n/locale-context";
 
 export function InfrastructureSection() {
+  const dictionary = useDictionary();
+  const copy = dictionary.infrastructure;
   const [open, setOpen] = useState(false);
+
+  const pillars = [
+    { key: "water" as const, ...copy.pillars.water },
+    { key: "power" as const, ...copy.pillars.power },
+    { key: "access" as const, ...copy.pillars.access },
+  ];
 
   return (
     <section className="bg-[var(--color-background)] px-5 py-24 sm:px-8 sm:py-32 lg:px-12">
       <div className="mx-auto max-w-[1440px]">
         <FadeIn className="max-w-2xl">
           <p className="mb-6 text-[11px] uppercase tracking-[0.28em] text-[var(--color-terracotta)]">
-            Infrastructure
+            {copy.eyebrow}
           </p>
           <h2 className="font-[family-name:var(--font-serif)] text-[clamp(2rem,4.5vw,3.25rem)] leading-[1.15] text-[var(--color-charcoal)]">
-            The estate is already served.
+            {copy.headline}
           </h2>
         </FadeIn>
 
         <div className="mt-16 grid gap-10 border-t border-[var(--color-warm-stone)]/70 pt-12 md:grid-cols-3 md:gap-8">
           {pillars.map((pillar, index) => (
-            <FadeIn key={pillar.title} delay={index * 0.08}>
+            <FadeIn key={pillar.key} delay={index * 0.08}>
               <p className="text-[11px] uppercase tracking-[0.24em] text-[var(--color-deep-olive)]">
                 {pillar.title}
               </p>
@@ -57,10 +47,10 @@ export function InfrastructureSection() {
 
         <FadeIn className="mt-12 max-w-3xl border-t border-[var(--color-warm-stone)]/70 pt-10">
           <p className="text-[11px] uppercase tracking-[0.24em] text-[var(--color-deep-olive)]">
-            Historic infrastructure concept
+            {copy.historicEyebrow}
           </p>
           <p className="mt-4 text-sm leading-relaxed text-[var(--color-deep-olive)]">
-            {contentFacts.infrastructure.wastewaterHistoric}
+            {copy.wastewaterHistoric}
           </p>
         </FadeIn>
 
@@ -70,7 +60,7 @@ export function InfrastructureSection() {
             onClick={() => setOpen(true)}
             className="border border-[var(--color-charcoal)] px-7 py-3.5 text-[11px] uppercase tracking-[0.22em] text-[var(--color-charcoal)] transition-colors hover:bg-[var(--color-charcoal)] hover:text-[var(--color-white)]"
           >
-            Request Technical Documentation
+            {copy.cta}
           </button>
         </FadeIn>
       </div>
@@ -78,7 +68,7 @@ export function InfrastructureSection() {
       <Modal
         open={open}
         onClose={() => setOpen(false)}
-        title="Request Technical Documentation"
+        title={copy.modalTitle}
       >
         <EnquiryForm onSuccess={() => setOpen(false)} />
       </Modal>

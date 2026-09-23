@@ -3,12 +3,19 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { siteConfig } from "@/data/site";
 import { BrandLogo } from "@/components/BrandLogo";
 import { EnquiryForm } from "@/components/EnquiryForm";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { Modal } from "@/components/ui/Modal";
+import {
+  localePath,
+  useDictionary,
+  useLocale,
+} from "@/i18n/locale-context";
 
 export function Navigation() {
+  const dictionary = useDictionary();
+  const locale = useLocale();
   const [mounted, setMounted] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -43,7 +50,7 @@ export function Navigation() {
       >
         <div className="mx-auto flex h-[4.75rem] max-w-[1440px] items-center justify-between px-5 sm:px-8 lg:h-[5.25rem] lg:px-12">
           <Link
-            href="/"
+            href={localePath(locale, "/")}
             className="relative z-50 flex h-11 shrink-0 items-center sm:h-12 lg:h-[3.35rem]"
             aria-label="Can Caramany home"
           >
@@ -54,11 +61,11 @@ export function Navigation() {
             />
           </Link>
 
-          <nav className="hidden items-center gap-8 xl:flex">
-            {siteConfig.navigation.map((item) => (
+          <nav className="hidden items-center gap-7 xl:flex">
+            {dictionary.nav.items.map((item) => (
               <Link
                 key={item.href}
-                href={item.href}
+                href={localePath(locale, item.href)}
                 className="text-[11px] uppercase tracking-[0.2em] opacity-85 transition-opacity hover:opacity-100"
               >
                 {item.label}
@@ -66,7 +73,8 @@ export function Navigation() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3 sm:gap-4">
+            <LanguageSwitcher light={!solidHeader} className="hidden sm:inline-flex" />
             <button
               type="button"
               onClick={() => setEnquireOpen(true)}
@@ -76,16 +84,16 @@ export function Navigation() {
                   : "border border-[var(--color-white)]/35 px-5 py-2.5 opacity-90"
               }`}
             >
-              Enquire
+              {dictionary.nav.enquire}
             </button>
             <button
               type="button"
-              aria-label={open ? "Close menu" : "Open menu"}
+              aria-label={open ? dictionary.nav.close : dictionary.nav.menu}
               aria-expanded={open}
               className="relative z-50 flex h-10 w-10 items-center justify-center xl:hidden"
               onClick={() => setOpen((value) => !value)}
             >
-              <span className="sr-only">Menu</span>
+              <span className="sr-only">{dictionary.nav.menu}</span>
               <span className="flex w-5 flex-col gap-1.5">
                 <span
                   className={`h-px w-full transition-transform duration-300 ${
@@ -124,7 +132,7 @@ export function Navigation() {
           >
             <div className="flex h-full flex-col justify-between px-6 pb-10 pt-28">
               <nav className="flex flex-col gap-6">
-                {siteConfig.navigation.map((item, index) => (
+                {dictionary.nav.items.map((item, index) => (
                   <motion.div
                     key={item.href}
                     initial={{ opacity: 0, y: 12 }}
@@ -132,7 +140,7 @@ export function Navigation() {
                     transition={{ delay: 0.05 * index, duration: 0.4 }}
                   >
                     <Link
-                      href={item.href}
+                      href={localePath(locale, item.href)}
                       onClick={() => setOpen(false)}
                       className="font-[family-name:var(--font-serif)] text-3xl text-[var(--color-charcoal)]"
                     >
@@ -141,16 +149,19 @@ export function Navigation() {
                   </motion.div>
                 ))}
               </nav>
-              <button
-                type="button"
-                onClick={() => {
-                  setOpen(false);
-                  setEnquireOpen(true);
-                }}
-                className="w-full border border-[var(--color-charcoal)] px-6 py-4 text-[11px] uppercase tracking-[0.22em] text-[var(--color-charcoal)]"
-              >
-                Enquire
-              </button>
+              <div className="space-y-4">
+                <LanguageSwitcher />
+                <button
+                  type="button"
+                  onClick={() => {
+                    setOpen(false);
+                    setEnquireOpen(true);
+                  }}
+                  className="w-full border border-[var(--color-charcoal)] px-6 py-4 text-[11px] uppercase tracking-[0.22em] text-[var(--color-charcoal)]"
+                >
+                  {dictionary.nav.enquire}
+                </button>
+              </div>
             </div>
           </motion.div>
         ) : null}
@@ -159,7 +170,7 @@ export function Navigation() {
       <Modal
         open={enquireOpen}
         onClose={() => setEnquireOpen(false)}
-        title="Enquire Privately"
+        title={dictionary.nav.enquire}
       >
         <EnquiryForm onSuccess={() => setEnquireOpen(false)} />
       </Modal>

@@ -5,31 +5,30 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
+import {
+  localePath,
+  useDictionary,
+  useLocale,
+} from "@/i18n/locale-context";
 
-const stages = [
+const stageMedia = [
   {
-    id: "existing",
-    label: "Existing",
+    id: "existing" as const,
     imageLabel: "IMAGE REQUIRED — FINCA EXISTING",
     alt: "Existing historic Mallorcan finca at Can Caramany",
     src: "/images/can-caramany/historic-finca/finca-existing-exterior.jpg",
-    note: null,
   },
   {
-    id: "study",
-    label: "Original Proposal",
+    id: "study" as const,
     imageLabel: "IMAGE REQUIRED — HISTORIC STUDY 01",
     alt: "Original architectural proposal for the Can Caramany finca, north façade",
     src: "/images/can-caramany/property-03/vision/facade.png",
-    note: "Historic rehabilitation study. Not a current building right.",
   },
   {
-    id: "vision",
-    label: "Vision",
+    id: "vision" as const,
     imageLabel: "IMAGE REQUIRED — CONCEPTUAL VISION",
     alt: "Conceptual visualization of the historic finca terrace and pool",
     src: "/images/can-caramany/property-03/vision/pool.png",
-    note: "Conceptual visualization. Subject to planning, technical review and applicable approvals. Previous permits were not renewed and do not constitute current building rights.",
   },
 ] as const;
 
@@ -52,7 +51,17 @@ const details = [
 ] as const;
 
 export function HistoricFincaSection() {
+  const dictionary = useDictionary();
+  const locale = useLocale();
+  const copy = dictionary.heritage;
   const [stage, setStage] = useState(0);
+
+  const stages = stageMedia.map((media) => ({
+    ...media,
+    label: copy.stages[media.id].label,
+    note: copy.stages[media.id].note,
+  }));
+
   const current = stages[stage];
 
   return (
@@ -64,23 +73,16 @@ export function HistoricFincaSection() {
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           <FadeIn className="lg:col-span-5 lg:pt-8">
             <p className="mb-6 text-[11px] uppercase tracking-[0.28em] text-[var(--color-terracotta)]">
-              Historic Finca
+              {copy.eyebrow}
             </p>
             <h2 className="font-[family-name:var(--font-serif)] text-[clamp(2.25rem,4.5vw,3.5rem)] leading-[1.12] text-[var(--color-charcoal)]">
-              The house that gives the estate its name.
+              {copy.headline}
             </h2>
             <p className="mt-8 max-w-md text-base leading-[1.85] text-[var(--color-deep-olive)]">
-              At the heart of Property III stands the historic Mallorcan finca
-              — stone, timber and tiled roofs that have belonged to this land
-              for generations. It is rare, authentic, and impossible to
-              reproduce.
+              {copy.p1}
             </p>
             <p className="mt-4 max-w-md text-base leading-[1.85] text-[var(--color-deep-olive)]">
-              A full rehabilitation was drawn for the house: a country
-              residence of real presence, with annexes, terrace and pool. The
-              project was later set aside. The finca remains the architectural
-              soul of Can Caramany — and a starting point, not a finished
-              permit.
+              {copy.p2}
             </p>
 
             <div className="mt-12 flex flex-wrap gap-2">
@@ -113,10 +115,10 @@ export function HistoricFincaSection() {
               ))}
             </div>
             <Link
-              href="/properties/property-iii"
+              href={localePath(locale, "/properties/property-iii")}
               className="mt-10 inline-flex border border-[var(--color-charcoal)] px-7 py-3.5 text-[11px] uppercase tracking-[0.22em] text-[var(--color-charcoal)] transition-colors hover:bg-[var(--color-charcoal)] hover:text-[var(--color-white)]"
             >
-              Discover Property III
+              {copy.cta}
             </Link>
           </FadeIn>
 
@@ -145,16 +147,28 @@ export function HistoricFincaSection() {
                 </p>
               ) : null}
               <div className="mt-6 flex items-center gap-4 text-[11px] uppercase tracking-[0.2em] text-[var(--color-deep-olive)]">
-                <span className={stage === 0 ? "text-[var(--color-charcoal)]" : ""}>
-                  Existing
+                <span
+                  className={
+                    stage === 0 ? "text-[var(--color-charcoal)]" : ""
+                  }
+                >
+                  {copy.stages.existing.label}
                 </span>
                 <span className="h-px w-8 bg-[var(--color-warm-stone)]" />
-                <span className={stage === 1 ? "text-[var(--color-charcoal)]" : ""}>
-                  Original Proposal
+                <span
+                  className={
+                    stage === 1 ? "text-[var(--color-charcoal)]" : ""
+                  }
+                >
+                  {copy.stages.study.label}
                 </span>
                 <span className="h-px w-8 bg-[var(--color-warm-stone)]" />
-                <span className={stage === 2 ? "text-[var(--color-charcoal)]" : ""}>
-                  Conceptual Vision
+                <span
+                  className={
+                    stage === 2 ? "text-[var(--color-charcoal)]" : ""
+                  }
+                >
+                  {copy.stages.vision.label}
                 </span>
               </div>
             </div>

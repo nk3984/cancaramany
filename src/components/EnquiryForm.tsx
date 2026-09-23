@@ -3,13 +3,24 @@
 import Link from "next/link";
 import { useState } from "react";
 import { siteConfig } from "@/data/site";
+import type { InterestOptionKey } from "@/i18n/types";
+import {
+  localePath,
+  useDictionary,
+  useLocale,
+} from "@/i18n/locale-context";
 
 type EnquiryFormProps = {
   onSuccess?: () => void;
   compact?: boolean;
 };
 
+const INTEREST_KEYS = siteConfig.interestOptions as readonly InterestOptionKey[];
+
 export function EnquiryForm({ onSuccess, compact }: EnquiryFormProps) {
+  const dictionary = useDictionary();
+  const locale = useLocale();
+  const enquiry = dictionary.enquiry;
   const [submitted, setSubmitted] = useState(false);
   const [pending, setPending] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -70,10 +81,10 @@ export function EnquiryForm({ onSuccess, compact }: EnquiryFormProps) {
     return (
       <div className="py-8 text-center">
         <p className="font-[family-name:var(--font-serif)] text-2xl text-[var(--color-charcoal)]">
-          Thank you.
+          {enquiry.thanksTitle}
         </p>
         <p className="mt-3 text-sm leading-relaxed text-[var(--color-deep-olive)]">
-          Your enquiry has been received. A private response will follow.
+          {enquiry.thanksBody}
         </p>
       </div>
     );
@@ -83,22 +94,21 @@ export function EnquiryForm({ onSuccess, compact }: EnquiryFormProps) {
     <form onSubmit={handleSubmit} className="space-y-5">
       {!compact ? (
         <p className="text-sm leading-relaxed text-[var(--color-deep-olive)]">
-          Qualified buyers, advisers and investment partners are invited to
-          request a private conversation regarding Can Caramany.
+          {enquiry.intro}
         </p>
       ) : null}
 
       <div className="grid gap-4 sm:grid-cols-2">
-        <Field label="First Name" name="firstName" required />
-        <Field label="Last Name" name="lastName" required />
+        <Field label={enquiry.firstName} name="firstName" required />
+        <Field label={enquiry.lastName} name="lastName" required />
       </div>
       <div className="grid gap-4 sm:grid-cols-2">
-        <Field label="Email" name="email" type="email" required />
-        <Field label="Phone" name="phone" type="tel" />
+        <Field label={enquiry.email} name="email" type="email" required />
+        <Field label={enquiry.phone} name="phone" type="tel" />
       </div>
       <div className="grid gap-4 sm:grid-cols-2">
-        <Field label="Company" name="company" />
-        <Field label="Country" name="country" required />
+        <Field label={enquiry.company} name="company" />
+        <Field label={enquiry.country} name="country" required />
       </div>
 
       <div>
@@ -106,7 +116,7 @@ export function EnquiryForm({ onSuccess, compact }: EnquiryFormProps) {
           htmlFor="interest"
           className="mb-2 block text-[10px] uppercase tracking-[0.2em] text-[var(--color-deep-olive)]"
         >
-          Interest
+          {enquiry.interest}
         </label>
         <select
           id="interest"
@@ -116,11 +126,11 @@ export function EnquiryForm({ onSuccess, compact }: EnquiryFormProps) {
           className="w-full border border-[var(--color-warm-stone)] bg-transparent px-4 py-3 text-sm text-[var(--color-charcoal)] outline-none transition focus:border-[var(--color-charcoal)]"
         >
           <option value="" disabled>
-            Select interest
+            {enquiry.interestPlaceholder}
           </option>
-          {siteConfig.interestOptions.map((option) => (
-            <option key={option} value={option}>
-              {option}
+          {INTEREST_KEYS.map((key) => (
+            <option key={key} value={key}>
+              {enquiry.interests[key]}
             </option>
           ))}
         </select>
@@ -131,7 +141,7 @@ export function EnquiryForm({ onSuccess, compact }: EnquiryFormProps) {
           htmlFor="message"
           className="mb-2 block text-[10px] uppercase tracking-[0.2em] text-[var(--color-deep-olive)]"
         >
-          Message
+          {enquiry.message}
         </label>
         <textarea
           id="message"
@@ -150,17 +160,22 @@ export function EnquiryForm({ onSuccess, compact }: EnquiryFormProps) {
           className="mt-0.5 accent-[var(--color-charcoal)]"
         />
         <span>
-          I have read the{" "}
-          <Link href="/privacy" className="underline underline-offset-2">
-            Privacy Policy
+          {enquiry.consentBefore}{" "}
+          <Link
+            href={localePath(locale, "/privacy")}
+            className="underline underline-offset-2"
+          >
+            {enquiry.consentLink}
           </Link>{" "}
-          and consent to the processing of my personal data for the purpose of
-          handling my enquiry.
+          {enquiry.consentAfter}
         </span>
       </label>
 
       {error ? (
-        <p className="text-sm leading-relaxed text-[var(--color-terracotta)]" role="alert">
+        <p
+          className="text-sm leading-relaxed text-[var(--color-terracotta)]"
+          role="alert"
+        >
           {error}
         </p>
       ) : null}
@@ -170,7 +185,7 @@ export function EnquiryForm({ onSuccess, compact }: EnquiryFormProps) {
         disabled={pending}
         className="w-full bg-[var(--color-charcoal)] px-6 py-4 text-[11px] uppercase tracking-[0.22em] text-[var(--color-white)] transition-colors hover:bg-[var(--color-deep-olive)] disabled:cursor-not-allowed disabled:opacity-60"
       >
-        {pending ? "Sending…" : "Submit Enquiry"}
+        {pending ? enquiry.sending : enquiry.submit}
       </button>
     </form>
   );

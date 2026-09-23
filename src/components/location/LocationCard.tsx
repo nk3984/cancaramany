@@ -6,9 +6,9 @@ import {
   CAN_CARAMANY_ESTATE_REFERENCE,
   formatDistance,
   formatEstateCoordinates,
-  getCategoryLabel,
   type LocationPoint,
 } from "@/data/locations";
+import { useDictionary } from "@/i18n/locale-context";
 
 export type MapSelection =
   | { type: "estate" }
@@ -28,6 +28,7 @@ export function LocationCard({
   onClose,
   variant = "floating",
 }: LocationCardProps) {
+  const dictionary = useDictionary();
   const isEstate = selection.type === "estate";
   const point = selection.type === "location" ? selection.point : null;
   const distance = point ? formatDistance(point) : null;
@@ -59,15 +60,16 @@ export function LocationCard({
           <div>
             <p className="text-[10px] uppercase tracking-[0.2em] text-[var(--color-terracotta)]">
               {isEstate
-                ? CAN_CARAMANY_ESTATE_REFERENCE.label
-                : getCategoryLabel(point!.category)}
+                ? (dictionary.properties["property-iii"].specialLabel ??
+                  dictionary.properties["property-iii"].label)
+                : dictionary.location.filters[point!.category]}
             </p>
             <h3 className="mt-2 font-[family-name:var(--font-serif)] text-xl text-[var(--color-charcoal)] sm:text-2xl">
-              {isEstate ? CAN_CARAMANY_ESTATE_REFERENCE.mapLabel : point!.name}
+              {isEstate ? dictionary.location.estateLabel : point!.name}
             </h3>
             {isEstate ? (
               <p className="mt-1 text-[10px] uppercase tracking-[0.16em] text-[var(--color-deep-olive)]/75">
-                {CAN_CARAMANY_ESTATE_REFERENCE.mapSubtitle}
+                {dictionary.location.estateSubtitle}
               </p>
             ) : null}
           </div>

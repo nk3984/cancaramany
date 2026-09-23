@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import { Instrument_Serif, Manrope } from "next/font/google";
-import { Navigation } from "@/components/Navigation";
-import { Footer } from "@/components/Footer";
 import { siteConfig } from "@/data/site";
 import "./globals.css";
 
@@ -25,12 +23,6 @@ export const metadata: Metadata = {
     icon: "/images/can-caramany/brand/apple-icon.png",
     apple: "/images/can-caramany/brand/apple-icon.png",
   },
-  openGraph: {
-    title: siteConfig.title,
-    description: siteConfig.description,
-    type: "website",
-    locale: "en_US",
-  },
 };
 
 export default function RootLayout({
@@ -40,14 +32,10 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
       className={`${instrumentSerif.variable} ${manrope.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col font-sans">
-        <Navigation />
-        <div className="flex-1">{children}</div>
-        <Footer />
-      </body>
+      <body className="min-h-full flex flex-col font-sans">{children}</body>
     </html>
   );
 }

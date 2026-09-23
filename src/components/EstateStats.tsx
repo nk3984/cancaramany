@@ -3,27 +3,10 @@
 import { motion, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { ESTATE_TOTAL } from "@/data/properties";
-
-const stats = [
-  {
-    value: `${ESTATE_TOTAL.squareMetresLabel} m²`,
-    label: "Estate",
-  },
-  {
-    value: `${ESTATE_TOTAL.acresLabel} acres`,
-    label: "Land",
-  },
-  {
-    value: "4",
-    label: "Private properties",
-  },
-  {
-    value: "1",
-    label: "Historic finca",
-  },
-];
+import { useDictionary } from "@/i18n/locale-context";
 
 export function EstateStats() {
+  const dictionary = useDictionary();
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-10% 0px" });
   const [show, setShow] = useState(false);
@@ -32,6 +15,25 @@ export function EstateStats() {
     if (inView) setShow(true);
   }, [inView]);
 
+  const stats = [
+    {
+      value: `${ESTATE_TOTAL.squareMetresLabel} m²`,
+      label: dictionary.estateStats.land,
+    },
+    {
+      value: "4",
+      label: dictionary.estateStats.properties,
+    },
+    {
+      value: "1",
+      label: dictionary.estateStats.heritage,
+    },
+    {
+      value: dictionary.estateStats.location,
+      label: dictionary.brand.locationLine,
+    },
+  ];
+
   return (
     <div
       ref={ref}
@@ -39,7 +41,7 @@ export function EstateStats() {
     >
       {stats.map((stat, index) => (
         <motion.div
-          key={stat.label}
+          key={`${stat.label}-${stat.value}`}
           initial={{ opacity: 0, y: 16 }}
           animate={show ? { opacity: 1, y: 0 } : {}}
           transition={{
@@ -49,7 +51,7 @@ export function EstateStats() {
           }}
           className="text-center lg:text-left"
         >
-          <p className="font-[family-name:var(--font-serif)] text-[clamp(2rem,4vw,3rem)] leading-none tracking-tight text-[var(--color-charcoal)]">
+          <p className="font-[family-name:var(--font-serif)] text-[clamp(1.5rem,3.5vw,2.75rem)] leading-none tracking-tight text-[var(--color-charcoal)]">
             {stat.value}
           </p>
           <p className="mt-4 text-[11px] uppercase tracking-[0.22em] text-[var(--color-deep-olive)]">

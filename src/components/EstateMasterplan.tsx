@@ -13,6 +13,11 @@ import {
   type EstateParcel,
 } from "@/data/estate-plan";
 import { properties } from "@/data/properties";
+import {
+  localePath,
+  useDictionary,
+  useLocale,
+} from "@/i18n/locale-context";
 
 function parcelFill(
   parcel: EstateParcel,
@@ -52,10 +57,14 @@ function parcelStrokeWidth(selected: boolean, hovered: boolean): number {
 }
 
 export function EstateMasterplan() {
+  const dictionary = useDictionary();
+  const locale = useLocale();
+  const copy = dictionary.masterplan;
   const [active, setActive] = useState<number>(DEFAULT_ESTATE_PROPERTY_INDEX);
   const [hoveredId, setHoveredId] = useState<string | null>(null);
 
   const activeProperty = properties[active];
+  const activeCopy = dictionary.properties[activeProperty.id];
   const { width, height } = ESTATE_VIEWBOX;
 
   return (
@@ -66,22 +75,13 @@ export function EstateMasterplan() {
       <div className="mx-auto max-w-[1440px]">
         <FadeIn className="mx-auto max-w-3xl text-center">
           <p className="mb-6 text-[11px] uppercase tracking-[0.28em] text-[var(--color-terracotta)]">
-            Estate Overview
+            {copy.eyebrow}
           </p>
           <h2 className="font-[family-name:var(--font-serif)] text-[clamp(2rem,4.5vw,3.5rem)] leading-[1.15] text-[var(--color-charcoal)]">
-            One estate. Four independent properties.
+            {copy.headline}
           </h2>
           <p className="mt-6 text-base leading-relaxed text-[var(--color-deep-olive)]">
-            The land was divided so that each holding could stand alone — its
-            own privacy, its own house, its own relationship to the landscape.
-            Properties I, II and IV received building permits for complete
-            villas. Property III holds the historic finca and a rehabilitation
-            proposal. Those permits were not renewed after the project was
-            postponed. Select a plot to explore it.
-          </p>
-          <p className="mt-4 text-sm leading-relaxed text-[var(--color-deep-olive)]/75">
-            Property V appears on the plan for geographic context only and is
-            not offered.
+            {copy.lead}
           </p>
         </FadeIn>
 
@@ -202,8 +202,8 @@ export function EstateMasterplan() {
               >
                 <p className="text-[11px] uppercase tracking-[0.24em] text-[var(--color-deep-olive)]">
                   {activeProperty.isHistoricFinca
-                    ? activeProperty.specialLabel
-                    : activeProperty.label}
+                    ? (activeCopy.specialLabel ?? activeCopy.label)
+                    : activeCopy.label}
                 </p>
 
                 <p className="mt-5 font-[family-name:var(--font-serif)] text-3xl text-[var(--color-charcoal)]">
@@ -214,32 +214,32 @@ export function EstateMasterplan() {
                   <div className="mt-5">
                     <ImagePlaceholder
                       label={activeProperty.imageLabel}
-                      alt={activeProperty.imageAlt}
+                      alt={activeCopy.imageAlt}
                       src={activeProperty.imagePath}
                       aspect="aspect-[16/10]"
                       sizes="(max-width: 1024px) 100vw, 28vw"
                     />
                     <p className="mt-2 text-[10px] uppercase tracking-[0.14em] text-[var(--color-deep-olive)]/65">
-                      Architectural visualization
+                      {dictionary.disclaimers.visualization}
                     </p>
                   </div>
                 ) : null}
 
                 {activeProperty.isHistoricFinca ? (
                   <span className="mt-4 inline-flex border border-[var(--color-terracotta)]/40 px-3 py-1.5 text-[10px] uppercase tracking-[0.18em] text-[var(--color-terracotta)]">
-                    Historic Finca
+                    {dictionary.heritage.eyebrow}
                   </span>
                 ) : null}
 
                 <p className="mt-6 font-[family-name:var(--font-serif)] text-xl leading-snug text-[var(--color-charcoal)]">
-                  {activeProperty.headline}
+                  {activeCopy.headline}
                 </p>
                 <p className="mt-4 text-sm leading-relaxed text-[var(--color-terracotta)]">
-                  {activeProperty.projectLine}
+                  {activeCopy.projectLine}
                 </p>
 
                 <ul className="mt-6 space-y-2.5 border-t border-[var(--color-warm-stone)]/60 pt-6">
-                  {activeProperty.descriptors.map((item) => (
+                  {activeCopy.descriptors.map((item) => (
                     <li
                       key={item}
                       className="text-sm leading-relaxed text-[var(--color-deep-olive)]"
@@ -250,10 +250,10 @@ export function EstateMasterplan() {
                 </ul>
 
                 <Link
-                  href={activeProperty.href}
+                  href={localePath(locale, activeProperty.href)}
                   className="mt-8 inline-flex border border-[var(--color-charcoal)] px-6 py-3 text-[11px] uppercase tracking-[0.22em] text-[var(--color-charcoal)] transition-colors hover:bg-[var(--color-charcoal)] hover:text-[var(--color-white)]"
                 >
-                  {activeProperty.cta}
+                  {activeCopy.cta}
                 </Link>
               </motion.div>
             </AnimatePresence>
@@ -271,7 +271,7 @@ export function EstateMasterplan() {
                     }`}
                   >
                     <span className="tracking-[0.08em]">
-                      Property {property.roman}
+                      {dictionary.properties[property.id].label}
                     </span>
                     <span className="text-xs opacity-80">
                       {property.acres.toFixed(2)} acres

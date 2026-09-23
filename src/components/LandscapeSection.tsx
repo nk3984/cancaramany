@@ -4,51 +4,47 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
+import { useDictionary } from "@/i18n/locale-context";
 
 const fragments = ["Stone", "Land", "Light", "Space", "Silence"];
 
 const images = [
   {
-    label: "Open land",
+    captionKey: "fields" as const,
     alt: "Open agricultural fields within Can Caramany",
     src: "/images/can-caramany/landscape/landscape-open-fields.jpg",
-    caption: "Open land",
     className: "lg:col-span-12",
     aspect: "aspect-[16/10] lg:aspect-[21/9]",
     objectPosition: "center 78%",
   },
   {
-    label: "Mediterranean planting",
+    captionKey: "planting" as const,
     alt: "Mature trees and dry-stone walls on the Can Caramany landholding",
     src: "/images/can-caramany/landscape/landscape-olive-grove.jpg",
-    caption: "Mediterranean planting",
     className: "lg:col-span-7",
     aspect: "aspect-[5/4]",
     objectPosition: "center 42%",
   },
   {
-    label: "IMAGE REQUIRED — ESTATE PATH",
+    captionKey: "path" as const,
     alt: "Shaded estate path between dry-stone walls and holm oaks",
     src: "/images/can-caramany/landscape/landscape-estate-path.jpg",
-    caption: "Estate paths",
     className: "lg:col-span-5",
     aspect: "aspect-[4/5]",
     objectPosition: "center",
   },
   {
-    label: "IMAGE REQUIRED — HOLM OAKS",
+    captionKey: "oaks" as const,
     alt: "Mature holm oaks on the Can Caramany estate",
     src: "/images/can-caramany/landscape/landscape-holm-oaks.jpg",
-    caption: "Holm oaks",
     className: "lg:col-span-12",
     aspect: "aspect-[16/10] lg:aspect-[2/1]",
     objectPosition: "center 45%",
   },
   {
-    label: "IMAGE REQUIRED — STONE WALL",
+    captionKey: "wall" as const,
     alt: "Traditional dry-stone wall across Can Caramany countryside",
     src: "/images/can-caramany/landscape/landscape-stone-wall.jpg",
-    caption: "Dry-stone walls",
     className: "lg:col-span-5 lg:col-start-8",
     aspect: "aspect-[4/5]",
     objectPosition: "center 30%",
@@ -56,6 +52,8 @@ const images = [
 ] as const;
 
 export function LandscapeSection() {
+  const dictionary = useDictionary();
+  const copy = dictionary.landscape;
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -73,22 +71,15 @@ export function LandscapeSection() {
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16 lg:items-end">
           <FadeIn className="lg:col-span-7">
             <p className="mb-6 text-[11px] uppercase tracking-[0.28em] text-[var(--color-terracotta)]">
-              Landscape
+              {copy.eyebrow}
             </p>
             <h2 className="font-[family-name:var(--font-serif)] text-[clamp(2.25rem,5vw,4rem)] leading-[1.1] text-[var(--color-charcoal)]">
-              The landscape is the luxury.
+              {copy.headline}
             </h2>
           </FadeIn>
           <FadeIn delay={0.1} className="lg:col-span-5">
             <p className="max-w-md text-base leading-[1.8] text-[var(--color-deep-olive)]">
-              This is what luxury looks like here: ancient holm oaks, almond and
-              olive trees, dry-stone walls that have held the land for
-              generations, and light that moves across the same ground from
-              morning until evening.
-            </p>
-            <p className="mt-4 max-w-md text-base leading-[1.8] text-[var(--color-deep-olive)]">
-              The estate does not imitate rural Mallorca. It is rural Mallorca
-              — private, unhurried, and unusually intact.
+              {copy.lead}
             </p>
           </FadeIn>
         </div>
@@ -112,25 +103,28 @@ export function LandscapeSection() {
         </motion.div>
 
         <div className="mt-16 grid grid-cols-1 gap-4 sm:gap-5 lg:grid-cols-12 lg:gap-6">
-          {images.map((image, index) => (
-            <FadeIn
-              key={image.label}
-              delay={index * 0.06}
-              className={image.className}
-            >
-              <ImagePlaceholder
-                label={image.label}
-                alt={image.alt}
-                src={image.src}
-                aspect={image.aspect}
-                objectPosition={image.objectPosition}
-                sizes="(max-width: 1024px) 100vw, 70vw"
-              />
-              <p className="mt-3 text-[11px] uppercase tracking-[0.18em] text-[var(--color-deep-olive)]/80">
-                {image.caption}
-              </p>
-            </FadeIn>
-          ))}
+          {images.map((image, index) => {
+            const caption = copy.captions[image.captionKey];
+            return (
+              <FadeIn
+                key={image.captionKey}
+                delay={index * 0.06}
+                className={image.className}
+              >
+                <ImagePlaceholder
+                  label={caption}
+                  alt={image.alt}
+                  src={image.src}
+                  aspect={image.aspect}
+                  objectPosition={image.objectPosition}
+                  sizes="(max-width: 1024px) 100vw, 70vw"
+                />
+                <p className="mt-3 text-[11px] uppercase tracking-[0.18em] text-[var(--color-deep-olive)]/80">
+                  {caption}
+                </p>
+              </FadeIn>
+            );
+          })}
         </div>
       </div>
     </section>

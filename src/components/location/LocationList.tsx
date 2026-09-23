@@ -5,6 +5,7 @@ import {
   getPointById,
   type LocationPoint,
 } from "@/data/locations";
+import { useDictionary, useLocale } from "@/i18n/locale-context";
 
 type LocationListProps = {
   selectedId: string | "estate" | null;
@@ -17,10 +18,13 @@ export function LocationList({
   onSelectEstate,
   onSelectLocation,
 }: LocationListProps) {
+  const dictionary = useDictionary();
+  const locale = useLocale();
+
   return (
     <div className="border-t border-[var(--color-warm-stone)]/70 pt-8">
       <p className="text-[10px] uppercase tracking-[0.2em] text-[var(--color-deep-olive)]">
-        Selected Destinations
+        {locale === "de" ? "Ausgewählte Ziele" : "Selected Destinations"}
       </p>
       <ul className="mt-5 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
         <li>
@@ -34,10 +38,10 @@ export function LocationList({
             }`}
           >
             <span className="text-[11px] uppercase tracking-[0.18em] text-[var(--color-charcoal)]">
-              Can Caramany
+              {dictionary.location.estateLabel}
             </span>
             <span className="mt-1 text-[10px] uppercase tracking-[0.14em] text-[var(--color-deep-olive)]/75">
-              Historic finca · Property III
+              {dictionary.location.estateSubtitle}
             </span>
           </button>
         </li>
@@ -72,7 +76,7 @@ export function LocationList({
                       : "text-[var(--color-deep-olive)]/75"
                   }`}
                 >
-                  {item.categoryLabel}
+                  {dictionary.location.filters[point.category]}
                 </span>
               </button>
             </li>

@@ -1,5 +1,12 @@
+"use client";
+
 import Link from "next/link";
 import { siteConfig } from "@/data/site";
+import {
+  localePath,
+  useDictionary,
+  useLocale,
+} from "@/i18n/locale-context";
 
 type LegalPageShellProps = {
   title: string;
@@ -12,6 +19,9 @@ export function LegalPageShell({
   children,
   updated,
 }: LegalPageShellProps) {
+  const dictionary = useDictionary();
+  const locale = useLocale();
+
   return (
     <main className="bg-[var(--color-background)] px-5 pb-24 pt-28 sm:px-8 sm:pb-32 sm:pt-32 lg:px-12">
       <div className="mx-auto max-w-3xl">
@@ -23,7 +33,7 @@ export function LegalPageShell({
         </h1>
         {updated ? (
           <p className="mt-4 text-sm text-[var(--color-deep-olive)]/70">
-            Last updated: {updated}
+            {dictionary.legal.updatedLabel}: {updated}
           </p>
         ) : null}
 
@@ -32,10 +42,10 @@ export function LegalPageShell({
         </div>
 
         <nav className="mt-16 flex flex-wrap gap-x-6 gap-y-3 border-t border-[var(--color-warm-stone)]/70 pt-8 text-[11px] uppercase tracking-[0.18em] text-[var(--color-deep-olive)]">
-          {siteConfig.legal.map((item) => (
+          {dictionary.legalLinks.map((item) => (
             <Link
               key={item.href}
-              href={item.href}
+              href={localePath(locale, item.href)}
               className="transition-colors hover:text-[var(--color-charcoal)]"
             >
               {item.label}

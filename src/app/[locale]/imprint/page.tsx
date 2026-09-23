@@ -1,23 +1,42 @@
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { LegalPageShell } from "@/components/LegalPageShell";
 import { formatCompanyAddress, siteConfig } from "@/data/site";
+import { locales, type Locale } from "@/i18n/config";
+import { getDictionary } from "@/i18n/get-dictionary";
 
-export const metadata: Metadata = {
-  title: `Imprint | ${siteConfig.name}`,
-  description: `Legal imprint for ${siteConfig.company.legalName}, operator of the ${siteConfig.name} website.`,
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale: raw } = await params;
+  if (!locales.includes(raw as Locale)) return {};
+  const locale = raw as Locale;
+  const dictionary = getDictionary(locale);
+  return {
+    title: `${dictionary.legal.imprint.title} | ${siteConfig.name}`,
+    description: dictionary.legal.imprint.metaDescription,
+  };
+}
 
-export default function ImprintPage() {
+export default async function ImprintPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale: raw } = await params;
+  if (!locales.includes(raw as Locale)) notFound();
+  const locale = raw as Locale;
+  const dictionary = getDictionary(locale);
+  const copy = dictionary.legal.imprint;
   const { company } = siteConfig;
 
   return (
-    <LegalPageShell title="Imprint" updated="September 2026">
-      <p>
-        Information pursuant to applicable Spanish and EU information
-        requirements for the website of {siteConfig.name}.
-      </p>
+    <LegalPageShell title={copy.title} updated={dictionary.legal.updated}>
+      <p>{copy.intro}</p>
 
-      <h2>Website operator</h2>
+      <h2>{copy.operator}</h2>
       <p>
         <strong className="font-medium text-[var(--color-charcoal)]">
           {company.legalName}
@@ -28,27 +47,26 @@ export default function ImprintPage() {
         NIF/CIF: {company.nif}
       </p>
 
-      <h2>Registered seat</h2>
+      <h2>{copy.seat}</h2>
       <p>{formatCompanyAddress()}</p>
 
-      <h2>Sole shareholder</h2>
+      <h2>{copy.shareholder}</h2>
       <p>{company.soleShareholder}</p>
 
-      <h2>Administrator</h2>
+      <h2>{copy.administrator}</h2>
       <p>
         {company.administrator}
         {!company.administratorVerified ? (
           <>
             <br />
             <span className="text-sm text-[var(--color-deep-olive)]/75">
-              Status to be confirmed against the current Registro Mercantil
-              extract before public launch.
+              {copy.adminUnverified}
             </span>
           </>
         ) : null}
       </p>
 
-      <h2>Contact</h2>
+      <h2>{copy.contact}</h2>
       {company.email || company.phone ? (
         <p>
           {company.email ? (
@@ -77,12 +95,11 @@ export default function ImprintPage() {
         </p>
       ) : (
         <p className="text-sm text-[var(--color-deep-olive)]/75">
-          Public contact email and telephone to be added before go-live.
-          Enquiries may currently be submitted via the website form.
+          {copy.contactPending}
         </p>
       )}
 
-      <h2>Brand / project</h2>
+      <h2>{copy.project}</h2>
       <p>
         {siteConfig.name} ({siteConfig.descriptor}) is presented by{" "}
         {company.legalName} ({company.projectName}).

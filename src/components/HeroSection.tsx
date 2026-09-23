@@ -4,8 +4,20 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
 import { ESTATE_TOTAL } from "@/data/properties";
+import {
+  localePath,
+  useDictionary,
+  useLocale,
+} from "@/i18n/locale-context";
 
 export function HeroSection() {
+  const dictionary = useDictionary();
+  const locale = useLocale();
+
+  const heroMeta = dictionary.hero.meta.includes("{area}")
+    ? dictionary.hero.meta.replace("{area}", ESTATE_TOTAL.display)
+    : dictionary.hero.meta;
+
   return (
     <section className="relative flex min-h-[100svh] items-end overflow-hidden bg-[var(--color-charcoal)]">
       <div className="absolute inset-0">
@@ -30,20 +42,20 @@ export function HeroSection() {
           className="max-w-2xl"
         >
           <p className="mb-5 text-[11px] uppercase tracking-[0.32em] text-[var(--color-white)]/70">
-            Private Estate · Mallorca
+            {dictionary.hero.eyebrow}
           </p>
           <h1 className="font-[family-name:var(--font-serif)] text-[clamp(2.75rem,8vw,5.5rem)] leading-[0.95] tracking-[0.06em] text-[var(--color-white)]">
             CAN CARAMANY
           </h1>
           <p className="mt-5 font-[family-name:var(--font-serif)] text-[clamp(1.25rem,2.8vw,2rem)] leading-snug text-[var(--color-white)]/90">
-            Space. Privacy. Heritage. Mallorca.
+            {dictionary.hero.lead}
           </p>
           <p className="mt-6 max-w-lg text-sm leading-relaxed text-[var(--color-white)]/70 sm:text-[15px]">
-            Four private landholdings · {ESTATE_TOTAL.display} · Historic finca
+            {heroMeta}
           </p>
           <div className="mt-10">
-            <Button href="#estate" variant="light">
-              Explore the Estate
+            <Button href={localePath(locale, "/#estate")} variant="light">
+              {dictionary.hero.cta}
             </Button>
           </div>
         </motion.div>
@@ -54,7 +66,9 @@ export function HeroSection() {
           animate={{ opacity: 1 }}
           transition={{ delay: 1.1, duration: 0.8 }}
         >
-          <span className="text-[10px] uppercase tracking-[0.28em]">Scroll</span>
+          <span className="text-[10px] uppercase tracking-[0.28em]">
+            {dictionary.hero.scroll}
+          </span>
           <span className="relative h-10 w-px overflow-hidden bg-[var(--color-white)]/25">
             <motion.span
               className="absolute inset-x-0 top-0 h-1/2 bg-[var(--color-white)]/80"

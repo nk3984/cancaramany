@@ -1,5 +1,8 @@
+"use client";
+
 import type { LocationFilterId } from "@/data/locations";
 import { locationCategories } from "@/data/locations";
+import { useDictionary } from "@/i18n/locale-context";
 
 type LocationFiltersProps = {
   activeFilter: LocationFilterId;
@@ -10,6 +13,9 @@ export function LocationFilters({
   activeFilter,
   onFilterChange,
 }: LocationFiltersProps) {
+  const dictionary = useDictionary();
+  const labels = dictionary.location.filters;
+
   return (
     <div className="flex flex-wrap gap-2">
       {locationCategories.map((category) => (
@@ -23,7 +29,7 @@ export function LocationFilters({
               : "border border-[var(--color-warm-stone)] text-[var(--color-deep-olive)] hover:border-[var(--color-charcoal)]/40"
           }`}
         >
-          {category.label}
+          {labels[category.id]}
         </button>
       ))}
     </div>

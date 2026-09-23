@@ -8,23 +8,32 @@ import { HistoricStudyGallery } from "@/components/HistoricStudyGallery";
 import { EnquiryForm } from "@/components/EnquiryForm";
 import { Modal } from "@/components/ui/Modal";
 import { Button } from "@/components/ui/Button";
-import { siteConfig } from "@/data/site";
 import { properties } from "@/data/properties";
-import { propertyIIIContent, propertyIIIImages } from "@/data/property-iii";
+import { propertyIIIImages } from "@/data/property-iii";
 import { historicPlansByProperty } from "@/data/historic-plans";
+import {
+  localePath,
+  useDictionary,
+  useLocale,
+} from "@/i18n/locale-context";
 
 export function PropertyIIIPage() {
+  const dictionary = useDictionary();
+  const locale = useLocale();
+  const content = dictionary.propertyIii;
+  const page = dictionary.propertyPage;
+  const cards = dictionary.residencesCards["property-iii"];
+  const images = propertyIIIImages;
   const [open, setOpen] = useState(false);
   const others = properties.filter((item) => item.id !== "property-iii");
-  const content = propertyIIIContent;
-  const images = propertyIIIImages;
+  const propertyCopy = dictionary.properties["property-iii"];
 
   return (
     <main>
       <section className="relative bg-[var(--color-charcoal)] pt-24">
         <ImagePlaceholder
-          label={images.hero.label}
-          alt={images.hero.alt}
+          label={content.eyebrow}
+          alt={propertyCopy.imageAlt}
           aspect="aspect-[16/10] min-h-[70vh]"
           className="min-h-[70vh] w-full"
           src={images.hero.src}
@@ -43,7 +52,7 @@ export function PropertyIIIPage() {
             64,455 m² · 15.93 acres
           </p>
           <p className="mt-4 max-w-xl text-[10px] uppercase tracking-[0.16em] text-[var(--color-white)]/55">
-            {siteConfig.visualizationCaption}
+            {dictionary.disclaimers.visualization}
           </p>
         </div>
       </section>
@@ -52,7 +61,7 @@ export function PropertyIIIPage() {
         <div className="mx-auto grid max-w-[1440px] gap-12 lg:grid-cols-12">
           <FadeIn className="lg:col-span-7">
             <p className="text-[11px] uppercase tracking-[0.24em] text-[var(--color-terracotta)]">
-              Overview
+              {page.overview}
             </p>
             <h2 className="mt-5 max-w-2xl font-[family-name:var(--font-serif)] text-[clamp(1.75rem,3.5vw,2.75rem)] leading-[1.2] text-[var(--color-charcoal)]">
               {content.lead}
@@ -101,33 +110,30 @@ export function PropertyIIIPage() {
               </p>
               <div className="mt-10 grid grid-cols-3 gap-3">
                 {images.details.map((item) => (
-                  <div key={item.label}>
+                  <div key={item.src}>
                     <ImagePlaceholder
-                      label={item.label}
-                      alt={item.alt}
+                      label={page.existing}
+                      alt={propertyCopy.imageAlt}
                       src={item.src}
                       aspect="aspect-square"
                       sizes="(max-width: 1024px) 30vw, 180px"
                     />
-                    <p className="mt-2 text-[10px] uppercase tracking-[0.16em] text-[var(--color-deep-olive)]/80">
-                      {item.caption}
-                    </p>
                   </div>
                 ))}
               </div>
             </FadeIn>
             <FadeIn delay={0.08} className="lg:col-span-7">
               <ImagePlaceholder
-                label={images.existing.label}
-                alt={images.existing.alt}
+                label={page.existing}
+                alt={propertyCopy.imageAlt}
                 src={images.existing.src}
                 aspect="aspect-[4/5] sm:aspect-[5/4] lg:aspect-[4/5]"
                 sizes="(max-width: 1024px) 100vw, 55vw"
               />
               <div className="mt-5">
                 <ImagePlaceholder
-                  label={images.annex.label}
-                  alt={images.annex.alt}
+                  label={page.existing}
+                  alt={propertyCopy.imageAlt}
                   src={images.annex.src}
                   aspect="aspect-[16/9]"
                   sizes="(max-width: 1024px) 100vw, 55vw"
@@ -162,25 +168,25 @@ export function PropertyIIIPage() {
                 ))}
               </ul>
               <p className="mt-10 text-[11px] uppercase tracking-[0.16em] text-[var(--color-warm-stone)]/80">
-                {siteConfig.conceptualDisclaimer}
+                {dictionary.disclaimers.conceptual}
               </p>
             </FadeIn>
             <FadeIn delay={0.08} className="lg:col-span-7">
               <div className="space-y-4">
                 {images.vision
                   .filter((item) => item.layout === "wide")
-                  .map((item) => (
-                    <div key={item.label}>
+                  .map((item, index) => (
+                    <div key={item.src}>
                       <ImagePlaceholder
-                        label={item.label}
-                        alt={item.alt}
+                        label={cards.captions[index] ?? page.gallery}
+                        alt={cards.alts[index] ?? propertyCopy.imageAlt}
                         src={item.src}
                         aspect="aspect-[16/9] sm:aspect-[21/9]"
                         className="bg-[var(--color-deep-olive)]/40"
                         sizes="(max-width: 1024px) 100vw, 58vw"
                       />
                       <p className="mt-3 text-[11px] uppercase tracking-[0.16em] text-[var(--color-warm-stone)]">
-                        {item.caption}
+                        {cards.captions[index] ?? page.gallery}
                       </p>
                     </div>
                   ))}
@@ -264,9 +270,9 @@ export function PropertyIIIPage() {
           <FadeIn delay={0.08} className="grid gap-4 sm:grid-cols-2 lg:col-span-7">
             {images.land.map((item) => (
               <ImagePlaceholder
-                key={item.label}
-                label={item.label}
-                alt={item.alt}
+                key={item.src}
+                label={content.land.eyebrow}
+                alt={propertyCopy.imageAlt}
                 src={item.src}
                 aspect="aspect-[4/5]"
                 sizes="(max-width: 640px) 100vw, 28vw"
@@ -280,31 +286,34 @@ export function PropertyIIIPage() {
         <div className="mx-auto max-w-[1440px]">
           <FadeIn>
             <p className="text-[11px] uppercase tracking-[0.24em] text-[var(--color-deep-olive)]">
-              Position within the estate
+              {page.positionEyebrow}
             </p>
             <h2 className="mt-5 font-[family-name:var(--font-serif)] text-3xl text-[var(--color-charcoal)]">
-              The architectural heart of four private opportunities.
+              {page.positionHeadlineIii}
             </h2>
           </FadeIn>
           <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            {properties.map((item) => (
-              <Link
-                key={item.id}
-                href={item.href}
-                className={`border px-5 py-6 transition-colors ${
-                  item.id === "property-iii"
-                    ? "border-[var(--color-charcoal)] bg-[var(--color-charcoal)] text-[var(--color-white)]"
-                    : "border-[var(--color-warm-stone)] text-[var(--color-deep-olive)] hover:border-[var(--color-charcoal)]/40"
-                }`}
-              >
-                <p className="text-[11px] uppercase tracking-[0.18em]">
-                  Property {item.roman}
-                </p>
-                <p className="mt-3 font-[family-name:var(--font-serif)] text-xl">
-                  {item.areaDisplay}
-                </p>
-              </Link>
-            ))}
+            {properties.map((item) => {
+              const itemCopy = dictionary.properties[item.id];
+              return (
+                <Link
+                  key={item.id}
+                  href={localePath(locale, item.href)}
+                  className={`border px-5 py-6 transition-colors ${
+                    item.id === "property-iii"
+                      ? "border-[var(--color-charcoal)] bg-[var(--color-charcoal)] text-[var(--color-white)]"
+                      : "border-[var(--color-warm-stone)] text-[var(--color-deep-olive)] hover:border-[var(--color-charcoal)]/40"
+                  }`}
+                >
+                  <p className="text-[11px] uppercase tracking-[0.18em]">
+                    {itemCopy.label}
+                  </p>
+                  <p className="mt-3 font-[family-name:var(--font-serif)] text-xl">
+                    {item.areaDisplay}
+                  </p>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -313,15 +322,19 @@ export function PropertyIIIPage() {
         <div className="mx-auto max-w-[1440px]">
           <FadeIn>
             <p className="text-[11px] uppercase tracking-[0.24em] text-[var(--color-deep-olive)]">
-              Gallery
+              {page.gallery}
             </p>
           </FadeIn>
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {images.gallery.map((item, index) => (
               <ImagePlaceholder
                 key={`${item.src}-${index}`}
-                label={`IMAGE REQUIRED — PROPERTY III GALLERY 0${index + 1}`}
-                alt={item.alt}
+                label={cards.captions[index % cards.captions.length]}
+                alt={
+                  index < cards.alts.length
+                    ? cards.alts[index]
+                    : propertyCopy.imageAlt
+                }
                 src={item.src}
                 aspect="aspect-[4/3]"
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -353,23 +366,23 @@ export function PropertyIIIPage() {
       <section className="bg-[var(--color-background)] px-5 py-16 sm:px-8 lg:px-12">
         <div className="mx-auto max-w-[1440px]">
           <p className="text-[11px] uppercase tracking-[0.2em] text-[var(--color-deep-olive)]">
-            Other properties
+            {page.otherProperties}
           </p>
           <div className="mt-6 flex flex-wrap gap-4">
             {others.map((item) => (
               <Link
                 key={item.id}
-                href={item.href}
+                href={localePath(locale, item.href)}
                 className="text-sm text-[var(--color-charcoal)] underline-offset-4 hover:underline"
               >
-                Property {item.roman}
+                {dictionary.properties[item.id].label}
               </Link>
             ))}
             <Link
-              href="/#properties"
+              href={localePath(locale, "/#properties")}
               className="text-sm text-[var(--color-charcoal)] underline-offset-4 hover:underline"
             >
-              Back to estate
+              {page.backToEstate}
             </Link>
           </div>
         </div>
@@ -378,7 +391,7 @@ export function PropertyIIIPage() {
       <Modal
         open={open}
         onClose={() => setOpen(false)}
-        title="Enquire — Property III"
+        title={`${page.enquireAbout} III`}
       >
         <EnquiryForm onSuccess={() => setOpen(false)} />
       </Modal>
