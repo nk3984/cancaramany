@@ -77,7 +77,7 @@ export function LocationCard({
             <button
               type="button"
               onClick={onClose}
-              className="shrink-0 text-[10px] uppercase tracking-[0.18em] text-[var(--color-deep-olive)]/70 hover:text-[var(--color-charcoal)] lg:hidden"
+              className="shrink-0 text-[10px] uppercase tracking-[0.18em] text-[var(--color-deep-olive)]/90 hover:text-[var(--color-charcoal)] lg:hidden"
               aria-label="Close location details"
             >
               Close

@@ -32,7 +32,7 @@ export function LegalPageShell({
           {title}
         </h1>
         {updated ? (
-          <p className="mt-4 text-sm text-[var(--color-deep-olive)]/70">
+          <p className="mt-4 text-sm text-[var(--color-deep-olive)]/90">
             {dictionary.legal.updatedLabel}: {updated}
           </p>
         ) : null}

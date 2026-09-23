@@ -42,8 +42,8 @@ export function PropertyIIIPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-charcoal)]/85 via-transparent to-[var(--color-charcoal)]/30" />
         <div className="absolute inset-x-0 bottom-0 mx-auto max-w-[1440px] px-5 pb-12 sm:px-8 lg:px-12">
-          <p className="text-[11px] uppercase tracking-[0.24em] text-[var(--color-white)]/70">
-            {content.eyebrow}
+          <p className="text-[11px] uppercase tracking-[0.24em] text-[var(--color-white)]/95">
+            {content.eyebrow} · {cards.title}
           </p>
           <h1 className="mt-4 max-w-4xl font-[family-name:var(--font-serif)] text-[clamp(2.25rem,5.5vw,4.25rem)] leading-[1.05] text-[var(--color-white)]">
             {content.headline}
@@ -77,7 +77,7 @@ export function PropertyIIIPage() {
                   key={item.label}
                   className="flex items-baseline justify-between gap-6 border-b border-[var(--color-warm-stone)]/70 pb-4"
                 >
-                  <span className="text-[11px] uppercase tracking-[0.18em] text-[var(--color-deep-olive)]/70">
+                  <span className="text-[11px] uppercase tracking-[0.18em] text-[var(--color-deep-olive)]/90">
                     {item.label}
                   </span>
                   <span className="text-right text-sm text-[var(--color-charcoal)]">
@@ -87,7 +87,7 @@ export function PropertyIIIPage() {
               ))}
             </ul>
             {content.factsNote ? (
-              <p className="mt-4 text-xs leading-relaxed text-[var(--color-deep-olive)]/70">
+              <p className="mt-4 text-xs leading-relaxed text-[var(--color-deep-olive)]/90">
                 {content.factsNote}
               </p>
             ) : null}
@@ -154,7 +154,7 @@ export function PropertyIIIPage() {
               <h2 className="mt-5 font-[family-name:var(--font-serif)] text-[clamp(1.85rem,3.8vw,3rem)] leading-[1.15]">
                 {content.vision.title}
               </h2>
-              <p className="mt-8 text-base leading-[1.85] text-[var(--color-white)]/70">
+              <p className="mt-8 text-base leading-[1.85] text-[var(--color-white)]/95">
                 {content.vision.copy}
               </p>
               <ul className="mt-8 space-y-4">
@@ -353,7 +353,7 @@ export function PropertyIIIPage() {
             <h2 className="mt-5 font-[family-name:var(--font-serif)] text-3xl sm:text-4xl">
               {content.cta.title}
             </h2>
-            <p className="mt-5 text-base leading-[1.8] text-[var(--color-white)]/70">
+            <p className="mt-5 text-base leading-[1.8] text-[var(--color-white)]/95">
               {content.cta.copy}
             </p>
           </div>

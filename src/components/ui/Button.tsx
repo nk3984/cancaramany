@@ -17,7 +17,7 @@ const variants = {
   ghost:
     "text-[var(--color-charcoal)] underline-offset-4 hover:underline",
   light:
-    "border border-[var(--color-white)]/35 text-[var(--color-white)] hover:bg-[var(--color-white)] hover:text-[var(--color-charcoal)]",
+    "border border-[var(--color-white)]/80 bg-[var(--color-charcoal)]/25 text-[var(--color-white)] hover:bg-[var(--color-white)] hover:text-[var(--color-charcoal)]",
 };
 
 export function Button({

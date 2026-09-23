@@ -22,13 +22,13 @@ const stageMedia = [
     id: "study" as const,
     imageLabel: "IMAGE REQUIRED — HISTORIC STUDY 01",
     alt: "Original architectural proposal for the Can Caramany finca, north façade",
-    src: "/images/can-caramany/property-03/vision/facade.png",
+    src: "/images/can-caramany/property-03/vision/facade.jpg",
   },
   {
     id: "vision" as const,
     imageLabel: "IMAGE REQUIRED — CONCEPTUAL VISION",
     alt: "Conceptual visualization of the historic finca terrace and pool",
-    src: "/images/can-caramany/property-03/vision/pool.png",
+    src: "/images/can-caramany/property-03/vision/pool.jpg",
   },
 ] as const;
 

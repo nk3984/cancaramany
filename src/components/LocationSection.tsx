@@ -10,7 +10,7 @@ function MapLoading() {
   const dictionary = useDictionary();
   return (
     <div className="mt-8 flex h-[520px] items-center justify-center border border-[var(--color-warm-stone)]/70 bg-[var(--color-background)] sm:h-[560px] lg:h-[700px]">
-      <p className="text-[11px] uppercase tracking-[0.2em] text-[var(--color-deep-olive)]/70">
+      <p className="text-[11px] uppercase tracking-[0.2em] text-[var(--color-deep-olive)]/90">
         {dictionary.location.loadingMap}
       </p>
     </div>

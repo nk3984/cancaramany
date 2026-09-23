@@ -27,7 +27,7 @@ export function MapLoadError({ message }: MapLoadErrorProps) {
             : "The Mapbox access token is present, but Mapbox rejected the request for map tiles. This usually means the token is invalid, restricted, or missing the required permissions."}
         </p>
         {message ? (
-          <p className="mt-3 text-xs text-[var(--color-deep-olive)]/70">{message}</p>
+          <p className="mt-3 text-xs text-[var(--color-deep-olive)]/90">{message}</p>
         ) : null}
       </div>
     </div>

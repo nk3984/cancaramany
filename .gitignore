@@ -49,3 +49,7 @@ next-env.d.ts
 
 .vercel
 .env*
+
+# Unpublished concept dossier (not for public release yet)
+/public/documents/
+

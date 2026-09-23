@@ -180,7 +180,7 @@ export function EstateMasterplan() {
               </svg>
 
               <div className="flex flex-col gap-2 border-t border-[var(--color-warm-stone)]/50 px-5 py-3 sm:flex-row sm:items-center sm:justify-between">
-                <p className="text-[10px] uppercase tracking-[0.18em] text-[var(--color-deep-olive)]/70">
+                <p className="text-[10px] uppercase tracking-[0.18em] text-[var(--color-deep-olive)]/90">
                   Historic estate plan · Select a property to explore
                 </p>
                 <p className="text-[10px] uppercase tracking-[0.14em] text-[var(--color-deep-olive)]/55">
@@ -203,7 +203,8 @@ export function EstateMasterplan() {
                 <p className="text-[11px] uppercase tracking-[0.24em] text-[var(--color-deep-olive)]">
                   {activeProperty.isHistoricFinca
                     ? (activeCopy.specialLabel ?? activeCopy.label)
-                    : activeCopy.label}
+                    : activeCopy.label}{" "}
+                  · {dictionary.residencesCards[activeProperty.id].title}
                 </p>
 
                 <p className="mt-5 font-[family-name:var(--font-serif)] text-3xl text-[var(--color-charcoal)]">

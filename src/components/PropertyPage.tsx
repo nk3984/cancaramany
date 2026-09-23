@@ -63,10 +63,11 @@ export function PropertyPage({ property }: { property: Property }) {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-charcoal)]/80 via-transparent to-[var(--color-charcoal)]/30" />
         <div className="absolute inset-x-0 bottom-0 mx-auto max-w-[1440px] px-5 pb-12 sm:px-8 lg:px-12">
-          <p className="text-[11px] uppercase tracking-[0.24em] text-[var(--color-white)]/70">
+          <p className="text-[11px] uppercase tracking-[0.24em] text-[var(--color-white)]/95">
             {property.isHistoricFinca
               ? (copy.specialLabel ?? copy.label)
-              : copy.label}
+              : copy.label}{" "}
+            · {cards.title}
           </p>
           <h1 className="mt-4 font-[family-name:var(--font-serif)] text-[clamp(2.5rem,6vw,4.5rem)] leading-none text-[var(--color-white)]">
             {property.areaDisplay}
@@ -93,7 +94,7 @@ export function PropertyPage({ property }: { property: Property }) {
               {copy.overview}
             </p>
             {copy.areaNote ? (
-              <p className="mt-4 text-xs text-[var(--color-deep-olive)]/70">
+              <p className="mt-4 text-xs text-[var(--color-deep-olive)]/90">
                 {copy.areaNote}
               </p>
             ) : null}
@@ -195,7 +196,12 @@ export function PropertyPage({ property }: { property: Property }) {
               {copy.architecture}
             </p>
             <p className="mt-6 text-sm text-[var(--color-deep-olive)]/75">
-              {page.historicApprovalsNote}
+              <Link
+                href={localePath(locale, "/#project")}
+                className="underline-offset-2 hover:underline"
+              >
+                {page.historicApprovalsNote}
+              </Link>
             </p>
           </FadeIn>
           <div className="mt-14">
@@ -234,13 +240,13 @@ export function PropertyPage({ property }: { property: Property }) {
                   label: page.originalProposal,
                   alt: cards.alts[0],
                   caption: page.originalProposal,
-                  src: "/images/can-caramany/property-03/vision/facade.png",
+                  src: "/images/can-caramany/property-03/vision/facade.jpg",
                 },
                 {
                   label: dictionary.disclaimers.conceptual,
                   alt: cards.alts[1],
                   caption: dictionary.disclaimers.conceptual,
-                  src: "/images/can-caramany/property-03/vision/pool.png",
+                  src: "/images/can-caramany/property-03/vision/pool.jpg",
                 },
               ].map((item) => (
                 <FadeIn key={item.src}>

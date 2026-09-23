@@ -25,8 +25,8 @@ export function LanguageSwitcher({
   }
 
   const muted = light
-    ? "text-[var(--color-white)]/55 hover:text-[var(--color-white)]"
-    : "text-[var(--color-deep-olive)]/55 hover:text-[var(--color-charcoal)]";
+    ? "text-[var(--color-white)]/85 hover:text-[var(--color-white)]"
+    : "text-[var(--color-deep-olive)]/80 hover:text-[var(--color-charcoal)]";
   const active = light
     ? "text-[var(--color-white)]"
     : "text-[var(--color-charcoal)]";
@@ -39,7 +39,7 @@ export function LanguageSwitcher({
       {locales.map((code, index) => (
         <span key={code} className="inline-flex items-center gap-2">
           {index > 0 ? (
-            <span className={light ? "text-[var(--color-white)]/30" : "text-[var(--color-warm-stone)]"}>
+            <span className={light ? "text-[var(--color-white)]/55" : "text-[var(--color-warm-stone)]"}>
               /
             </span>
           ) : null}

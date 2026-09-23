@@ -68,12 +68,12 @@ export const properties: Property[] = [
     landscape:
       "Gently rolling terrain, dry-stone walls and agricultural openness shape a landscape of light, silence and spatial generosity.",
     architecture: arch.architectureIIiIv,
-    infrastructure: `Property I is connected through the estate’s established access network. ${infra.electricity} ${infra.water}`,
+    infrastructure: `Property I is reached through the estate’s established access network. ${infra.electricity} ${infra.water}`,
     cta: "Explore Property I",
     href: "/properties/property-i",
     imageLabel: "Architectural visualization",
     imageAlt: "Architectural visualization of the original villa project for Property I at Can Caramany",
-    imagePath: "/images/can-caramany/property-01/vision/pool.png",
+    imagePath: "/images/can-caramany/property-01/vision/pool.jpg",
     areaNote: "Area figures provisional pending current Registro / Catastro confirmation.",
   },
   {
@@ -103,7 +103,7 @@ export const properties: Property[] = [
     href: "/properties/property-ii",
     imageLabel: "Architectural visualization",
     imageAlt: "Architectural visualization of the original villa project for Property II at Can Caramany",
-    imagePath: "/images/can-caramany/property-02/vision/pool.png",
+    imagePath: "/images/can-caramany/property-02/vision/pool.jpg",
     areaNote: "Area figures provisional pending current Registro / Catastro confirmation.",
   },
   {
@@ -133,7 +133,7 @@ export const properties: Property[] = [
     href: "/properties/property-iii",
     imageLabel: "Architectural visualization",
     imageAlt: "Architectural visualization of the original rehabilitation proposal for the historic finca at Property III",
-    imagePath: "/images/can-caramany/property-03/vision/pool.png",
+    imagePath: "/images/can-caramany/property-03/vision/pool.jpg",
     isHistoricFinca: true,
     specialLabel: "Property III — The Historic Estate",
     areaNote: p.III.areaNote,
@@ -165,7 +165,7 @@ export const properties: Property[] = [
     href: "/properties/property-iv",
     imageLabel: "Architectural visualization",
     imageAlt: "Architectural visualization of the original villa project for Property IV at Can Caramany",
-    imagePath: "/images/can-caramany/property-04/vision/pool.png",
+    imagePath: "/images/can-caramany/property-04/vision/pool.jpg",
     areaNote: "Area figures provisional pending current Registro / Catastro confirmation.",
   },
 ];

@@ -2,8 +2,16 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { defaultLocale, isLocale, locales } from "@/i18n/config";
 
+const gatedDocumentPaths = new Set([
+  "/documents/Can-Caramany-Konzept-Dossier.pdf",
+]);
+
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
+
+  if (gatedDocumentPaths.has(pathname)) {
+    return new NextResponse("Not Found", { status: 404 });
+  }
 
   if (
     pathname.startsWith("/api") ||
@@ -27,7 +35,10 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/((?!_next/static|_next/image|favicon.ico|images|api).*)"],
+  matcher: [
+    "/((?!_next/static|_next/image|favicon.ico|images|api).*)",
+    "/documents/:path*",
+  ],
 };
 
 // Ensure locales stay referenced for tooling

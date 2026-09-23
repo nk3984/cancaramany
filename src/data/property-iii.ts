@@ -83,7 +83,7 @@ export const propertyIIIContent = {
 
 export const propertyIIIImages = {
   hero: {
-    src: "/images/can-caramany/property-03/vision/pool.png",
+    src: "/images/can-caramany/property-03/vision/pool.jpg",
     alt: "Architectural visualization of the Property III finca terrace and pool",
     label: "Architectural visualization",
   },
@@ -119,21 +119,21 @@ export const propertyIIIImages = {
   ],
   vision: [
     {
-      src: "/images/can-caramany/property-03/vision/facade.png",
+      src: "/images/can-caramany/property-03/vision/facade.jpg",
       alt: "Property III vision — symmetrical finca façade with arched door and oculus",
       label: "Façade vision",
       caption: "Façade",
       layout: "wide",
     },
     {
-      src: "/images/can-caramany/property-03/vision/pool.png",
+      src: "/images/can-caramany/property-03/vision/pool.jpg",
       alt: "Property III vision — finca terrace and pool at golden hour",
       label: "Pool vision",
       caption: "Terrace & pool",
       layout: "wide",
     },
     {
-      src: "/images/can-caramany/property-03/vision/evening.png",
+      src: "/images/can-caramany/property-03/vision/terrace.jpg",
       alt: "Property III vision — evening light on the symmetrical finca entrance",
       label: "Evening vision",
       caption: "Evening",
@@ -154,15 +154,15 @@ export const propertyIIIImages = {
   ],
   gallery: [
     {
-      src: "/images/can-caramany/property-03/vision/pool.png",
+      src: "/images/can-caramany/property-03/vision/pool.jpg",
       alt: "Architectural vision — terrace and pool for Property III",
     },
     {
-      src: "/images/can-caramany/property-03/vision/facade.png",
+      src: "/images/can-caramany/property-03/vision/facade.jpg",
       alt: "Architectural vision — façade for Property III",
     },
     {
-      src: "/images/can-caramany/property-03/vision/evening.png",
+      src: "/images/can-caramany/property-03/vision/terrace.jpg",
       alt: "Architectural vision — evening terrace for Property III",
     },
     {

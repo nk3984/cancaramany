@@ -19,6 +19,7 @@ function PropertyContent({ property }: { property: Property }) {
   const dictionary = useDictionary();
   const locale = useLocale();
   const copy = dictionary.properties[property.id];
+  const concept = dictionary.residencesCards[property.id].title;
 
   return (
     <>
@@ -31,7 +32,8 @@ function PropertyContent({ property }: { property: Property }) {
       >
         {property.isHistoricFinca
           ? (copy.specialLabel ?? copy.label)
-          : copy.label}
+          : copy.label}{" "}
+        · {concept}
       </p>
 
       <h3 className="mt-5 font-[family-name:var(--font-serif)] text-[clamp(1.75rem,3.5vw,2.75rem)] leading-[1.15] text-[var(--color-charcoal)]">
@@ -98,7 +100,7 @@ export function PropertyFeature({ property, reverse }: PropertyFeatureProps) {
               src={property.imagePath}
               sizes="(max-width: 1024px) 100vw, 58vw"
             />
-            <p className="mt-3 text-[10px] uppercase tracking-[0.16em] text-[var(--color-deep-olive)]/70">
+            <p className="mt-3 text-[10px] uppercase tracking-[0.16em] text-[var(--color-deep-olive)]/90">
               {visualizationCaption}
             </p>
           </FadeIn>
@@ -120,7 +122,7 @@ export function PropertyFeature({ property, reverse }: PropertyFeatureProps) {
           src={property.imagePath}
           sizes="(max-width: 1024px) 100vw, 58vw"
         />
-        <p className="mt-3 text-[10px] uppercase tracking-[0.16em] text-[var(--color-deep-olive)]/70">
+        <p className="mt-3 text-[10px] uppercase tracking-[0.16em] text-[var(--color-deep-olive)]/90">
           {visualizationCaption}
         </p>
       </FadeIn>

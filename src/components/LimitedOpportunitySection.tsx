@@ -54,7 +54,7 @@ export function LimitedOpportunitySection() {
           <p className="mt-8 font-[family-name:var(--font-serif)] text-[clamp(1.35rem,3vw,2rem)] leading-snug text-[var(--color-white)]">
             a true private estate with room to breathe.
           </p>
-          <p className="mt-8 max-w-2xl text-base leading-[1.85] text-[var(--color-white)]/70">
+          <p className="mt-8 max-w-2xl text-base leading-[1.85] text-[var(--color-white)]/95">
             The opportunity is not simply to acquire land, but to shape a
             residence or family estate with a strong sense of place, permanence
             and identity.

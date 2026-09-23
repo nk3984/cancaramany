@@ -29,7 +29,7 @@ export function StatementSection() {
             <p className="mx-auto mt-6 max-w-2xl text-base leading-[1.8] text-[var(--color-deep-olive)] sm:text-lg">
               {dictionary.statement.p2}
             </p>
-            <p className="mx-auto mt-4 max-w-2xl text-xs leading-relaxed text-[var(--color-deep-olive)]/70">
+            <p className="mx-auto mt-4 max-w-2xl text-xs leading-relaxed text-[var(--color-deep-olive)]/90">
               {dictionary.disclaimers.areaCaveat}
             </p>
           </FadeIn>

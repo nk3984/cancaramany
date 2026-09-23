@@ -1,5 +1,6 @@
 import { HeroSection } from "@/components/HeroSection";
 import { StatementSection } from "@/components/StatementSection";
+import { ProjectSection } from "@/components/ProjectSection";
 import { EstateMasterplan } from "@/components/EstateMasterplan";
 import { PropertiesSection } from "@/components/PropertiesSection";
 import { HistoricFincaSection } from "@/components/HistoricFincaSection";
@@ -15,6 +16,7 @@ export default function HomePage() {
     <main>
       <HeroSection />
       <StatementSection />
+      <ProjectSection />
       <EstateMasterplan />
       <PropertiesSection />
       <HistoricFincaSection />

@@ -17,6 +17,7 @@ export const de: Dictionary = {
   nav: {
     items: [
       { label: "Das Anwesen", href: "/#estate" },
+      { label: "Das Projekt", href: "/#project" },
       { label: "Überblick", href: "/#overview" },
       { label: "Grundstücke", href: "/#properties" },
       { label: "Heritage", href: "/#heritage" },
@@ -46,7 +47,7 @@ export const de: Dictionary = {
     eyebrow: "Das Anwesen",
     headline: "Ein privates mallorquinisches Anwesen von seltener Größe.",
     p1: "Can Caramany umfasst vier eigenständige Grundstücke in der Landschaft von Manacor — mehr als 235.000 m² Steineichen, Mandeln, Trockensteinmauern und offener Himmel, mit einer historischen Finca im Zentrum. Land dieser Größenordnung, als ein privates Anwesen gehalten, wird auf Mallorca zunehmend selten.",
-    p2: "Jedes Grundstück ist eine eigene Welt: eigenes Land, eigener Charakter und ein originales Architekturprojekt, das einst dafür erarbeitet wurde. Das Anwesen wurde mit ungewöhnlicher Sorgfalt konzipiert — und dann über Jahre zurückgestellt. Was heute angeboten wird, ist das Land, die Finca und dieser dokumentierte Anfang.",
+    p2: "Jedes Grundstück ist eine eigene Welt: eigenes Land, eigener Charakter und ein originales Architekturprojekt, das einst dafür erarbeitet wurde. Das Anwesen wurde mit ungewöhnlicher Sorgfalt konzipiert. Was heute angeboten wird, ist das Land, die Finca und dieser dokumentierte Anfang.",
   },
   estateStats: {
     land: "Anwesenfläche",
@@ -57,7 +58,38 @@ export const de: Dictionary = {
   masterplan: {
     eyebrow: "Überblick über das Anwesen",
     headline: "Ein Anwesen. Vier eigenständige Grundstücke.",
-    lead: "Das Land wurde so geteilt, dass jedes Grundstück für sich stehen kann — mit eigener Privatsphäre, eigenem Haus und eigener Beziehung zur Landschaft. Für die Grundstücke I, II und IV wurden einst Baugenehmigungen für vollständige Villen erteilt. Grundstück III birgt die historische Finca und einen früheren Sanierungsvorschlag. Diese Genehmigungen wurden nach der Verschiebung des Vorhabens nicht erneuert; sie sind konzeptionelle Ausgangspunkte, keine aktuellen Baurechte. Wählen Sie ein Grundstück, um es zu erkunden.",
+    lead: "Das Land wurde so geteilt, dass jedes Grundstück für sich stehen kann — mit eigener Privatsphäre, eigenem Haus und eigener Beziehung zur Landschaft. Die Grundstücke I, II und IV wurden als vollständige Villen konzipiert; Grundstück III birgt die historische Finca und ihre Sanierungsstudie. Wählen Sie ein Grundstück, um es zu erkunden.",
+  },
+  project: {
+    eyebrow: "Das Projekt",
+    headline: "Ein Anwesen, das bereits vorbereitet wurde.",
+    lead: "Can Caramany wurde nicht nur gezeichnet — es wurde erschlossen. Zur damaligen Zeit entstand und wurde Grundstück V fertiggestellt. In diesem Zuge wurden Brunnen auf dem Anwesen gebohrt, die Wasser führen, Strom in ausreichender Kapazität bis zum Haupteingang des Anwesens gelegt und Zuwegungen ausgebaut. Die Rahmenbedingungen für die vier angebotenen Grundstücke sind damit auf höchstem Niveau vorbereitet.",
+    points: [
+      {
+        title: "Erschließung von Bestand",
+        copy: "Auf dem Anwesen wurden private Brunnen gebohrt — und sie führen Wasser. Die Stromversorgung ist bis zum Haupteingang des Anwesens gelegt und für vier eigenständige Villen ausgelegt. Interne Zufahrten und Wege sind angelegt. Can Caramany ist von den Rahmenbedingungen her top vorbereitet.",
+      },
+      {
+        title: "Grundstück V als Beweis",
+        copy: "Das ursprüngliche Grundstück V wurde damals gebaut und fertiggestellt. Genau in diesem Zug entstanden Brunnen, Stromversorgung bis zum Haupteingang des Anwesens und Zuwegungen — gelebte Infrastruktur für das gesamte Estate, nicht nur Planung auf dem Papier.",
+      },
+      {
+        title: "Vier dokumentierte Wohnkonzepte",
+        copy: "Für die Grundstücke I, II und IV wurden vollständige Villenprojekte erarbeitet und historisch genehmigt. Grundstück III birgt die historische Finca und eine durchdachte Sanierung. The Olive Court, The Stone Gallery, The Heritage Finca und The Courtyard Estate zeigen, wie jedes Grundstück seine eigene Residenz tragen kann.",
+      },
+      {
+        title: "Entwicklung bleibt möglich",
+        copy: "Nach mallorquinischem Planungsrecht bleibt eine Wohnbebauung dem Grunde nach möglich. Die heutigen Bauvorschriften sind den Regelungen der Zeit der originalen Projekte weitgehend ähnlich — ein starkes Fundament für die nächste Generation von Häusern auf Can Caramany.",
+      },
+      {
+        title: "Was Sie erwerben",
+        copy: "Sie erwerben vorbereitetes Land, funktionierende Erschließung, Heritage im Herzen des Anwesens und einen dokumentierten architektonischen Anfang — ein ernsthaftes Fundament, von dem aus Sie Ihre eigene Vision gestalten.",
+      },
+    ],
+    closing:
+      "Die Sorgfalt, mit der Can Caramany einst erschlossen und gebaut wurde, ist heute Ihr Vorteil.",
+    footnote:
+      "Details zur Planung und Dokumentation finden Sie im Konzeptdossier und auf Anfrage im privaten Data Room.",
   },
   propertiesSection: {
     eyebrow: "Grundstücke",
@@ -68,17 +100,17 @@ export const de: Dictionary = {
     eyebrow: "Historische Finca",
     headline: "Das Haus, das dem Anwesen seinen Namen gibt.",
     p1: "Im Herzen von Grundstück III steht die historische mallorquinische Finca — Stein, Holz und Ziegeldächer, die seit Generationen zu diesem Land gehören. Sie ist selten, authentisch und nicht zu reproduzieren.",
-    p2: "Für das Haus wurde eine vollständige Sanierung gezeichnet: eine Landresidenz von echter Präsenz, mit Annexbauten, Terrasse und Pool. Das Vorhaben wurde später zurückgestellt. Die Finca bleibt die architektonische Seele von Can Caramany — und ein Ausgangspunkt, kein aktuelles Baurecht.",
+    p2: "Für das Haus wurde eine vollständige Sanierung gezeichnet: eine Landresidenz von echter Präsenz, mit Annexbauten, Terrasse und Pool. Die Finca bleibt die architektonische Seele von Can Caramany — und ein durchdachter Ausgangspunkt für ihr nächstes Kapitel.",
     cta: "Grundstück III entdecken",
     stages: {
       existing: { label: "Bestand", note: null },
       study: {
         label: "Originaler Vorschlag",
-        note: "Historische Sanierungsstudie. Kein aktuelles Baurecht.",
+        note: "Historische Sanierungsstudie.",
       },
       vision: {
         label: "Vision",
-        note: "Konzeptionelle Visualisierung. Vorbehaltlich Planung, technischer Prüfung und geltender Genehmigungen. Frühere Genehmigungen wurden nicht erneuert und stellen keine aktuellen Baurechte dar.",
+        note: "Konzeptionelle Visualisierung.",
       },
     },
   },
@@ -98,39 +130,39 @@ export const de: Dictionary = {
     eyebrow: "Architektonische Vision",
     headline: "Die Residenzen",
     subhead: "Traditioneller Charakter. Moderne Raffinesse.",
-    lead: "Vier Grundstücke. Vier eigene architektonische Ideen — L-Grundriss, Stein und Licht, historische Finca, modern rustic. Jedes mit ausgewählten Ansichten, wie eine Residenz hier leben könnte. Ihr Architekt, Ihr Thema, Ihr Haus. Ausschließlich konzeptionelles Material; keine aktuellen Baurechte.",
+    lead: "Vier Grundstücke. Vier eigenständige Residenzen — The Olive Court, The Stone Gallery, The Heritage Finca, The Courtyard Estate. Jedes mit ausgewählten Ansichten, wie das Leben hier entfaltet werden kann.",
     explore: "Grundstück erkunden",
     closing:
       "Jedes Grundstück ist ein Juwel für sich — zum Entdecken, zum Gestalten und dazu, es unverwechselbar zu Ihrem zu machen.",
     disclaimer:
-      "Architektonische Visionen und ehemals genehmigte Villenprojekte. Baugenehmigungen für die Grundstücke I, II und IV wurden erteilt, dann nach längerer Zurückstellung des Anwesens nicht erneuert. Sie stellen keine aktuellen Baurechte dar. Endgültige Planung und jede Entwicklung bleiben einer unabhängigen technischen und rechtlichen Prüfung sowie allen erforderlichen Genehmigungen vorbehalten. Siehe unseren",
-    legalLink: "Rechtlichen Hinweis",
+      "Architektonische Visionen aus der Can-Caramany-Konzeptstudie. Planungskontext:",
+    legalLink: "Rechtlicher Hinweis",
   },
   infrastructure: {
     eyebrow: "Infrastruktur",
-    headline: "Das Anwesen ist bereits erschlossen.",
-    historicEyebrow: "Historisches Infrastrukturkonzept",
+    headline: "Vorbereitet für vier Residenzen.",
+    historicEyebrow: "Weitere Weitsicht",
     cta: "Technische Unterlagen anfordern",
     modalTitle: "Technische Unterlagen anfordern",
     pillars: {
       water: {
         title: "Wasser",
-        headline: "Bestehender privater Brunnen",
-        copy: "Bestehender privater Brunnen auf dem Anwesen. Aktuelle Kapazität, Wasserqualität und Entnahmerechte unterliegen der technischen und rechtlichen Prüfung.",
+        headline: "Brunnen auf dem Anwesen",
+        copy: "Auf dem Anwesen wurden private Brunnen gebohrt — und sie führen Wasser. Eine belastbare Grundlage für ernsthaftes Landleben auf Can Caramany.",
       },
       power: {
         title: "Strom",
-        headline: "Bestehende elektrische Infrastruktur",
-        copy: "Bestehende elektrische Infrastruktur auf dem Anwesen. Technische Kapazität und Anschlussdetails bleiben der Prüfung durch einen qualifizierten Elektriker und den Netzbetreiber vorbehalten.",
+        headline: "Strom bis zum Haupteingang",
+        copy: "Die Stromversorgung ist bis zum Haupteingang des Anwesens gelegt — ausgelegt für vier eigenständige Villen.",
       },
       access: {
         title: "Zugang",
         headline: "Etablierte interne Erschließung",
-        copy: "Etablierte interne Zufahrten und Wege erschließen das Anwesen und seine einzelnen Grundstücke.",
+        copy: "Etablierte interne Zufahrten und Wege verbinden das Anwesen und seine vier Grundstücke.",
       },
     },
     wastewaterHistoric:
-      "Historische Infrastrukturkonzepte sahen eine separate Abwasseranlage, unterirdische Aufbereitung und Regenwasserspeicherung zur Bewässerung vor. Diese beschreiben ausschließlich die historische Planungsabsicht und werden nicht als aktueller Betriebszustand dargestellt.",
+      "Frühere Planungen sahen zudem eine separate Abwasseranlage, unterirdische Aufbereitung und Regenwasserspeicherung zur Bewässerung vor — weiteres Zeichen dafür, wie sorgfältig das Anwesen gedacht wurde.",
   },
   location: {
     eyebrow: "Lage",
@@ -172,19 +204,26 @@ export const de: Dictionary = {
   dataRoom: {
     eyebrow: "Privater Data Room",
     headline: "Für alle, die tiefer gehen möchten.",
-    lead: "Pläne, Eigentumsnachweise, Infrastrukturhinweise und die originalen Architekturzeichnungen stehen qualifizierten Käufern und ihren Beratern zur Verfügung — privat und vollständig.",
+    lead: "Das Konzeptdossier, originale Zeichnungen, Eigentumsnachweise und Infrastrukturhinweise stehen qualifizierten Käufern und ihren Beratern zur Verfügung — privat und vollständig.",
     cta: "Privaten Zugang anfordern",
     modalTitle: "Privaten Zugang anfordern",
     categoriesLabel: "Dokumentenkategorien",
     documents: [
+      "Konzeptdossier — Grundstücke I–IV",
       "Katasterinformationen",
-      "Frühere Planungsunterlagen",
       "Originale Architekturzeichnungen",
       "Infrastrukturinformationen",
       "Technische Unterlagen",
       "Grundstücksdokumentation",
       "Investmentmaterial",
     ],
+    dossierLabel: "Architektur- und Vermarktungsstudie",
+    dossierCta: "Konzeptdossier herunterladen (PDF)",
+    dossierHref: "/documents/Can-Caramany-Konzept-Dossier.pdf",
+    dossierGateTitle: "Downloads nach persönlichem Kontakt",
+    dossierGateBody:
+      "Downloads stehen erst nach dem persönlichen Kontakt und der Registrierung zur Verfügung. Das Konzeptdossier ist zum jetzigen Zeitpunkt nicht öffentlich freigegeben.",
+    dossierGateCta: "Privaten Zugang anfordern",
   },
   closing: {
     line: "Vier private Welten. Ein außergewöhnliches Stück Mallorca.",
@@ -222,10 +261,8 @@ export const de: Dictionary = {
     },
   },
   disclaimers: {
-    conceptual:
-      "Konzeptionelle Visualisierung. Vorbehaltlich Planung, technischer Prüfung und geltender Genehmigungen.",
-    visualization:
-      "Architektonische Visualisierung des originalen Projekts. Vorbehaltlich Planung, technischer Prüfung und aller erforderlichen Genehmigungen.",
+    conceptual: "Konzeptionelle Visualisierung.",
+    visualization: "Architektonische Visualisierung des originalen Projekts.",
     historicDrawings: "Originale Architekturzeichnungen",
     areaCaveat:
       "Vorbehaltlich der abschließenden Flächenprüfung anhand aktueller Registro- und Catastro-Unterlagen.",
@@ -235,21 +272,21 @@ export const de: Dictionary = {
       label: "Grundstück I",
       headline: "Offenes Land. Weite Blicke. Ein Haus, das bereits gedacht wurde.",
       projectLine:
-        "Ehemals genehmigte Villa mit Pool und Garage, eingebettet in mehr als fünf Hektar private Landschaft.",
+        "The Olive Court — zweigeschossige Residenz mit Eingangshof, Poolachse und großzügiger Loggia.",
       descriptors: [
         "50.033 m² offene Landschaft",
         "Vollständige Privatsphäre und weite Blicke",
         "Villa, Pool und Garage im originalen Projekt",
-        "Ehemals erteilte Baugenehmigung",
+        "Dokumentiertes Villenprojekt",
       ],
       overview:
-        "Grundstück I ist das offenste der vier Grundstücke — eine großzügige private Landschaft aus Trockensteinmauern, mediterraner Bepflanzung und ununterbrochenem Himmel. Für dieses Land wurde ein vollständiges Wohnprojekt erarbeitet: eine Villa mit Pool und Garage, einst genehmigt, später mit dem übrigen Anwesen zurückgestellt. Was bleibt, sind Maßstab, Stille und ein dokumentierter architektonischer Ausgangspunkt — kein aktuelles Baurecht.",
+        "Grundstück I ist das offenste der vier Grundstücke — eine großzügige private Landschaft aus Trockensteinmauern, mediterraner Bepflanzung und ununterbrochenem Himmel. Für dieses Land wurde ein vollständiges Wohnprojekt erarbeitet: eine Villa mit Pool und Garage, mit der Sorgfalt einer ausgereiften Idee. Was bleibt, sind Maßstab, Stille und ein dokumentierter architektonischer Ausgangspunkt.",
       landscape:
         "Sanft welliges Gelände, Trockensteinmauern und landwirtschaftliche Weite formen eine Landschaft aus Licht, Stille und räumlicher Großzügigkeit.",
       architecture:
-        "Für dieses Land wurde ein vollständiges Wohnprojekt erarbeitet, und eine Baugenehmigung wurde erteilt. Das Can-Caramany-Vorhaben wurde später über einen längeren Zeitraum zurückgestellt, und die Genehmigung wurde nicht erneuert. Sie ist am 18. Juli 2009 abgelaufen. Was bleibt, ist die originale architektonische Arbeit — ein einst genehmigtes Konzept, das einem künftigen Eigentümer einen klaren, dokumentierten Ausgangspunkt gibt. Es ist kein aktuelles Baurecht. Jede heutige Entwicklung unterliegt den aktuellen Planungsvorschriften und erneuter behördlicher Genehmigung.",
+        "Für dieses Land wurde ein vollständiges Wohnprojekt erarbeitet, und historisch eine Baugenehmigung erteilt. Die originale architektonische Arbeit bleibt — ein einst genehmigtes Konzept, das einem künftigen Eigentümer einen klaren, dokumentierten Ausgangspunkt gibt.",
       infrastructure:
-        "Grundstück I ist über das etablierte Erschließungsnetz des Anwesens angebunden. Bestehende elektrische Infrastruktur auf dem Anwesen. Technische Kapazität und Anschlussdetails bleiben der Prüfung durch einen qualifizierten Elektriker und den Netzbetreiber vorbehalten. Bestehender privater Brunnen auf dem Anwesen. Aktuelle Kapazität, Wasserqualität und Entnahmerechte unterliegen der technischen und rechtlichen Prüfung.",
+        "Grundstück I ist über das etablierte Erschließungsnetz des Anwesens angebunden. Private Brunnen auf dem Anwesen wurden gebohrt und führen Wasser. Die Stromversorgung ist bis zum Haupteingang des Anwesens gelegt — ausgelegt für vier eigenständige Villen.",
       cta: "Grundstück I erkunden",
       imageAlt:
         "Architektonische Visualisierung des originalen Villenprojekts für Grundstück I bei Can Caramany",
@@ -260,21 +297,21 @@ export const de: Dictionary = {
       label: "Grundstück II",
       headline: "Im Zentrum des Anwesens, unter den Eichen.",
       projectLine:
-        "Ehemals genehmigtes Familienhaus, mit Wohnräumen zur Terrasse und zum Pool hin geöffnet.",
+        "The Stone Gallery — langer zweigeschossiger Baukörper mit Naturstein, Patio und beschatteten Terrassen.",
       descriptors: [
         "57.092 m² · 14,11 Acres",
         "Herz des Anwesens",
         "Reife Steineichen und interne Wege",
-        "Ehemals erteilte Baugenehmigung",
+        "Dokumentiertes Villenprojekt",
       ],
       overview:
-        "Grundstück II liegt im ruhigen Zentrum von Can Caramany, zwischen reifen Steineichen und den eigenen Wegen des Anwesens. Hier wurde ein großzügiges Familienhaus entworfen — Wohnräume, Terrasse und Pool dem Land zugewandt. Die Baugenehmigung wurde erteilt, dann nach der Verschiebung des Vorhabens nicht erneuert. Das Land, die Bäume und die originalen Zeichnungen bleiben — als ernsthafter Ausgangspunkt, nicht als aktuelles Baurecht.",
+        "Grundstück II liegt im ruhigen Zentrum von Can Caramany, zwischen reifen Steineichen und den eigenen Wegen des Anwesens. Hier wurde ein großzügiges Familienhaus entworfen — Wohnräume, Terrasse und Pool dem Land zugewandt. Das Land, die Bäume und die originalen Zeichnungen bleiben als ernsthafter architektonischer Anfang.",
       landscape:
         "Reife Steineichen, landwirtschaftliche Weite und interne Wege des Anwesens tragen zu einer Atmosphäre bei, die von Stille, Licht und räumlicher Großzügigkeit geprägt ist.",
       architecture:
-        "Für dieses Land wurde ein vollständiges Wohnprojekt erarbeitet, und eine Baugenehmigung wurde erteilt. Das Can-Caramany-Vorhaben wurde später über einen längeren Zeitraum zurückgestellt, und die Genehmigung wurde nicht erneuert. Sie ist am 18. Juli 2009 abgelaufen. Was bleibt, ist die originale architektonische Arbeit — ein einst genehmigtes Konzept, das einem künftigen Eigentümer einen klaren, dokumentierten Ausgangspunkt gibt. Es ist kein aktuelles Baurecht. Jede heutige Entwicklung unterliegt den aktuellen Planungsvorschriften und erneuter behördlicher Genehmigung.",
+        "Für dieses Land wurde ein vollständiges Wohnprojekt erarbeitet, und historisch eine Baugenehmigung erteilt. Die originale architektonische Arbeit bleibt — ein einst genehmigtes Konzept, das einem künftigen Eigentümer einen klaren, dokumentierten Ausgangspunkt gibt.",
       infrastructure:
-        "Der Zugang erfolgt über die etablierten Wege des Anwesens. Bestehende elektrische Infrastruktur auf dem Anwesen. Technische Kapazität und Anschlussdetails bleiben der Prüfung durch einen qualifizierten Elektriker und den Netzbetreiber vorbehalten. Bestehender privater Brunnen auf dem Anwesen. Aktuelle Kapazität, Wasserqualität und Entnahmerechte unterliegen der technischen und rechtlichen Prüfung.",
+        "Der Zugang erfolgt über die etablierten Wege des Anwesens. Private Brunnen auf dem Anwesen wurden gebohrt und führen Wasser. Die Stromversorgung ist bis zum Haupteingang des Anwesens gelegt — ausgelegt für vier eigenständige Villen.",
       cta: "Grundstück II erkunden",
       imageAlt:
         "Architektonische Visualisierung des originalen Villenprojekts für Grundstück II bei Can Caramany",
@@ -285,21 +322,21 @@ export const de: Dictionary = {
       label: "Grundstück III",
       headline: "Das historische Herz von Can Caramany.",
       projectLine:
-        "Die originale mallorquinische Finca, mit einem durchdachten Vorschlag für Sanierung, Annexbauten, Terrasse und Pool.",
+        "The Heritage Finca — behutsame Sanierung der Casa Payesa mit Annexbauten, Terrasse und Pool.",
       descriptors: [
         "Historische mallorquinische Finca",
         "64.455 m² · 15,93 Acres",
         "Originaler Stein, Holz und Ziegeldächer",
-        "Früherer Sanierungsvorschlag",
+        "Heritage im Herzen des Anwesens",
       ],
       overview:
-        "Grundstück III ist die Seele des Anwesens: die historische mallorquinische Finca, verwittert und authentisch, eingebettet in mehr als fünfzehn Acres Steineichen, Mandeln und Trockensteinmauern. Für das Haus wurde eine umfassende Sanierung gezeichnet — eine Landresidenz von echter Präsenz, mit Annexbauten, Terrasse und Pool. Das Vorhaben wurde später zurückgestellt. Die Finca steht. Die Zeichnungen bleiben ein Ausgangspunkt, kein aktuelles Baurecht.",
+        "Grundstück III ist die Seele des Anwesens: die historische mallorquinische Finca, verwittert und authentisch, eingebettet in mehr als fünfzehn Acres Steineichen, Mandeln und Trockensteinmauern. Für das Haus wurde eine umfassende Sanierung gezeichnet — eine Landresidenz von echter Präsenz, mit Annexbauten, Terrasse und Pool. Die Finca steht als architektonisches Herz von Can Caramany.",
       landscape:
         "Ein längliches, unregelmäßiges Grundstück mit Nord-Süd-Ausrichtung und einer sanften Neigung von etwa 7–11 %. Trockensteinmauern, Steineichen, ein trockener Torrente und Gebäude im flacheren Teil des Landes formen eine unverkennbar mallorquinische Umgebung.",
       architecture:
-        "Für die historische Finca wurde ein umfassender Sanierungsvorschlag erarbeitet. Die Unterlagen verweisen auf eine Zustimmung des Consell de Mallorca vom 6. April 2009; eine entsprechende Genehmigung des Ayuntamiento ist in den verfügbaren Akten nicht dokumentiert. Wie beim übrigen Anwesen wurde das Vorhaben später über einen längeren Zeitraum zurückgestellt. Diese Zeichnungen bleiben ein durchdachter architektonischer Ausgangspunkt. Sie stellen keine aktuellen Baurechte dar. Jede Sanierung, Erweiterung oder Nutzungsänderung unterliegt den aktuellen Planungsvorschriften und allen erforderlichen Genehmigungen.",
+        "Für die historische Finca wurde ein umfassender Sanierungsvorschlag erarbeitet, mit dokumentiertem Fortschritt beim Consell de Mallorca. Die Zeichnungen geben dem Haus einen klaren architektonischen Weg nach vorn.",
       infrastructure:
-        "Als historisches Herz des Anwesens ist Grundstück III über etablierte interne Zugänge angebunden. Bestehender privater Brunnen auf dem Anwesen. Aktuelle Kapazität, Wasserqualität und Entnahmerechte unterliegen der technischen und rechtlichen Prüfung. Bestehende elektrische Infrastruktur auf dem Anwesen. Technische Kapazität und Anschlussdetails bleiben der Prüfung durch einen qualifizierten Elektriker und den Netzbetreiber vorbehalten. Historische Infrastrukturkonzepte sahen eine separate Abwasseranlage, unterirdische Aufbereitung und Regenwasserspeicherung zur Bewässerung vor. Diese beschreiben ausschließlich die historische Planungsabsicht und werden nicht als aktueller Betriebszustand dargestellt.",
+        "Als historisches Herz des Anwesens ist Grundstück III über etablierte interne Zugänge angebunden. Private Brunnen auf dem Anwesen wurden gebohrt und führen Wasser. Die Stromversorgung ist bis zum Haupteingang des Anwesens gelegt — ausgelegt für vier eigenständige Villen. Frühere Planungen sahen zudem Abwasseraufbereitung und Regenwasserspeicherung zur Bewässerung vor.",
       cta: "Die historische Finca entdecken",
       imageAlt:
         "Architektonische Visualisierung des originalen Sanierungsvorschlags für die historische Finca auf Grundstück III",
@@ -310,21 +347,21 @@ export const de: Dictionary = {
       label: "Grundstück IV",
       headline: "Ruhige Größe am östlichen Rand.",
       projectLine:
-        "Ehemals genehmigte Villa mit Räumen im Untergeschoss, Pool und Vier-Wagen-Garage.",
+        "The Courtyard Estate — Haupthaus und Flügel um einen geschützten Garten, mit Pool und Gästewohnen.",
       descriptors: [
         "61.834 m² · 15,28 Acres",
         "Eigenständigkeit am Rand des Anwesens",
         "Villa, Pool und Vier-Wagen-Garage im originalen Projekt",
-        "Ehemals erteilte Baugenehmigung",
+        "Dokumentiertes Villenprojekt",
       ],
       overview:
-        "Grundstück IV ist das ruhigere östliche Grundstück — großzügig, privat und etwas abseits. Für dieses Land wurde eine vollständige Villa entworfen, mit Wohngeschossen, Räumen im Untergeschoss, Pool und einer Vier-Wagen-Garage. Wie bei den Grundstücken I und II wurde eine Baugenehmigung erteilt und später nicht erneuert, als das Vorhaben des Anwesens zurückgestellt wurde. Die Chance liegt im Land und in einem ernsthaften architektonischen Anfang — nicht in einem aktuellen Baurecht.",
+        "Grundstück IV ist das ruhigere östliche Grundstück — großzügig, privat und etwas abseits. Für dieses Land wurde eine vollständige Villa entworfen, mit Wohngeschossen, Räumen im Untergeschoss, Pool und einer Vier-Wagen-Garage. Die Chance liegt im Land und in einem ernsthaften architektonischen Anfang.",
       landscape:
         "Offene Felder, reife Bäume und der landwirtschaftliche Charakter von Can Caramany prägen eine Umgebung von Privatsphäre und mediterraner Authentizität.",
       architecture:
-        "Für dieses Land wurde ein vollständiges Wohnprojekt erarbeitet, und eine Baugenehmigung wurde erteilt. Das Can-Caramany-Vorhaben wurde später über einen längeren Zeitraum zurückgestellt, und die Genehmigung wurde nicht erneuert. Sie ist am 18. Juli 2009 abgelaufen. Was bleibt, ist die originale architektonische Arbeit — ein einst genehmigtes Konzept, das einem künftigen Eigentümer einen klaren, dokumentierten Ausgangspunkt gibt. Es ist kein aktuelles Baurecht. Jede heutige Entwicklung unterliegt den aktuellen Planungsvorschriften und erneuter behördlicher Genehmigung.",
+        "Für dieses Land wurde ein vollständiges Wohnprojekt erarbeitet, und historisch eine Baugenehmigung erteilt. Die originale architektonische Arbeit bleibt — ein einst genehmigtes Konzept, das einem künftigen Eigentümer einen klaren, dokumentierten Ausgangspunkt gibt.",
       infrastructure:
-        "Grundstück IV ist über die etablierten Zufahrten des Anwesens angebunden. Bestehende elektrische Infrastruktur auf dem Anwesen. Technische Kapazität und Anschlussdetails bleiben der Prüfung durch einen qualifizierten Elektriker und den Netzbetreiber vorbehalten. Bestehender privater Brunnen auf dem Anwesen. Aktuelle Kapazität, Wasserqualität und Entnahmerechte unterliegen der technischen und rechtlichen Prüfung.",
+        "Grundstück IV ist über die etablierten Zufahrten des Anwesens angebunden. Private Brunnen auf dem Anwesen wurden gebohrt und führen Wasser. Die Stromversorgung ist bis zum Haupteingang des Anwesens gelegt — ausgelegt für vier eigenständige Villen.",
       cta: "Grundstück IV erkunden",
       imageAlt:
         "Architektonische Visualisierung des originalen Villenprojekts für Grundstück IV bei Can Caramany",
@@ -334,44 +371,71 @@ export const de: Dictionary = {
   },
   residencesCards: {
     "property-i": {
-      title: "Grundstück I — L-Residenz",
-      copy: "Offenes Land und weite Blicke. Eine L-förmige Residenz aus cremefarbenem Putz und hellem Kalkstein, eine freistehende Garage im Westen und ein privater Pool im Osten — eine architektonische Idee unter vielen, die dieses Grundstück tragen kann. Ihr Architekt. Ihr Thema. Ihr Haus.",
-      captions: ["Ankunft", "Pool & Terrasse", "Abendliches Wohnen"],
+      title: "The Olive Court",
+      copy: "Zweigeschossige Residenz mit gegliedertem T-Grundriss, Eingangshof und klarer Poolachse. Offenes Wohnen und Essen zum Garten, private Schlafzimmer im Obergeschoss und eine großzügige Loggia — mediterranes Wohnen mit ruhiger Selbstverständlichkeit.",
+      captions: ["Pool & Garten", "Ankunft", "Loggia", "Luftaufnahme"],
       alts: [
-        "Vision Grundstück I — Ankunftsfassade mit freistehender Garage und Pool im Osten",
-        "Vision Grundstück I — östliche Poolterrasse zur L-förmigen Residenz",
-        "Vision Grundstück I — abendliches Wohnen am zurückgesetzten Terrassenflügel",
+        "The Olive Court — Poolterrasse zur Residenz",
+        "The Olive Court — Ankunftsfassade zwischen Oliven und Lavendel",
+        "The Olive Court — überdachte Loggia zum Garten",
+        "The Olive Court — Luftaufnahme der Residenz in der Landschaft",
       ],
     },
     "property-ii": {
-      title: "Grundstück II — Stein & Licht",
-      copy: "Im Herzen des Anwesens: ein skulpturaler Steinkörper mit baumförmigem Durchblick, ein verputzter Wohnflügel mit klarer Sechs-Fenster-Rhythmik und ein sich verjüngender Kamin. Ein markanter Materialkontrast — und der Beweis, dass jedes Grundstück eine ganz eigene Architektursprache tragen kann.",
-      captions: ["Ankunft", "Innenhof", "Pool & Garten"],
+      title: "The Stone Gallery",
+      copy: "Langer, zweigeschossiger Baukörper mit Naturstein-Akzenten, Nebenflügel und Patio. Repräsentative Ankunft, zusammenhängende Wohnräume und beschattete Terrassen — Architektur mit Präsenz im Herzen des Anwesens.",
+      captions: ["Pool & Terrasse", "Ankunft", "Überdachte Terrasse", "Luftaufnahme"],
       alts: [
-        "Vision Grundstück II — Steinflügel mit Baumdurchblick und verputzter Sechs-Fenster-Fassade",
-        "Vision Grundstück II — Hofwohnen, gerahmt von Oliven und Steinkamin",
-        "Vision Grundstück II — Poolgarten mit Stein-und-Putz-Residenz im Hintergrund",
+        "The Stone Gallery — Pool und rückwärtige Terrassen",
+        "The Stone Gallery — Steinfassade und Ankunftshof",
+        "The Stone Gallery — weinumranktes Außenwohnen",
+        "The Stone Gallery — Luftaufnahme der Residenz zwischen den Eichen",
       ],
     },
     "property-iii": {
-      title: "Grundstück III — Historische Finca",
-      copy: "Die historische Finca neu gedacht mit klassischer Symmetrie: Rundbogenportal, Oculus, Juliabalkone und durchgehendes Terrakottadach. Zeitloser mallorquinischer Charakter — ausschließlich konzeptionell und eine Einladung zu Ihrer eigenen Sanierungsvision auf diesem außergewöhnlichen Grund.",
-      captions: ["Fassade", "Terrasse & Pool", "Abend"],
+      title: "The Heritage Finca",
+      copy: "Behutsame Sanierung der Casa Payesa und Einbindung der überlieferten Nebengebäude. Historische Substanz als Mittelpunkt; zeitgemäßer Komfort in einer mallorquinischen Silhouette von bleibendem Charakter.",
+      captions: ["Pool & Terrasse", "Fassade", "Gartenwohnen", "Luftaufnahme"],
       alts: [
-        "Vision Grundstück III — symmetrische Finca-Fassade mit Rundbogen und Oculus",
-        "Vision Grundstück III — Finca-Terrasse und Pool zur goldenen Stunde",
-        "Vision Grundstück III — Abendlicht am symmetrischen Finca-Eingang",
+        "The Heritage Finca — Poolterrasse zum sanierten Haus",
+        "The Heritage Finca — symmetrische Steinfassade und Eingang",
+        "The Heritage Finca — Pergola-Wohnen zwischen Oliven",
+        "The Heritage Finca — Luftaufnahme der Finca und ihrer Gründe",
       ],
     },
     "property-iv": {
-      title: "Grundstück IV — Modern Rustic",
-      copy: "Ruhige Größe am Rand des Anwesens. Asymmetrische Steinflügel, aufsteigende Pultdächer, horizontale Verkleidung und moderne Schlitzfenster — eine zeitgenössische Lesart Mallorcas, die dennoch dem Land gehört. Anderes Grundstück. Andere Idee. Absolute Privatsphäre.",
-      captions: ["Fassade", "Pool & Land", "Terrasse"],
+      title: "The Courtyard Estate",
+      copy: "Ensemble aus zweigeschossigem Haupthaus und eingeschossigem Flügel um einen geschützten Garten. Große gemeinschaftliche Räume, flexible Gästezone und mediterrane Außenräume — Privatsphäre mit Maßstab am Rand von Can Caramany.",
+      captions: ["Pool & Land", "Ankunft", "Hofwohnen", "Luftaufnahme"],
       alts: [
-        "Vision Grundstück IV — asymmetrische Steinflügel mit horizontaler Verkleidung und Schlitzfenstern",
-        "Vision Grundstück IV — Poolterrasse zur offenen Landschaft",
-        "Vision Grundstück IV — überdachte Terrasse bei Dämmerung mit Steinflügeln und Verkleidung",
+        "The Courtyard Estate — Pool zur offenen Landschaft",
+        "The Courtyard Estate — Ankunft und Haupthaus",
+        "The Courtyard Estate — geschützter Garten und Außenräume",
+        "The Courtyard Estate — Luftaufnahme des Hofensembles",
       ],
+    },
+  },
+  drawings: {
+    eyebrowPermit: "Dokumentiertes Villenprojekt",
+    eyebrowRehab: "Dokumentierte Sanierungsstudie",
+    title: "Zeichnungen Grundstück {roman}",
+    introPermit:
+      "Ansichten, Schnitte und zugehörige Zeichnungen aus dem dokumentierten Villenprojekt. Sie halten ein ernsthaftes architektonisches Konzept fest, das einst für dieses Land erarbeitet wurde.",
+    introRehab:
+      "Ansichten, Schnitte und zugehörige Zeichnungen aus dem originalen Sanierungsvorschlag. Sie bleiben ein durchdachter architektonischer Ausgangspunkt für das nächste Kapitel der Finca.",
+    close: "Schließen",
+    previous: "Zurück",
+    next: "Weiter",
+    lightboxEyebrow: "Grundstück {roman} · Originale Zeichnungen",
+    lightboxMeta:
+      "Zeichnung anklicken zum Vergrößern · Keine aktuelle Baugenehmigung",
+    drawingAlt: "Historische Zeichnung {label} für Grundstück {roman}",
+    categories: {
+      all: "Alle",
+      elevation: "Ansichten",
+      section: "Schnitte",
+      roof: "Dächer",
+      outbuilding: "Nebengebäude",
     },
   },
   propertyIii: {
@@ -379,7 +443,7 @@ export const de: Dictionary = {
     headline: "Das historische Herz von Can Caramany.",
     lead: "Originaler Stein, Ziegeldächer und eine Landschaft, die seit Generationen um das Haus gewachsen ist — die Finca, die dem Anwesen seinen Namen gibt.",
     overview:
-      "Das ist die Seele von Can Caramany: eine echte mallorquinische Finca, verwittert und unersetzlich, eingebettet in mehr als fünfzehn Acres Steineichen, Mandeln und Trockensteinmauern. Für das Haus wurde eine umfassende Sanierung gezeichnet — Landleben von echter Präsenz, mit Annexbauten, Terrasse und Pool. Die Unterlagen verweisen auf eine Zustimmung des Consell de Mallorca vom 6. April 2009; eine entsprechende Genehmigung des Ayuntamiento ist nicht dokumentiert, und das Vorhaben wurde später zurückgestellt. Die Zeichnungen bleiben ein Ausgangspunkt, kein aktuelles Baurecht.",
+      "Das ist die Seele von Can Caramany: eine echte mallorquinische Finca, verwittert und unersetzlich, eingebettet in mehr als fünfzehn Acres Steineichen, Mandeln und Trockensteinmauern. Für das Haus wurde eine umfassende Sanierung gezeichnet — Landleben von echter Präsenz, mit Annexbauten, Terrasse und Pool. Die Unterlagen verweisen auf eine Zustimmung des Consell de Mallorca vom 6. April 2009. Die Zeichnungen bleiben ein durchdachter architektonischer Anfang für das nächste Kapitel des Hauses.",
     facts: [
       { label: "Land", value: "64.455 m²" },
       { label: "Maßstab", value: "15,93 Acres" },
@@ -393,9 +457,9 @@ export const de: Dictionary = {
       copy: "Im Herzen von Grundstück III steht eine originale mallorquinische Finca — verwittert, authentisch und tief in ihrer Landschaft verwurzelt. Steinmauern, Holzkonstruktionen und traditionelle Dachziegel verleihen dem Haus einen Charakter, der sich nicht herstellen lässt. Was hier steht, ist keine fertige Residenz, sondern ein seltener Ausgangspunkt: historische Substanz mit echter architektonischer Präsenz.",
     },
     vision: {
-      eyebrow: "Früherer Sanierungsvorschlag",
+      eyebrow: "Sanierungsvorschlag",
       title: "Eine ruhige Fortsetzung mallorquinischen Wohnens.",
-      copy: "Ein durchdachter architektonischer Vorschlag zur Sanierung und Erweiterung der bestehenden traditionellen mallorquinischen Finca, einschließlich Annexbauten und Pool. Der originale Vorschlag stellte sich eine komponierte Casa Payesa mit Annexbauten, Terrasse, Pergola und Pool vor — zeitgemäß im Komfort, unverkennbar mallorquinisch im Charakter. Das Vorhaben wurde später zurückgestellt; diese Zeichnungen sind ein Ausgangspunkt, kein aktuelles Baurecht.",
+      copy: "Ein durchdachter architektonischer Vorschlag zur Sanierung und Erweiterung der bestehenden traditionellen mallorquinischen Finca, einschließlich Annexbauten und Pool. Der originale Vorschlag stellte sich eine komponierte Casa Payesa mit Annexbauten, Terrasse, Pergola und Pool vor — zeitgemäß im Komfort, unverkennbar mallorquinisch im Charakter.",
       points: [
         "Sanierung und Erweiterung der bestehenden Casa Payesa und Annexbauten",
         "Pool und Pergola im historischen Vorschlag vorgesehen",
@@ -406,7 +470,7 @@ export const de: Dictionary = {
       eyebrow: "Originale Architekturzeichnungen",
       title: "Konzipiert für Begegnung, Rückzug und Leben im Freien.",
       intro:
-        "Die nachstehenden Zahlen sind Näherungswerte aus dem originalen Sanierungsvorschlag und dienen ausschließlich der Information. Die folgenden Zeichnungen dokumentieren dieses Konzept — sie sind kein aktuelles Baurecht.",
+        "Die nachstehenden Zahlen sind Näherungswerte aus dem originalen Sanierungsvorschlag und dienen ausschließlich der Information. Die folgenden Zeichnungen dokumentieren dieses Konzept.",
       levels: [
         {
           label: "Erdgeschoss",
@@ -439,7 +503,7 @@ export const de: Dictionary = {
         },
       ],
       figuresNote:
-        "Originaler Architekturvorschlag — Näherungswerte. Frühere Genehmigungen wurden nicht erneuert und stellen keine aktuellen Baurechte dar.",
+        "Originaler Architekturvorschlag — Näherungswerte.",
     },
     land: {
       eyebrow: "Landschaft",
@@ -457,8 +521,8 @@ export const de: Dictionary = {
     overview: "Überblick",
     landscape: "Landschaft",
     architecture: "Architektur",
-    architectureFormerPermit: "Architektur / Frühere Genehmigung",
-    architectureFormerHeadline: "Einst erteilt. Später zurückgestellt.",
+    architectureFormerPermit: "Architektur",
+    architectureFormerHeadline: "Ein dokumentierter architektonischer Anfang.",
     infrastructure: "Infrastruktur",
     gallery: "Galerie",
     positionEyebrow: "Lage innerhalb des Anwesens",
@@ -477,7 +541,7 @@ export const de: Dictionary = {
     backToEstate: "Zurück zum Anwesen",
     landToday: "Das Land heute",
     historicApprovalsNote:
-      "Frühere Genehmigungen wurden nicht verlängert und stellen keine aktuellen Baurechte dar.",
+      "Den Planungskontext des Anwesens finden Sie unter Das Projekt.",
     enquireAbout: "Anfrage zu Grundstück",
   },
   legal: {
@@ -571,8 +635,8 @@ export const de: Dictionary = {
         "Endgültige Fassung vorbehaltlich der Zustimmung durch Rechtsberatung vor dem öffentlichen Go-live.",
       paragraphs: [
         "Die auf dieser Website gezeigten Architekturzeichnungen, Pläne, Renderings, Studien und sonstigen Entwicklungskonzepte umfassen historisches und konzeptionelles Material und dienen ausschließlich illustrativen und informativen Zwecken.",
-        "Bestimmte Grundstücke des Anwesens Can Caramany waren historisch Gegenstand von Architekturprojekten und Planungsverfahren, einschließlich Baugenehmigungen, die nach längerer Zurückstellung des Vorhabens später nicht erneuert wurden. Frühere Genehmigungen oder Zustimmungen sind abgelaufen, möglicherweise nicht mehr gültig oder können unter aktuellen Planungs-, Umwelt- und Bauvorschriften Anpassungen erfordern.",
-        "Es wird keine Zusicherung oder Gewährleistung abgegeben, dass die gezeigten Konzepte in ihrer aktuellen Form umgesetzt werden können. Jede künftige Errichtung, Sanierung, Erweiterung, Nutzungsänderung oder sonstige Entwicklung unterliegt einer unabhängigen technischen und rechtlichen Prüfung sowie allen von den zuständigen Behörden erforderlichen Genehmigungen.",
+        "Bestimmte Grundstücke des Anwesens Can Caramany waren historisch Gegenstand von Architekturprojekten und Planungsverfahren, einschließlich Baugenehmigungen für vollständige Villenprojekte auf den Grundstücken I, II und IV sowie einer Sanierungsstudie für Grundstück III. Das Anwesen wurde später über einen längeren Zeitraum zurückgestellt; jene Genehmigungen wurden nicht in die Gegenwart übernommen, und für jede heutige Entwicklung ist ein erneutes Verfahren erforderlich. Eine Entwicklung bleibt nach mallorquinischem Planungsrecht dem Grunde nach möglich — die heutigen Vorschriften sind den Regelungen der Zeit der originalen Projekte weitgehend ähnlich —, vorbehaltlich der zuständigen Behörden sowie unabhängiger technischer und rechtlicher Prüfung.",
+        "Es wird keine Zusicherung oder Gewährleistung abgegeben, dass die gezeigten Konzepte in ihrer aktuellen Form umgesetzt werden können. Jede künftige Errichtung, Sanierung, Erweiterung, Nutzungsänderung oder sonstige Entwicklung bleibt allen von den zuständigen Behörden erforderlichen Genehmigungen vorbehalten.",
         "Alle Flächen, Maße, Pläne, Entfernungen, Infrastrukturangaben und sonstigen Grundstücksdaten sind Näherungswerte, sofern sie nicht ausdrücklich durch aktuelle amtliche Unterlagen bestätigt sind, und sollten von einem interessierten Käufer unabhängig geprüft werden.",
         "Renderings und Visualisierungen sind künstlerische Darstellungen und stellen keine vertragliche Spezifikation oder Verpflichtung dar.",
         "Nichts auf dieser Website stellt ein verbindliches Angebot, eine Kaufverpflichtung, eine Investmentempfehlung oder eine Garantie für künftiges Entwicklungspotenzial dar.",

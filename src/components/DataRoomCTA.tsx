@@ -10,6 +10,7 @@ export function DataRoomCTA() {
   const dictionary = useDictionary();
   const copy = dictionary.dataRoom;
   const [open, setOpen] = useState(false);
+  const [dossierGateOpen, setDossierGateOpen] = useState(false);
 
   return (
     <section
@@ -28,13 +29,25 @@ export function DataRoomCTA() {
             <p className="mt-8 max-w-md text-base leading-[1.85] text-[var(--color-deep-olive)]">
               {copy.lead}
             </p>
-            <button
-              type="button"
-              onClick={() => setOpen(true)}
-              className="mt-10 inline-flex bg-[var(--color-charcoal)] px-7 py-3.5 text-[11px] uppercase tracking-[0.22em] text-[var(--color-white)] transition-colors hover:bg-[var(--color-deep-olive)]"
-            >
-              {copy.cta}
-            </button>
+            <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <button
+                type="button"
+                onClick={() => setDossierGateOpen(true)}
+                className="inline-flex bg-[var(--color-charcoal)] px-7 py-3.5 text-center text-[11px] uppercase tracking-[0.22em] text-[var(--color-white)] transition-colors hover:bg-[var(--color-deep-olive)]"
+              >
+                {copy.dossierCta}
+              </button>
+              <button
+                type="button"
+                onClick={() => setOpen(true)}
+                className="inline-flex border border-[var(--color-charcoal)] px-7 py-3.5 text-[11px] uppercase tracking-[0.22em] text-[var(--color-charcoal)] transition-colors hover:bg-[var(--color-charcoal)] hover:text-[var(--color-white)]"
+              >
+                {copy.cta}
+              </button>
+            </div>
+            <p className="mt-4 text-[11px] uppercase tracking-[0.18em] text-[var(--color-deep-olive)]/90">
+              {copy.dossierLabel}
+            </p>
           </FadeIn>
 
           <FadeIn delay={0.1} className="lg:col-span-6">
@@ -54,6 +67,26 @@ export function DataRoomCTA() {
           </FadeIn>
         </div>
       </div>
+
+      <Modal
+        open={dossierGateOpen}
+        onClose={() => setDossierGateOpen(false)}
+        title={copy.dossierGateTitle}
+      >
+        <p className="text-base leading-[1.85] text-[var(--color-deep-olive)]">
+          {copy.dossierGateBody}
+        </p>
+        <button
+          type="button"
+          onClick={() => {
+            setDossierGateOpen(false);
+            setOpen(true);
+          }}
+          className="mt-8 inline-flex bg-[var(--color-charcoal)] px-7 py-3.5 text-[11px] uppercase tracking-[0.22em] text-[var(--color-white)] transition-colors hover:bg-[var(--color-deep-olive)]"
+        >
+          {copy.dossierGateCta}
+        </button>
+      </Modal>
 
       <Modal open={open} onClose={() => setOpen(false)} title={copy.modalTitle}>
         <EnquiryForm onSuccess={() => setOpen(false)} />

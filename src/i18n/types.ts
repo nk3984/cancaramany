@@ -53,6 +53,14 @@ export type Dictionary = {
     headline: string;
     lead: string;
   };
+  project: {
+    eyebrow: string;
+    headline: string;
+    lead: string;
+    points: { title: string; copy: string }[];
+    closing: string;
+    footnote: string;
+  };
   propertiesSection: {
     eyebrow: string;
     headline: string;
@@ -139,6 +147,12 @@ export type Dictionary = {
     modalTitle: string;
     categoriesLabel: string;
     documents: string[];
+    dossierLabel: string;
+    dossierCta: string;
+    dossierHref: string;
+    dossierGateTitle: string;
+    dossierGateBody: string;
+    dossierGateCta: string;
   };
   closing: {
     line: string;
@@ -193,10 +207,30 @@ export type Dictionary = {
     {
       title: string;
       copy: string;
-      captions: [string, string, string];
-      alts: [string, string, string];
+      captions: [string, string, string, string];
+      alts: [string, string, string, string];
     }
   >;
+  drawings: {
+    eyebrowPermit: string;
+    eyebrowRehab: string;
+    title: string;
+    introPermit: string;
+    introRehab: string;
+    close: string;
+    previous: string;
+    next: string;
+    lightboxEyebrow: string;
+    lightboxMeta: string;
+    drawingAlt: string;
+    categories: {
+      all: string;
+      elevation: string;
+      section: string;
+      roof: string;
+      outbuilding: string;
+    };
+  };
   propertyIii: {
     eyebrow: string;
     headline: string;

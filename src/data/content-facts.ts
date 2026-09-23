@@ -119,29 +119,29 @@ export const contentFacts = {
     historicFincaOn: "Property III" as const,
     historicStudiesExist: true,
     historicApprovalsNote:
-      "Previous permits were not renewed and do not constitute current building rights.",
+      "The estate’s planning context is set out in The Project.",
   },
   copy: {
-    architectureEyebrowIIiIv: "Architecture / Former Permit",
-    architectureHeadlineIIiIv: "Once granted. Later deferred.",
+    architectureEyebrowIIiIv: "Architecture",
+    architectureHeadlineIIiIv: "A documented architectural beginning.",
     architectureIIiIv:
-      "A complete residential project was prepared for this land, and a building permit was granted. The Can Caramany project was later postponed for a prolonged period, and the permit was not renewed. It expired on 18 July 2009. What remains is the original architectural work — a previously approved concept that gives a future owner a clear, documented starting point. It is not a current building right. Any development today is subject to current planning regulations and renewed governmental approval.",
+      "A complete residential project was prepared for this land, and a building permit was historically granted. The original architectural work remains — a previously approved concept that gives a future owner a clear, documented starting point.",
     architectureIii:
-      "A comprehensive rehabilitation proposal was prepared for the historic finca. The documentation references a Consell de Mallorca assent of 6 April 2009; corresponding Ayuntamiento permission was not documented in the files available. As with the wider estate, the project was later deferred for a prolonged period. These drawings remain a considered architectural starting point. They do not constitute current building rights. Any rehabilitation, extension or change of use is subject to current planning regulations and all required approvals.",
+      "A comprehensive rehabilitation proposal was prepared for the historic finca. The documentation references a Consell de Mallorca assent of 6 April 2009; corresponding Ayuntamiento permission was not documented in the files available. These drawings remain a considered architectural starting point for the house’s next chapter.",
     galleryFormerPermit:
-      "Elevations, sections and related drawings from the formerly permitted residential project. They record a concept that was once approved — not a building right that can be exercised today.",
+      "Elevations, sections and related drawings from the documented villa project. They record a serious architectural concept once prepared for this land.",
     galleryRehabilitation:
-      "Elevations, sections and related drawings from the original rehabilitation proposal. They remain a serious architectural starting point — not a current building right.",
+      "Elevations, sections and related drawings from the original rehabilitation proposal. They remain a considered architectural starting point for the finca’s next chapter.",
   },
   infrastructure: {
     water:
-      "Existing private borehole on the estate. Current capacity, water quality and extraction rights subject to technical and legal verification.",
+      "Private boreholes have been drilled on the estate and produce water for Can Caramany.",
     electricity:
-      "Existing electrical infrastructure on the estate. Technical capacity and connection details remain subject to verification by a qualified electrician and the network operator.",
+      "Electrical supply has been brought to the main entrance of the estate, sized to serve four independent villas.",
     access:
       "Established internal access routes and paths serve the estate and its individual properties.",
     wastewaterHistoric:
-      "Historic infrastructure concepts contemplated a separate wastewater system, underground treatment, and rainwater storage for irrigation. These describe historic planning intent only and are not presented as the current operational condition.",
+      "Earlier planning also contemplated a separate wastewater system, underground treatment and rainwater storage for irrigation — a further layer of foresight in how the estate was conceived.",
   },
   coordinates: {
     latitude: 39.64149,
@@ -154,8 +154,8 @@ export const contentFacts = {
 /** Full site disclaimer — for counsel final approval before public go-live. */
 export const siteDisclaimerParagraphs = [
   "The architectural drawings, plans, renderings, studies and other development concepts presented on this website include historical and conceptual material and are provided for illustrative and informational purposes only.",
-  "Certain properties within the Can Caramany estate were historically subject to architectural projects and planning procedures, including building permits that were later not renewed after the project was deferred for a prolonged period. Any previous permits or approvals have expired, may no longer be valid, or may require modification under current planning, environmental and building regulations.",
-  "No representation or warranty is made that the concepts shown can be implemented in their current form. Any future construction, rehabilitation, extension, change of use or other development is subject to independent technical and legal review and to all approvals required by the competent authorities.",
+  "Certain properties within the Can Caramany estate were historically the subject of architectural projects and planning procedures, including building permits granted for complete villa projects on Properties I, II and IV, and a rehabilitation study for Property III. The estate was later set aside for a prolonged period; those permissions were not carried into the present and a renewed application is required for any development today. Development remains possible in principle under Mallorcan planning, where current regulations are broadly similar to those of the original projects’ period, subject to the competent authorities and independent technical and legal review.",
+  "No representation or warranty is made that the concepts shown can be implemented in their current form. Any future construction, rehabilitation, extension, change of use or other development remains subject to all approvals required by the competent authorities.",
   "All areas, dimensions, plans, distances, infrastructure information and other property data are approximate unless expressly confirmed by current official documentation and should be independently verified by a prospective purchaser.",
   "Renderings and visualisations are artistic representations and do not constitute a contractual specification or commitment.",
   "Nothing contained on this website constitutes a binding offer, purchase commitment, investment recommendation or guarantee of future development potential.",

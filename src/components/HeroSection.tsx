@@ -31,7 +31,8 @@ export function HeroSection() {
           sizes="100vw"
           objectPosition="center 42%"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-charcoal)]/75 via-[var(--color-charcoal)]/25 to-[var(--color-charcoal)]/15" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-charcoal)]/92 via-[var(--color-charcoal)]/55 to-[var(--color-charcoal)]/35 sm:from-[var(--color-charcoal)]/88 sm:via-[var(--color-charcoal)]/45 sm:to-[var(--color-charcoal)]/28" />
+        <div className="absolute inset-0 bg-[var(--color-charcoal)]/25 sm:bg-[var(--color-charcoal)]/10" />
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-[1440px] px-5 pb-16 pt-32 sm:px-8 sm:pb-20 lg:px-12 lg:pb-24">
@@ -39,18 +40,18 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
-          className="max-w-2xl"
+          className="max-w-2xl [text-shadow:0_1px_18px_rgba(0,0,0,0.35)]"
         >
-          <p className="mb-5 text-[11px] uppercase tracking-[0.32em] text-[var(--color-white)]/70">
+          <p className="mb-5 text-[11px] uppercase tracking-[0.32em] text-[var(--color-white)]/95 sm:text-[12px]">
             {dictionary.hero.eyebrow}
           </p>
           <h1 className="font-[family-name:var(--font-serif)] text-[clamp(2.75rem,8vw,5.5rem)] leading-[0.95] tracking-[0.06em] text-[var(--color-white)]">
             CAN CARAMANY
           </h1>
-          <p className="mt-5 font-[family-name:var(--font-serif)] text-[clamp(1.25rem,2.8vw,2rem)] leading-snug text-[var(--color-white)]/90">
+          <p className="mt-5 font-[family-name:var(--font-serif)] text-[clamp(1.25rem,2.8vw,2rem)] leading-snug text-[var(--color-white)]">
             {dictionary.hero.lead}
           </p>
-          <p className="mt-6 max-w-lg text-sm leading-relaxed text-[var(--color-white)]/70 sm:text-[15px]">
+          <p className="mt-6 max-w-lg text-[15px] leading-relaxed text-[var(--color-white)]/95 sm:text-base">
             {heroMeta}
           </p>
           <div className="mt-10">
@@ -61,17 +62,17 @@ export function HeroSection() {
         </motion.div>
 
         <motion.div
-          className="mt-16 flex items-center gap-3 text-[var(--color-white)]/55"
+          className="mt-16 flex items-center gap-3 text-[var(--color-white)]/85"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.1, duration: 0.8 }}
         >
-          <span className="text-[10px] uppercase tracking-[0.28em]">
+          <span className="text-[11px] uppercase tracking-[0.28em]">
             {dictionary.hero.scroll}
           </span>
-          <span className="relative h-10 w-px overflow-hidden bg-[var(--color-white)]/25">
+          <span className="relative h-10 w-px overflow-hidden bg-[var(--color-white)]/40">
             <motion.span
-              className="absolute inset-x-0 top-0 h-1/2 bg-[var(--color-white)]/80"
+              className="absolute inset-x-0 top-0 h-1/2 bg-[var(--color-white)]"
               animate={{ y: ["-100%", "200%"] }}
               transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
             />

@@ -55,13 +55,13 @@ export function ResidencesSection() {
                       sizes="(max-width: 1024px) 100vw, 58vw"
                       priority={index === 0}
                     />
-                    <p className="mt-3 text-[11px] uppercase tracking-[0.18em] text-[var(--color-deep-olive)]/70">
+                    <p className="mt-3 text-[11px] uppercase tracking-[0.18em] text-[var(--color-deep-olive)]/90">
                       {card.captions[0]}
                     </p>
                   </FadeIn>
                   <FadeIn delay={0.08} className="lg:col-span-5 lg:pb-4">
                     <p className="text-[11px] uppercase tracking-[0.24em] text-[var(--color-terracotta)]">
-                      {dictionary.properties[property.id].label}
+                      {dictionary.properties[property.id].label} · {card.title}
                     </p>
                     <h3 className="mt-4 font-[family-name:var(--font-serif)] text-[clamp(1.75rem,3vw,2.5rem)] leading-[1.15] text-[var(--color-charcoal)]">
                       {card.title}
@@ -73,12 +73,12 @@ export function ResidencesSection() {
                       href={localePath(locale, property.href)}
                       className="mt-8 inline-flex text-[11px] uppercase tracking-[0.22em] text-[var(--color-charcoal)] underline-offset-4 hover:underline"
                     >
-                      {copy.explore} {property.roman}
+                      {copy.explore} · {card.title}
                     </Link>
                   </FadeIn>
                 </div>
 
-                <div className="mt-5 grid gap-4 sm:grid-cols-2">
+                <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                   {property.visions.slice(1).map((vision, visionIndex) => (
                     <FadeIn key={vision.src} delay={0.06 + visionIndex * 0.05}>
                       <ImagePlaceholder
@@ -86,9 +86,9 @@ export function ResidencesSection() {
                         alt={card.alts[visionIndex + 1]}
                         src={vision.src}
                         aspect="aspect-[4/3]"
-                        sizes="(max-width: 640px) 100vw, 45vw"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 30vw"
                       />
-                      <p className="mt-3 text-[11px] uppercase tracking-[0.18em] text-[var(--color-deep-olive)]/70">
+                      <p className="mt-3 text-[11px] uppercase tracking-[0.18em] text-[var(--color-deep-olive)]/90">
                         {card.captions[visionIndex + 1]}
                       </p>
                     </FadeIn>
@@ -105,6 +105,13 @@ export function ResidencesSection() {
           </p>
           <p className="mt-10 max-w-xl text-[11px] leading-relaxed tracking-[0.04em] text-[var(--color-deep-olive)]/75">
             {copy.disclaimer}{" "}
+            <Link
+              href={localePath(locale, "/#project")}
+              className="underline underline-offset-2"
+            >
+              {dictionary.project.eyebrow}
+            </Link>
+            {" · "}
             <Link
               href={localePath(locale, "/legal")}
               className="underline underline-offset-2"

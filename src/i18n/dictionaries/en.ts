@@ -17,6 +17,7 @@ export const en: Dictionary = {
   nav: {
     items: [
       { label: "The Estate", href: "/#estate" },
+      { label: "The Project", href: "/#project" },
       { label: "Overview", href: "/#overview" },
       { label: "Properties", href: "/#properties" },
       { label: "Heritage", href: "/#heritage" },
@@ -46,7 +47,7 @@ export const en: Dictionary = {
     eyebrow: "The Estate",
     headline: "A private Mallorcan estate of rare scale.",
     p1: "Can Caramany is four independent landholdings in the countryside of Manacor — more than 235,000 m² of oaks, almonds, dry-stone walls and open sky, with a historic finca at its heart. Land of this scale, held as one private estate, is increasingly difficult to find on Mallorca.",
-    p2: "Each property is its own world: its own land, its own character, and an original architectural project once prepared for it. The estate was conceived with unusual seriousness — then set aside for many years. What is offered now is the land, the finca, and that documented beginning.",
+    p2: "Each property is its own world: its own land, its own character, and an original architectural project once prepared for it. The estate was conceived with unusual seriousness. What is offered now is the land, the finca, and that documented beginning.",
   },
   estateStats: {
     land: "Estate land",
@@ -57,7 +58,38 @@ export const en: Dictionary = {
   masterplan: {
     eyebrow: "Estate Overview",
     headline: "One estate. Four independent properties.",
-    lead: "The land was divided so that each holding could stand alone — its own privacy, its own house, its own relationship to the landscape. Properties I, II and IV once received building permits for complete villas. Property III holds the historic finca and a former rehabilitation proposal. Those permits were not renewed after the project was postponed; they are conceptual starting points, not current building rights. Select a plot to explore it.",
+    lead: "The land was divided so that each holding could stand alone — its own privacy, its own house, its own relationship to the landscape. Properties I, II and IV were conceived as complete villas; Property III holds the historic finca and its rehabilitation study. Select a plot to explore it.",
+  },
+  project: {
+    eyebrow: "The Project",
+    headline: "An estate already prepared.",
+    lead: "Can Caramany was not only drawn — it was served. At the time, original Property V was built and completed. In that same campaign, boreholes were drilled on the estate and produce water, electrical supply was brought to the main entrance of the estate in capacity for four villas, and access roads were established. The framework for the four plots offered today is prepared to a high standard.",
+    points: [
+      {
+        title: "Infrastructure in place",
+        copy: "Private boreholes have been drilled on the estate and produce water. Electrical supply has been brought to the main entrance of the estate — sized for four independent villas. Internal access roads and paths are in place. In terms of framework conditions, Can Caramany is exceptionally well prepared.",
+      },
+      {
+        title: "Property V as proof",
+        copy: "Original Property V was built and finished in that period. It was in that same undertaking that wells, power to the estate’s main entrance, and access routes were delivered — lived infrastructure for the whole estate, not plans on paper alone.",
+      },
+      {
+        title: "Four documented residence concepts",
+        copy: "Complete villa projects were prepared and historically permitted for Properties I, II and IV. Property III holds the historic finca and a considered rehabilitation. The Olive Court, The Stone Gallery, The Heritage Finca and The Courtyard Estate show how each plot can carry its own residence.",
+      },
+      {
+        title: "Development remains possible",
+        copy: "Under Mallorcan planning, residential development remains possible in principle. Current building regulations are broadly similar to those of the original projects’ period — a strong foundation for the next generation of houses at Can Caramany.",
+      },
+      {
+        title: "What you acquire",
+        copy: "You acquire prepared land, working infrastructure, heritage at the heart of the estate, and a documented architectural beginning — a serious foundation from which to shape your own vision.",
+      },
+    ],
+    closing:
+      "The care with which Can Caramany was once served and built is your advantage today.",
+    footnote:
+      "Further planning detail is available in the concept dossier and, on request, in the private data room.",
   },
   propertiesSection: {
     eyebrow: "Properties",
@@ -68,17 +100,17 @@ export const en: Dictionary = {
     eyebrow: "Historic Finca",
     headline: "The house that gives the estate its name.",
     p1: "At the heart of Property III stands the historic Mallorcan finca — stone, timber and tiled roofs that have belonged to this land for generations. It is rare, authentic, and impossible to reproduce.",
-    p2: "A full rehabilitation was drawn for the house: a country residence of real presence, with annexes, terrace and pool. The project was later set aside. The finca remains the architectural soul of Can Caramany — and a starting point, not a current building right.",
+    p2: "A full rehabilitation was drawn for the house: a country residence of real presence, with annexes, terrace and pool. The finca remains the architectural soul of Can Caramany — and a considered starting point for its next chapter.",
     cta: "Discover Property III",
     stages: {
       existing: { label: "Existing", note: null },
       study: {
         label: "Original Proposal",
-        note: "Historic rehabilitation study. Not a current building right.",
+        note: "Historic rehabilitation study.",
       },
       vision: {
         label: "Vision",
-        note: "Conceptual visualization. Subject to planning, technical review and applicable approvals. Previous permits were not renewed and do not constitute current building rights.",
+        note: "Conceptual visualization.",
       },
     },
   },
@@ -98,39 +130,39 @@ export const en: Dictionary = {
     eyebrow: "Architectural Vision",
     headline: "The Residences",
     subhead: "Traditional Character. Modern Refinement.",
-    lead: "Four plots. Four distinct architectural ideas — L-plan, stone and light, historic finca, modern rustic. Each with curated views of how a residence could live here. Your architect, your theme, your house. Conceptual material only; not current building rights.",
+    lead: "Four plots. Four distinct residences — The Olive Court, The Stone Gallery, The Heritage Finca, The Courtyard Estate. Each with curated views of how life can unfold here.",
     explore: "Explore Property",
     closing:
       "Each plot is a gem in its own right — to discover, to shape, and to make unmistakably yours.",
     disclaimer:
-      "Architectural visions and formerly permitted villa projects. Building permits for Properties I, II and IV were granted, then not renewed after the estate was deferred for a prolonged period. They do not constitute current building rights. Final design and any development remain subject to independent technical and legal review and all required approvals. See our",
+      "Architectural visions from the Can Caramany concept study. Planning context:",
     legalLink: "Legal Disclaimer",
   },
   infrastructure: {
     eyebrow: "Infrastructure",
-    headline: "The estate is already served.",
-    historicEyebrow: "Historic infrastructure concept",
+    headline: "Prepared for four residences.",
+    historicEyebrow: "Further foresight",
     cta: "Request Technical Documentation",
     modalTitle: "Request Technical Documentation",
     pillars: {
       water: {
         title: "Water",
-        headline: "Existing private borehole",
-        copy: "Existing private borehole on the estate. Current capacity, water quality and extraction rights subject to technical and legal verification.",
+        headline: "Boreholes on the estate",
+        copy: "Private boreholes have been drilled on the estate and produce water — a working foundation for rural living of real substance at Can Caramany.",
       },
       power: {
         title: "Power",
-        headline: "Existing electrical infrastructure",
-        copy: "Existing electrical infrastructure on the estate. Technical capacity and connection details remain subject to verification by a qualified electrician and the network operator.",
+        headline: "Power to the estate entrance",
+        copy: "Electrical supply has been brought to the main entrance of the estate, sized to serve four independent villas.",
       },
       access: {
         title: "Access",
         headline: "Established internal access",
-        copy: "Established internal access routes and paths serve the estate and its individual properties.",
+        copy: "Established internal roads and paths connect the estate and its four properties.",
       },
     },
     wastewaterHistoric:
-      "Historic infrastructure concepts contemplated a separate wastewater system, underground treatment, and rainwater storage for irrigation. These describe historic planning intent only and are not presented as the current operational condition.",
+      "Earlier planning also contemplated a separate wastewater system, underground treatment and rainwater storage for irrigation — further evidence of how seriously the estate was conceived.",
   },
   location: {
     eyebrow: "Location",
@@ -172,19 +204,26 @@ export const en: Dictionary = {
   dataRoom: {
     eyebrow: "Private Data Room",
     headline: "For those who want to go deeper.",
-    lead: "Plans, titles, infrastructure notes and the original architectural drawings are available to qualified buyers and their advisers — privately, and in full.",
+    lead: "The concept dossier, original drawings, titles and infrastructure notes are available to qualified buyers and their advisers — privately, and in full.",
     cta: "Request Private Access",
     modalTitle: "Request Private Access",
     categoriesLabel: "Document categories",
     documents: [
+      "Concept dossier — Properties I–IV",
       "Cadastral information",
-      "Former planning documentation",
       "Original architectural drawings",
       "Infrastructure information",
       "Technical documents",
       "Property documentation",
       "Investment material",
     ],
+    dossierLabel: "Architecture & marketing study",
+    dossierCta: "Download concept dossier (PDF)",
+    dossierHref: "/documents/Can-Caramany-Konzept-Dossier.pdf",
+    dossierGateTitle: "Downloads by invitation",
+    dossierGateBody:
+      "Downloads are available only after personal contact and registration. The concept dossier is not publicly released at this stage.",
+    dossierGateCta: "Request private access",
   },
   closing: {
     line: "Four private worlds. One extraordinary piece of Mallorca.",
@@ -221,10 +260,8 @@ export const en: Dictionary = {
     },
   },
   disclaimers: {
-    conceptual:
-      "Conceptual visualization. Subject to planning, technical review and applicable approvals.",
-    visualization:
-      "Architectural visualization of the original project. Subject to planning, technical review and all required approvals.",
+    conceptual: "Conceptual visualization.",
+    visualization: "Architectural visualization of the original project.",
     historicDrawings: "Original Architectural Drawings",
     areaCaveat:
       "Subject to final area verification against current Registro and Catastro documentation.",
@@ -234,21 +271,21 @@ export const en: Dictionary = {
       label: "Property I",
       headline: "Open land. Long views. A house already conceived.",
       projectLine:
-        "Formerly permitted villa with pool and garage, set in more than five hectares of private countryside.",
+        "The Olive Court — two-storey residence with entrance courtyard, pool axis and generous loggia.",
       descriptors: [
         "50,033 m² of open countryside",
         "Complete privacy and long views",
         "Villa, pool and garage in the original project",
-        "Formerly granted building permit",
+        "Documented villa project",
       ],
       overview:
-        "Property I is the most open of the four landholdings — a generous private landscape of dry-stone walls, Mediterranean planting and uninterrupted sky. A complete residential project was prepared for this land: a villa with pool and garage, once permitted, later deferred with the rest of the estate. What remains is scale, silence, and a documented architectural starting point — not a current building right.",
+        "Property I is the most open of the four landholdings — a generous private landscape of dry-stone walls, Mediterranean planting and uninterrupted sky. A complete residential project was prepared for this land: a villa with pool and garage, conceived with the care of a finished idea. What remains is scale, silence, and a documented architectural starting point.",
       landscape:
         "Gently rolling terrain, dry-stone walls and agricultural openness shape a landscape of light, silence and spatial generosity.",
       architecture:
-        "A complete residential project was prepared for this land, and a building permit was granted. The Can Caramany project was later postponed for a prolonged period, and the permit was not renewed. It expired on 18 July 2009. What remains is the original architectural work — a previously approved concept that gives a future owner a clear, documented starting point. It is not a current building right. Any development today is subject to current planning regulations and renewed governmental approval.",
+        "A complete residential project was prepared for this land, and a building permit was historically granted. The original architectural work remains — a previously approved concept that gives a future owner a clear, documented starting point.",
       infrastructure:
-        "Property I is connected through the estate’s established access network. Existing electrical infrastructure on the estate. Technical capacity and connection details remain subject to verification by a qualified electrician and the network operator. Existing private borehole on the estate. Current capacity, water quality and extraction rights subject to technical and legal verification.",
+        "Property I is reached through the estate’s established access network. Private boreholes on the estate produce water. Electrical supply has been brought to the main entrance of the estate, sized to serve four independent villas.",
       cta: "Explore Property I",
       imageAlt:
         "Architectural visualization of the original villa project for Property I at Can Caramany",
@@ -259,21 +296,21 @@ export const en: Dictionary = {
       label: "Property II",
       headline: "At the centre of the estate, among the oaks.",
       projectLine:
-        "Formerly permitted family house, with living rooms opening to terrace and pool.",
+        "The Stone Gallery — long two-storey residence with natural stone, patio and shaded terraces.",
       descriptors: [
         "57,092 m² · 14.11 acres",
         "Heart of the estate",
         "Mature holm oaks and internal paths",
-        "Formerly granted building permit",
+        "Documented villa project",
       ],
       overview:
-        "Property II sits in the quiet centre of Can Caramany, among mature holm oaks and the estate’s own paths. A substantial family house was designed here — living rooms, terrace and pool turned toward the land. The building permit was granted, then not renewed after the project was postponed. The land, the trees and the original drawings remain — as a serious starting point, not a current building right.",
+        "Property II sits in the quiet centre of Can Caramany, among mature holm oaks and the estate’s own paths. A substantial family house was designed here — living rooms, terrace and pool turned toward the land. The land, the trees and the original drawings remain as a serious architectural beginning.",
       landscape:
         "Mature holm oaks, agricultural openness and internal estate routes contribute to a setting defined by silence, light and spatial generosity.",
       architecture:
-        "A complete residential project was prepared for this land, and a building permit was granted. The Can Caramany project was later postponed for a prolonged period, and the permit was not renewed. It expired on 18 July 2009. What remains is the original architectural work — a previously approved concept that gives a future owner a clear, documented starting point. It is not a current building right. Any development today is subject to current planning regulations and renewed governmental approval.",
+        "A complete residential project was prepared for this land, and a building permit was historically granted. The original architectural work remains — a previously approved concept that gives a future owner a clear, documented starting point.",
       infrastructure:
-        "Access is provided through the estate’s established routes. Existing electrical infrastructure on the estate. Technical capacity and connection details remain subject to verification by a qualified electrician and the network operator. Existing private borehole on the estate. Current capacity, water quality and extraction rights subject to technical and legal verification.",
+        "Access is provided through the estate’s established routes. Private boreholes on the estate produce water. Electrical supply has been brought to the main entrance of the estate, sized to serve four independent villas.",
       cta: "Explore Property II",
       imageAlt:
         "Architectural visualization of the original villa project for Property II at Can Caramany",
@@ -284,21 +321,21 @@ export const en: Dictionary = {
       label: "Property III",
       headline: "The historic heart of Can Caramany.",
       projectLine:
-        "The original Mallorcan finca, with a considered proposal for rehabilitation, annexes, terrace and pool.",
+        "The Heritage Finca — careful rehabilitation of the Casa Payesa with annexes, terrace and pool.",
       descriptors: [
         "Historic Mallorcan finca",
         "64,455 m² · 15.93 acres",
         "Original stone, timber and tiled roofs",
-        "Former rehabilitation proposal",
+        "Heritage at the heart of the estate",
       ],
       overview:
-        "Property III is the soul of the estate: the historic Mallorcan finca, weathered and authentic, set in more than fifteen acres of oaks, almonds and dry-stone walls. A comprehensive rehabilitation was drawn for the house — a country residence of real presence, with annexes, terrace and pool. The project was later deferred. The finca stands. The drawings remain a starting point, not a current building right.",
+        "Property III is the soul of the estate: the historic Mallorcan finca, weathered and authentic, set in more than fifteen acres of oaks, almonds and dry-stone walls. A comprehensive rehabilitation was drawn for the house — a country residence of real presence, with annexes, terrace and pool. The finca stands as the architectural heart of Can Caramany.",
       landscape:
         "An elongated, irregular landholding with a north–south orientation and a gentle slope of approximately 7–11%. Dry-stone walls, holm oaks, a dry torrent and buildings set in the flatter portion of the land shape a distinctly Mallorcan setting.",
       architecture:
-        "A comprehensive rehabilitation proposal was prepared for the historic finca. The documentation references a Consell de Mallorca assent of 6 April 2009; corresponding Ayuntamiento permission was not documented in the files available. As with the wider estate, the project was later deferred for a prolonged period. These drawings remain a considered architectural starting point. They do not constitute current building rights. Any rehabilitation, extension or change of use is subject to current planning regulations and all required approvals.",
+        "A comprehensive rehabilitation proposal was prepared for the historic finca, with historic planning progress recorded at Consell de Mallorca. The drawings give the house a clear architectural path forward.",
       infrastructure:
-        "As the historic heart of the estate, Property III is connected by established internal access. Existing private borehole on the estate. Current capacity, water quality and extraction rights subject to technical and legal verification. Existing electrical infrastructure on the estate. Technical capacity and connection details remain subject to verification by a qualified electrician and the network operator. Historic infrastructure concepts contemplated a separate wastewater system, underground treatment, and rainwater storage for irrigation. These describe historic planning intent only and are not presented as the current operational condition.",
+        "As the historic heart of the estate, Property III is connected by established internal access. Private boreholes on the estate produce water. Electrical supply has been brought to the main entrance of the estate, sized to serve four independent villas. Earlier planning also contemplated wastewater treatment and rainwater storage for irrigation.",
       cta: "Discover the Historic Finca",
       imageAlt:
         "Architectural visualization of the original rehabilitation proposal for the historic finca at Property III",
@@ -309,21 +346,21 @@ export const en: Dictionary = {
       label: "Property IV",
       headline: "Quiet scale at the eastern edge.",
       projectLine:
-        "Formerly permitted villa with lower-ground rooms, pool and a four-car garage.",
+        "The Courtyard Estate — main house and wing around a protected garden, with pool and guest living.",
       descriptors: [
         "61,834 m² · 15.28 acres",
         "Independence at the edge of the estate",
         "Villa, pool and four-car garage in the original project",
-        "Formerly granted building permit",
+        "Documented villa project",
       ],
       overview:
-        "Property IV is the quieter eastern landholding — generous, private, and slightly apart. A complete villa was designed for this ground, with living floors, lower-ground rooms, pool and a four-car garage. As with Properties I and II, a building permit was granted and later not renewed when the estate project was postponed. The opportunity is the land, and a serious architectural beginning — not a current building right.",
+        "Property IV is the quieter eastern landholding — generous, private, and slightly apart. A complete villa was designed for this ground, with living floors, lower-ground rooms, pool and a four-car garage. The opportunity is the land, and a serious architectural beginning.",
       landscape:
         "Open fields, mature trees and the broader agricultural character of Can Caramany define a setting of privacy and Mediterranean authenticity.",
       architecture:
-        "A complete residential project was prepared for this land, and a building permit was granted. The Can Caramany project was later postponed for a prolonged period, and the permit was not renewed. It expired on 18 July 2009. What remains is the original architectural work — a previously approved concept that gives a future owner a clear, documented starting point. It is not a current building right. Any development today is subject to current planning regulations and renewed governmental approval.",
+        "A complete residential project was prepared for this land, and a building permit was historically granted. The original architectural work remains — a previously approved concept that gives a future owner a clear, documented starting point.",
       infrastructure:
-        "Property IV is linked through the estate’s established access routes. Existing electrical infrastructure on the estate. Technical capacity and connection details remain subject to verification by a qualified electrician and the network operator. Existing private borehole on the estate. Current capacity, water quality and extraction rights subject to technical and legal verification.",
+        "Property IV is linked through the estate’s established access routes. Private boreholes on the estate produce water. Electrical supply has been brought to the main entrance of the estate, sized to serve four independent villas.",
       cta: "Explore Property IV",
       imageAlt:
         "Architectural visualization of the original villa project for Property IV at Can Caramany",
@@ -333,44 +370,71 @@ export const en: Dictionary = {
   },
   residencesCards: {
     "property-i": {
-      title: "Property I — L-Plan Residence",
-      copy: "Open land and long views. An L-shaped residence of cream plaster and pale limestone, a detached garage to the west, and a private pool set to the east — one architectural idea among many this plot can hold. Your architect. Your theme. Your house.",
-      captions: ["Arrival", "Pool & terrace", "Evening living"],
+      title: "The Olive Court",
+      copy: "A two-storey residence with a composed T-plan, an entrance courtyard and a clear pool axis. Open living and dining toward the garden, private bedrooms above, and a generous loggia — Mediterranean living of quiet certainty.",
+      captions: ["Pool & garden", "Arrival", "Loggia living", "Aerial"],
       alts: [
-        "Property I vision — arrival façade with detached garage and pool to the east",
-        "Property I vision — east pool terrace opening to the L-shaped residence",
-        "Property I vision — evening living on the recessed terrace wing",
+        "The Olive Court — pool terrace opening to the residence",
+        "The Olive Court — arrival façade among olives and lavender",
+        "The Olive Court — covered loggia living toward the garden",
+        "The Olive Court — aerial view of the residence in the landscape",
       ],
     },
     "property-ii": {
-      title: "Property II — Stone & Light",
-      copy: "At the heart of the estate: a sculptural stone volume with a tree-shaped void, a plastered living wing with a clear six-window rhythm, and a tapering chimney. A bold material contrast — and proof that each plot can carry an entirely different architectural language.",
-      captions: ["Arrival", "Courtyard", "Pool & garden"],
+      title: "The Stone Gallery",
+      copy: "A long, two-storey volume with natural stone accents, a side wing and patio. Representative arrival, continuous living rooms and shaded terraces — architecture with presence at the heart of the estate.",
+      captions: ["Pool & terrace", "Arrival", "Covered terrace", "Aerial"],
       alts: [
-        "Property II vision — stone wing with tree void and plastered six-window façade",
-        "Property II vision — courtyard living framed by olives and stone chimney",
-        "Property II vision — pool garden with stone-and-plaster residence beyond",
+        "The Stone Gallery — pool and rear terraces",
+        "The Stone Gallery — stone façade and arrival court",
+        "The Stone Gallery — vine-shaded outdoor living",
+        "The Stone Gallery — aerial view of the residence among the oaks",
       ],
     },
     "property-iii": {
-      title: "Property III — Historic Finca",
-      copy: "The historic finca reimagined with classical symmetry: arched entrance, oculus, Juliet balconies, and a continuous terracotta roof. Timeless Mallorcan character — conceptual only, and an invitation for your own restoration vision on this exceptional ground.",
-      captions: ["Façade", "Terrace & pool", "Evening"],
+      title: "The Heritage Finca",
+      copy: "A careful rehabilitation of the Casa Payesa, drawing the historic outbuildings into a composed whole. Historic substance at the centre; contemporary comfort held within a Mallorcan silhouette of lasting character.",
+      captions: ["Pool & terrace", "Façade", "Garden living", "Aerial"],
       alts: [
-        "Property III vision — symmetrical finca façade with arched door and oculus",
-        "Property III vision — finca terrace and pool at golden hour",
-        "Property III vision — evening light on the symmetrical finca entrance",
+        "The Heritage Finca — pool terrace toward the restored house",
+        "The Heritage Finca — symmetrical stone façade and entrance",
+        "The Heritage Finca — pergola living among olives",
+        "The Heritage Finca — aerial view of the finca and its grounds",
       ],
     },
     "property-iv": {
-      title: "Property IV — Modern Rustic",
-      copy: "Quiet scale at the edge of the estate. Asymmetrical stone wings, rising shed roofs, horizontal cladding and modern slot windows — a contemporary reading of Mallorca that still belongs to the land. Different plot. Different idea. Absolute privacy.",
-      captions: ["Façade", "Pool & land", "Terrace"],
+      title: "The Courtyard Estate",
+      copy: "A two-storey main house and a single-storey wing arranged around a protected garden. Generous gathering rooms, a flexible guest wing and Mediterranean outdoor rooms — privacy with scale at the edge of Can Caramany.",
+      captions: ["Pool & land", "Arrival", "Courtyard living", "Aerial"],
       alts: [
-        "Property IV vision — asymmetrical stone wings with horizontal cladding and slot windows",
-        "Property IV vision — pool terrace opening to open countryside",
-        "Property IV vision — covered terrace at dusk with stone wings and cladding",
+        "The Courtyard Estate — pool opening to the countryside",
+        "The Courtyard Estate — arrival and main house",
+        "The Courtyard Estate — protected garden and outdoor rooms",
+        "The Courtyard Estate — aerial view of the courtyard ensemble",
       ],
+    },
+  },
+  drawings: {
+    eyebrowPermit: "Documented villa project",
+    eyebrowRehab: "Documented rehabilitation study",
+    title: "Property {roman} drawings",
+    introPermit:
+      "Elevations, sections and related drawings from the documented villa project. They record a serious architectural concept once prepared for this land.",
+    introRehab:
+      "Elevations, sections and related drawings from the original rehabilitation proposal. They remain a considered architectural starting point for the finca’s next chapter.",
+    close: "Close",
+    previous: "Previous",
+    next: "Next",
+    lightboxEyebrow: "Property {roman} · Original drawings",
+    lightboxMeta:
+      "Click the drawing to enlarge it · Not a current building permit",
+    drawingAlt: "Historic {label} for Property {roman}",
+    categories: {
+      all: "All",
+      elevation: "Elevations",
+      section: "Sections",
+      roof: "Roofs",
+      outbuilding: "Outbuildings",
     },
   },
   propertyIii: {
@@ -378,7 +442,7 @@ export const en: Dictionary = {
     headline: "The historic heart of Can Caramany.",
     lead: "Original stone, tiled roofs and a landscape that has grown around the house for generations — the finca that gives the estate its name.",
     overview:
-      "This is the soul of Can Caramany: a genuine Mallorcan finca, weathered and irreplaceable, set in more than fifteen acres of oaks, almonds and dry-stone walls. A comprehensive rehabilitation was drawn for the house — country living of real presence, with annexes, terrace and pool. The documentation references a Consell de Mallorca assent of 6 April 2009; corresponding Ayuntamiento permission was not documented, and the project was later deferred. The drawings remain a starting point, not a current building right.",
+      "This is the soul of Can Caramany: a genuine Mallorcan finca, weathered and irreplaceable, set in more than fifteen acres of oaks, almonds and dry-stone walls. A comprehensive rehabilitation was drawn for the house — country living of real presence, with annexes, terrace and pool. The documentation references a Consell de Mallorca assent of 6 April 2009. The drawings remain a considered architectural beginning for the house’s next chapter.",
     facts: [
       { label: "Land", value: "64,455 m²" },
       { label: "Scale", value: "15.93 acres" },
@@ -392,9 +456,9 @@ export const en: Dictionary = {
       copy: "At the heart of Property III stands an original Mallorcan finca — weathered, authentic and deeply rooted in its landscape. Stone walls, timber structures and traditional roof tiles give the house a character that cannot be manufactured. What stands here is not a finished residence, but a rare starting point: historic substance with genuine architectural presence.",
     },
     vision: {
-      eyebrow: "Former rehabilitation proposal",
+      eyebrow: "Rehabilitation proposal",
       title: "A quiet continuation of Mallorcan living.",
-      copy: "A considered architectural proposal for the rehabilitation and extension of the existing traditional Mallorcan finca, including annexes and a pool. The original proposal imagined a composed Casa Payesa with annexes, terrace, pergola and pool — contemporary in comfort, unmistakably Mallorcan in character. The project was later deferred; these drawings are a starting point, not a current building right.",
+      copy: "A considered architectural proposal for the rehabilitation and extension of the existing traditional Mallorcan finca, including annexes and a pool. The original proposal imagined a composed Casa Payesa with annexes, terrace, pergola and pool — contemporary in comfort, unmistakably Mallorcan in character.",
       points: [
         "Rehabilitation and extension of the existing Casa Payesa and annexes",
         "Pool and pergola contemplated in the historic proposal",
@@ -405,7 +469,7 @@ export const en: Dictionary = {
       eyebrow: "Original architectural drawings",
       title: "Conceived for gathering, retreat and outdoor living.",
       intro:
-        "Figures below are approximate values from the original rehabilitation proposal and are provided for information only. The drawings that follow record that concept — they are not a current building right.",
+        "Figures below are approximate values from the original rehabilitation proposal and are provided for information only. The drawings that follow record that concept.",
       levels: [
         {
           label: "Ground floor",
@@ -438,7 +502,7 @@ export const en: Dictionary = {
         },
       ],
       figuresNote:
-        "Original architectural proposal — approximate figures. Previous permits were not renewed and do not constitute current building rights.",
+        "Original architectural proposal — approximate figures.",
     },
     land: {
       eyebrow: "Landscape",
@@ -456,8 +520,8 @@ export const en: Dictionary = {
     overview: "Overview",
     landscape: "Landscape",
     architecture: "Architecture",
-    architectureFormerPermit: "Architecture / Former Permit",
-    architectureFormerHeadline: "Once granted. Later deferred.",
+    architectureFormerPermit: "Architecture",
+    architectureFormerHeadline: "A documented architectural beginning.",
     infrastructure: "Infrastructure",
     gallery: "Gallery",
     positionEyebrow: "Position within the estate",
@@ -475,7 +539,7 @@ export const en: Dictionary = {
     backToEstate: "Back to estate",
     landToday: "The land today",
     historicApprovalsNote:
-      "Previous permits were not renewed and do not constitute current building rights.",
+      "The estate’s planning context is set out in The Project.",
     enquireAbout: "Enquire about Property",
   },
   legal: {
@@ -569,8 +633,8 @@ export const en: Dictionary = {
         "Final wording subject to counsel approval before public go-live.",
       paragraphs: [
         "The architectural drawings, plans, renderings, studies and other development concepts presented on this website include historical and conceptual material and are provided for illustrative and informational purposes only.",
-        "Certain properties within the Can Caramany estate were historically subject to architectural projects and planning procedures, including building permits that were later not renewed after the project was deferred for a prolonged period. Any previous permits or approvals have expired, may no longer be valid, or may require modification under current planning, environmental and building regulations.",
-        "No representation or warranty is made that the concepts shown can be implemented in their current form. Any future construction, rehabilitation, extension, change of use or other development is subject to independent technical and legal review and to all approvals required by the competent authorities.",
+        "Certain properties within the Can Caramany estate were historically the subject of architectural projects and planning procedures, including building permits granted for complete villa projects on Properties I, II and IV, and a rehabilitation study for Property III. The estate was later set aside for a prolonged period; those permissions were not carried into the present and a renewed application is required for any development today. Development remains possible in principle under Mallorcan planning, where current regulations are broadly similar to those of the original projects’ period, subject to the competent authorities and independent technical and legal review.",
+        "No representation or warranty is made that the concepts shown can be implemented in their current form. Any future construction, rehabilitation, extension, change of use or other development remains subject to all approvals required by the competent authorities.",
         "All areas, dimensions, plans, distances, infrastructure information and other property data are approximate unless expressly confirmed by current official documentation and should be independently verified by a prospective purchaser.",
         "Renderings and visualisations are artistic representations and do not constitute a contractual specification or commitment.",
         "Nothing contained on this website constitutes a binding offer, purchase commitment, investment recommendation or guarantee of future development potential.",

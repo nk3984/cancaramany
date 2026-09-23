@@ -3,12 +3,13 @@
 :root {
   --color-background: #f3f0e8;
   --color-warm-stone: #c8ba9a;
-  --color-deep-olive: #383d31;
-  --color-charcoal: #20211f;
-  --color-terracotta: #9a654d;
+  --color-deep-olive: #2c3128;
+  --color-charcoal: #1a1b19;
+  --color-terracotta: #8f5a44;
   --color-white: #faf9f6;
   --background: var(--color-background);
   --foreground: var(--color-charcoal);
+  --color-muted: color-mix(in srgb, var(--color-deep-olive) 88%, black);
 }
 
 @theme inline {

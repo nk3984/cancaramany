@@ -6,11 +6,10 @@ import { AnimatePresence, motion } from "framer-motion";
 import { FadeIn } from "@/components/ui/FadeIn";
 import {
   filterHistoricPlans,
-  historicPlanCategories,
   type HistoricPlanDrawing,
   type HistoricPlanFilterId,
 } from "@/data/historic-plans";
-import { contentFacts } from "@/data/content-facts";
+import { useDictionary } from "@/i18n/locale-context";
 
 type HistoricStudyGalleryProps = {
   drawings: HistoricPlanDrawing[];
@@ -25,8 +24,18 @@ export function HistoricStudyGallery({
   tone = "light",
   variant = "former-permit",
 }: HistoricStudyGalleryProps) {
+  const dictionary = useDictionary();
+  const copy = dictionary.drawings;
   const [filter, setFilter] = useState<HistoricPlanFilterId>("all");
   const [activeId, setActiveId] = useState<string | null>(null);
+
+  const categories: { id: HistoricPlanFilterId; label: string }[] = [
+    { id: "all", label: copy.categories.all },
+    { id: "elevation", label: copy.categories.elevation },
+    { id: "section", label: copy.categories.section },
+    { id: "roof", label: copy.categories.roof },
+    { id: "outbuilding", label: copy.categories.outbuilding },
+  ];
 
   const visible = useMemo(
     () => filterHistoricPlans(drawings, filter),
@@ -56,13 +65,15 @@ export function HistoricStudyGallery({
 
   const isDark = tone === "dark";
   const intro =
-    variant === "rehabilitation"
-      ? contentFacts.copy.galleryRehabilitation
-      : contentFacts.copy.galleryFormerPermit;
+    variant === "rehabilitation" ? copy.introRehab : copy.introPermit;
   const eyebrow =
-    variant === "rehabilitation"
-      ? "Original rehabilitation proposal"
-      : "Formerly permitted project";
+    variant === "rehabilitation" ? copy.eyebrowRehab : copy.eyebrowPermit;
+  const title = copy.title.replace("{roman}", roman);
+  const lightboxEyebrow = copy.lightboxEyebrow.replace("{roman}", roman);
+  const drawingAlt = (label: string) =>
+    copy.drawingAlt
+      .replace("{label}", label)
+      .replace("{roman}", roman);
 
   return (
     <div>
@@ -79,11 +90,11 @@ export function HistoricStudyGallery({
             isDark ? "text-[var(--color-white)]" : "text-[var(--color-charcoal)]"
           }`}
         >
-          Property {roman} drawings
+          {title}
         </h2>
         <p
           className={`mt-6 max-w-2xl text-sm leading-relaxed ${
-            isDark ? "text-[var(--color-white)]/70" : "text-[var(--color-deep-olive)]"
+            isDark ? "text-[var(--color-white)]/95" : "text-[var(--color-deep-olive)]"
           }`}
         >
           {intro}
@@ -91,7 +102,7 @@ export function HistoricStudyGallery({
       </FadeIn>
 
       <div className="mt-8 flex flex-wrap gap-2">
-        {historicPlanCategories.map((category) => (
+        {categories.map((category) => (
           <button
             key={category.id}
             type="button"
@@ -124,7 +135,7 @@ export function HistoricStudyGallery({
               <span className="relative block aspect-[4/3] overflow-hidden bg-[var(--color-white)]">
                 <Image
                   src={drawing.src}
-                  alt={`Historic ${drawing.label} for Property ${roman}`}
+                  alt={drawingAlt(drawing.label)}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   quality={85}
@@ -150,7 +161,7 @@ export function HistoricStudyGallery({
             <div className="flex items-center justify-between gap-4 px-5 py-4 sm:px-8">
               <div>
                 <p className="text-[10px] uppercase tracking-[0.2em] text-[var(--color-warm-stone)]">
-                  Property {roman} · Original drawings
+                  {lightboxEyebrow}
                 </p>
                 <p className="mt-1 font-[family-name:var(--font-serif)] text-xl text-[var(--color-white)]">
                   {active.label}
@@ -161,7 +172,7 @@ export function HistoricStudyGallery({
                 onClick={() => setActiveId(null)}
                 className="text-[11px] uppercase tracking-[0.2em] text-[var(--color-white)]/80 hover:text-[var(--color-white)]"
               >
-                Close
+                {copy.close}
               </button>
             </div>
             <div className="flex min-h-0 flex-1 items-center justify-center overflow-auto px-4 pb-4 sm:px-8">
@@ -169,7 +180,7 @@ export function HistoricStudyGallery({
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={active.src}
-                alt={`Historic ${active.label} for Property ${roman}`}
+                alt={drawingAlt(active.label)}
                 className="max-h-[78vh] w-auto max-w-full object-contain"
               />
             </div>
@@ -180,11 +191,10 @@ export function HistoricStudyGallery({
                 onClick={() => setActiveId(visible[activeIndex - 1]?.id ?? null)}
                 className="text-[11px] uppercase tracking-[0.18em] text-[var(--color-white)]/80 disabled:opacity-30"
               >
-                Previous
+                {copy.previous}
               </button>
               <p className="text-[10px] uppercase tracking-[0.16em] text-[var(--color-warm-stone)]">
-                {activeIndex + 1} / {visible.length} · Click the drawing to enlarge
-                it · Not a current building permit
+                {activeIndex + 1} / {visible.length} · {copy.lightboxMeta}
               </p>
               <button
                 type="button"
@@ -192,7 +202,7 @@ export function HistoricStudyGallery({
                 onClick={() => setActiveId(visible[activeIndex + 1]?.id ?? null)}
                 className="text-[11px] uppercase tracking-[0.18em] text-[var(--color-white)]/80 disabled:opacity-30"
               >
-                Next
+                {copy.next}
               </button>
             </div>
           </motion.div>

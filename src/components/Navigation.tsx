@@ -66,7 +66,7 @@ export function Navigation() {
               <Link
                 key={item.href}
                 href={localePath(locale, item.href)}
-                className="text-[11px] uppercase tracking-[0.2em] opacity-85 transition-opacity hover:opacity-100"
+                className="text-[11px] uppercase tracking-[0.2em] opacity-95 transition-opacity hover:opacity-100"
               >
                 {item.label}
               </Link>
@@ -81,7 +81,7 @@ export function Navigation() {
               className={`hidden text-[11px] uppercase tracking-[0.22em] transition-opacity hover:opacity-100 sm:inline-flex ${
                 solidHeader
                   ? "border border-[var(--color-charcoal)]/20 px-5 py-2.5 opacity-100"
-                  : "border border-[var(--color-white)]/35 px-5 py-2.5 opacity-90"
+                  : "border border-[var(--color-white)]/70 bg-[var(--color-charcoal)]/20 px-5 py-2.5 opacity-100"
               }`}
             >
               {dictionary.nav.enquire}
