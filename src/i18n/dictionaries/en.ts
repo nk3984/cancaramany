@@ -555,19 +555,15 @@ export const en: Dictionary = {
       seat: "Registered seat",
       shareholder: "Sole shareholder",
       administrator: "Administrator",
-      adminUnverified:
-        "Status to be confirmed against the current Registro Mercantil extract before public launch.",
       contact: "Contact",
       contactPending:
-        "Public contact email and telephone to be added before go-live. Enquiries may currently be submitted via the website form.",
+        "Enquiries may be submitted via the website form or by email.",
       project: "Brand / project",
     },
     privacy: {
       title: "Privacy",
       metaDescription:
         "Privacy information for the Can Caramany website operated by GENI BALEAR S.L.U.",
-      draftNote:
-        "Draft aligned to the current website concept. Final wording should be reviewed by counsel before public go-live.",
       sections: [
         {
           heading: "1. Controller",
@@ -629,8 +625,6 @@ export const en: Dictionary = {
       title: "Legal Disclaimer",
       metaDescription:
         "Legal disclaimer for information published on the Can Caramany website.",
-      draftNote:
-        "Final wording subject to counsel approval before public go-live.",
       paragraphs: [
         "The architectural drawings, plans, renderings, studies and other development concepts presented on this website include historical and conceptual material and are provided for illustrative and informational purposes only.",
         "Certain properties within the Can Caramany estate were historically the subject of architectural projects and planning procedures, including building permits granted for complete villa projects on Properties I, II and IV, and a rehabilitation study for Property III. The estate was later set aside for a prolonged period; those permissions were not carried into the present and a renewed application is required for any development today. Development remains possible in principle under Mallorcan planning, where current regulations are broadly similar to those of the original projects’ period, subject to the competent authorities and independent technical and legal review.",

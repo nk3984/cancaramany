@@ -35,10 +35,6 @@ export default async function PrivacyPage({
 
   return (
     <LegalPageShell title={copy.title} updated={dictionary.legal.updated}>
-      <p className="rounded-none border border-[var(--color-warm-stone)] bg-[var(--color-white)] px-5 py-4 text-sm">
-        {copy.draftNote}
-      </p>
-
       {copy.sections.map((section) => (
         <div key={section.heading}>
           <h2>{section.heading}</h2>

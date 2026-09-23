@@ -291,7 +291,6 @@ export type Dictionary = {
       seat: string;
       shareholder: string;
       administrator: string;
-      adminUnverified: string;
       contact: string;
       contactPending: string;
       project: string;
@@ -299,13 +298,11 @@ export type Dictionary = {
     privacy: {
       title: string;
       metaDescription: string;
-      draftNote: string;
       sections: { heading: string; body: string[] }[];
     };
     disclaimer: {
       title: string;
       metaDescription: string;
-      draftNote: string;
       paragraphs: string[];
       operatorHeading: string;
       operatorBody: string;

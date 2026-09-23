@@ -54,17 +54,7 @@ export default async function ImprintPage({
       <p>{company.soleShareholder}</p>
 
       <h2>{copy.administrator}</h2>
-      <p>
-        {company.administrator}
-        {!company.administratorVerified ? (
-          <>
-            <br />
-            <span className="text-sm text-[var(--color-deep-olive)]/75">
-              {copy.adminUnverified}
-            </span>
-          </>
-        ) : null}
-      </p>
+      <p>{company.administrator}</p>
 
       <h2>{copy.contact}</h2>
       {company.email || company.phone ? (

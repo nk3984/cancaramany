@@ -151,7 +151,7 @@ export const contentFacts = {
     "I have read the Privacy Policy and consent to the processing of my personal data for the purpose of handling my enquiry.",
 } as const;
 
-/** Full site disclaimer — for counsel final approval before public go-live. */
+/** Full site disclaimer paragraphs used for the legal page. */
 export const siteDisclaimerParagraphs = [
   "The architectural drawings, plans, renderings, studies and other development concepts presented on this website include historical and conceptual material and are provided for illustrative and informational purposes only.",
   "Certain properties within the Can Caramany estate were historically the subject of architectural projects and planning procedures, including building permits granted for complete villa projects on Properties I, II and IV, and a rehabilitation study for Property III. The estate was later set aside for a prolonged period; those permissions were not carried into the present and a renewed application is required for any development today. Development remains possible in principle under Mallorcan planning, where current regulations are broadly similar to those of the original projects’ period, subject to the competent authorities and independent technical and legal review.",

@@ -557,19 +557,15 @@ export const de: Dictionary = {
       seat: "Sitz",
       shareholder: "Alleingesellschafter",
       administrator: "Geschäftsführer",
-      adminUnverified:
-        "Status vor öffentlichem Launch anhand des aktuellen Registro-Mercantil-Auszugs zu bestätigen.",
       contact: "Kontakt",
       contactPending:
-        "Öffentliche Kontakt-E-Mail und Telefonnummer werden vor dem Go-live ergänzt. Anfragen können derzeit über das Website-Formular gestellt werden.",
+        "Anfragen können über das Website-Formular oder per E-Mail gestellt werden.",
       project: "Marke / Projekt",
     },
     privacy: {
       title: "Datenschutz",
       metaDescription:
         "Datenschutzinformationen zur Website Can Caramany, betrieben von GENI BALEAR S.L.U.",
-      draftNote:
-        "Entwurf entsprechend dem aktuellen Website-Konzept. Die endgültige Fassung sollte vor dem öffentlichen Go-live rechtlich geprüft werden.",
       sections: [
         {
           heading: "1. Verantwortlicher",
@@ -631,8 +627,6 @@ export const de: Dictionary = {
       title: "Rechtlicher Hinweis",
       metaDescription:
         "Rechtlicher Hinweis zu den auf der Website Can Caramany veröffentlichten Informationen.",
-      draftNote:
-        "Endgültige Fassung vorbehaltlich der Zustimmung durch Rechtsberatung vor dem öffentlichen Go-live.",
       paragraphs: [
         "Die auf dieser Website gezeigten Architekturzeichnungen, Pläne, Renderings, Studien und sonstigen Entwicklungskonzepte umfassen historisches und konzeptionelles Material und dienen ausschließlich illustrativen und informativen Zwecken.",
         "Bestimmte Grundstücke des Anwesens Can Caramany waren historisch Gegenstand von Architekturprojekten und Planungsverfahren, einschließlich Baugenehmigungen für vollständige Villenprojekte auf den Grundstücken I, II und IV sowie einer Sanierungsstudie für Grundstück III. Das Anwesen wurde später über einen längeren Zeitraum zurückgestellt; jene Genehmigungen wurden nicht in die Gegenwart übernommen, und für jede heutige Entwicklung ist ein erneutes Verfahren erforderlich. Eine Entwicklung bleibt nach mallorquinischem Planungsrecht dem Grunde nach möglich — die heutigen Vorschriften sind den Regelungen der Zeit der originalen Projekte weitgehend ähnlich —, vorbehaltlich der zuständigen Behörden sowie unabhängiger technischer und rechtlicher Prüfung.",

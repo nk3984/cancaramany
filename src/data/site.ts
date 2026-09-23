@@ -23,8 +23,7 @@ export const siteConfig = {
     nif: "B-57091464",
     soleShareholder: "Niclas Königbauer",
     administrator: "Niclas Königbauer",
-    /** Confirm against current Registro Mercantil extract before go-live. */
-    administratorVerified: false,
+    administratorVerified: true,
     address: {
       street: "C/ Arquitecto Francisco Casas 17, local A06",
       postalCode: "07181",
@@ -32,7 +31,6 @@ export const siteConfig = {
       region: "Baleares (Illes)",
       country: "Spain",
     },
-    /** Add public contact email before go-live. */
     email: "info@cancaramany.com",
     phone: "+49 170 3232013",
   },

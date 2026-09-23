@@ -35,10 +35,6 @@ export default async function LegalDisclaimerPage({
 
   return (
     <LegalPageShell title={copy.title} updated={dictionary.legal.updated}>
-      <p className="rounded-none border border-[var(--color-warm-stone)] bg-[var(--color-white)] px-5 py-4 text-sm">
-        {copy.draftNote}
-      </p>
-
       {copy.paragraphs.map((paragraph) => (
         <p key={paragraph.slice(0, 48)}>{paragraph}</p>
       ))}
